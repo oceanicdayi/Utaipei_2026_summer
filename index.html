@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="北市大 2026 暑期地球科學課程——地震學、地球物理與 AI／Agent 輔助教學實作" />
+  <title>北市大暑期地球科學課程 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f2a2e;
+      --ink-soft: #2a4a4f;
+      --mist: #eef5f3;
+      --paper: #f7fbf9;
+      --teal-deep: #0a3d42;
+      --teal: #1a6b72;
+      --teal-bright: #2ea8a4;
+      --foam: #b8e0d8;
+      --magma: #e07a3d;
+      --gold: #d4a04a;
+      --line: rgba(15, 42, 46, 0.12);
+      --max: 1080px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: var(--teal); text-underline-offset: 0.2em; }
+    a:hover { color: var(--magma); }
+
+    .wrap {
+      width: min(100% - 2.5rem, var(--max));
+      margin-inline: auto;
+    }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-content: end;
+      padding: 1.5rem 0 4.5rem;
+      color: var(--mist);
+      background:
+        radial-gradient(ellipse 90% 60% at 70% 20%, rgba(46, 168, 164, 0.35), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 15% 80%, rgba(224, 122, 61, 0.22), transparent 50%),
+        linear-gradient(165deg, #061c20 0%, #0a3d42 42%, #134e56 78%, #0f3338 100%);
+      isolation: isolate;
+    }
+
+    .hero-wave {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-wave svg {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      width: min(140vw, 1600px);
+      transform: translateX(-50%);
+      opacity: 0.85;
+    }
+
+    .hero-wave path {
+      fill: none;
+      stroke: var(--foam);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 2400;
+      animation: draw-wave 2.8s var(--ease) 0.35s forwards, drift 8s ease-in-out 3.2s infinite;
+    }
+
+    .hero-wave path:nth-child(2) {
+      stroke: rgba(212, 160, 74, 0.7);
+      stroke-width: 1.4;
+      animation-delay: 0.55s, 3.4s;
+    }
+
+    .hero-wave path:nth-child(3) {
+      stroke: rgba(184, 224, 216, 0.35);
+      stroke-width: 1;
+      animation-delay: 0.75s, 3.6s;
+    }
+
+    @keyframes draw-wave {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(184, 224, 216, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184, 224, 216, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
+      opacity: 0.6;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      margin: 0 0 1.1rem;
+      max-width: 14ch;
+      animation: rise 1s var(--ease) both;
+    }
+
+    .brand span {
+      display: block;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 0.28em;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      font-weight: 400;
+      color: rgba(238, 245, 243, 0.88);
+      max-width: 34ch;
+      margin: 0 0 2rem;
+      animation: rise 1s var(--ease) 0.12s both;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1rem;
+      animation: rise 1s var(--ease) 0.22s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.25s var(--ease), background 0.25s, color 0.25s, border-color 0.25s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--magma);
+      color: #fff8f2;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      background: #c9652f;
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--mist);
+      border: 1px solid rgba(184, 224, 216, 0.45);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--foam);
+      color: #fff;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hero-wave path { stroke-dashoffset: 0; }
+    }
+
+    /* —— Sections —— */
+    section {
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+
+    .reveal.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-kicker {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 0.75rem;
+    }
+
+    .section-title {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 700;
+      font-size: clamp(1.85rem, 4vw, 2.55rem);
+      line-height: 1.25;
+      margin: 0 0 1rem;
+      max-width: 16ch;
+    }
+
+    .section-text {
+      margin: 0;
+      max-width: 42ch;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    /* Spirit */
+    .spirit {
+      background:
+        radial-gradient(ellipse 50% 40% at 100% 0%, rgba(46, 168, 164, 0.12), transparent 60%),
+        var(--mist);
+    }
+
+    .spirit-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: end;
+    }
+
+    @media (min-width: 800px) {
+      .spirit-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+      }
+    }
+
+    .spirit-quote {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+      line-height: 1.55;
+      margin: 0;
+      color: var(--ink);
+      border-left: 3px solid var(--gold);
+      padding-left: 1.25rem;
+    }
+
+    /* Weeks */
+    .weeks {
+      background: var(--paper);
+    }
+
+    .week-list {
+      list-style: none;
+      margin: 3rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .week-item {
+      display: grid;
+      gap: 0.35rem 1.5rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+      grid-template-columns: auto 1fr;
+      align-items: baseline;
+      transition: background 0.35s var(--ease), padding-left 0.35s var(--ease);
+    }
+
+    .week-item:hover {
+      background: rgba(46, 168, 164, 0.06);
+      padding-left: 0.6rem;
+    }
+
+    @media (min-width: 720px) {
+      .week-item {
+        grid-template-columns: 5.5rem 7rem 1.2fr 1fr;
+        gap: 1rem 1.75rem;
+      }
+    }
+
+    .week-num {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .week-date {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .week-topic {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.12rem;
+      margin: 0;
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 720px) {
+      .week-topic { grid-column: auto; }
+    }
+
+    .week-task {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 720px) {
+      .week-task { grid-column: auto; }
+    }
+
+    /* Tools */
+    .tools {
+      background:
+        linear-gradient(180deg, var(--teal-deep), #0d2f34 55%, #123a40);
+      color: var(--mist);
+    }
+
+    .tools .section-kicker { color: var(--gold); }
+    .tools .section-title { color: #fff; max-width: 14ch; }
+    .tools .section-text { color: rgba(238, 245, 243, 0.78); }
+
+    .tool-flow {
+      display: grid;
+      gap: 0;
+      margin-top: 2.75rem;
+      border-top: 1px solid rgba(184, 224, 216, 0.2);
+    }
+
+    .tool-row {
+      display: grid;
+      gap: 0.4rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(184, 224, 216, 0.2);
+    }
+
+    @media (min-width: 700px) {
+      .tool-row {
+        grid-template-columns: 11rem 1fr;
+        gap: 2rem;
+        align-items: baseline;
+      }
+    }
+
+    .tool-name {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--foam);
+      margin: 0;
+    }
+
+    .tool-desc {
+      margin: 0;
+      color: rgba(238, 245, 243, 0.72);
+      font-size: 0.98rem;
+    }
+
+    /* Resources */
+    .resources {
+      background: var(--mist);
+    }
+
+    .res-links {
+      margin: 2.5rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0;
+    }
+
+    .res-links a {
+      display: grid;
+      gap: 0.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      transition: padding-left 0.3s var(--ease);
+    }
+
+    .res-links a:first-child { border-top: 1px solid var(--line); }
+    .res-links a:hover { padding-left: 0.5rem; }
+
+    .res-title {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--ink);
+    }
+
+    .res-meta {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .res-arrow {
+      font-family: "Bricolage Grotesque", sans-serif;
+      color: var(--magma);
+      font-weight: 700;
+    }
+
+    /* Flow strip */
+    .flow {
+      padding: 3rem 0;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .flow-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.35rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .flow-steps {
+      display: grid;
+      gap: 1.25rem;
+      counter-reset: step;
+    }
+
+    @media (min-width: 800px) {
+      .flow-steps {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    .flow-step {
+      position: relative;
+      padding-top: 0.25rem;
+    }
+
+    .flow-step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--teal-bright);
+      display: block;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    .flow-step p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.75rem 0 3.5rem;
+      background: var(--ink);
+      color: rgba(238, 245, 243, 0.7);
+      font-size: 0.9rem;
+    }
+
+    footer .brand-mini {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+    }
+
+    footer p { margin: 0; max-width: 40ch; }
+    footer a { color: var(--foam); }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1200 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <path d="M0 160 C40 160 60 90 100 90 S160 220 200 220 S260 120 300 120 S360 200 400 200 S460 70 520 70 S580 190 640 190 S700 110 760 110 S820 230 880 230 S940 130 1000 130 S1060 180 1100 180 S1160 150 1200 150" />
+        <path d="M0 190 C50 190 70 150 110 150 S170 230 210 230 S270 160 320 160 S380 210 430 210 S490 120 550 120 S610 200 670 200 S730 145 790 145 S850 215 910 215 S970 165 1030 165 S1090 195 1140 195 S1180 180 1200 180" />
+        <path d="M0 210 C60 210 90 185 140 185 S220 240 280 240 S360 175 420 175 S500 225 560 225 S640 160 720 160 S800 230 860 230 S940 190 1000 190 S1080 220 1140 220 S1180 205 1200 205" />
+      </svg>
+    </div>
+    <div class="wrap">
+      <h1 class="brand">
+        <span>UTaipei · Summer 2026</span>
+        北市大暑期地球科學
+      </h1>
+      <p class="hero-lead">把地震學變成可帶回教室的動手實驗——六週，從波形到防災教材。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#weeks">看六週地圖</a>
+        <a class="btn btn-ghost" href="#resources">打開課程資料</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="spirit" id="about">
+      <div class="wrap spirit-grid reveal">
+        <div>
+          <p class="section-kicker">Course spirit</p>
+          <h2 class="section-title">教學相長，動手做出能用的東西</h2>
+          <p class="section-text">為中小學現職教師設計。主軸是地震學與地球物理，同時導入 AI／Agent 與雲端平台，讓知識長成教材、網頁與專題。</p>
+        </div>
+        <blockquote class="spirit-quote">
+          不是只聽完地震學——而是親手把真實資料、工具與教案織在一起，帶回學校啟發學生的興趣與創造力。
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="weeks" id="weeks">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Six Fridays · 2026</p>
+          <h2 class="section-title">六週旅程</h2>
+          <p class="section-text">每週五上午四小時。從建好數位工作區開始，一路走到野外觀測與期末發表。</p>
+        </div>
+        <ol class="week-list">
+          <li class="week-item reveal">
+            <span class="week-num">W01</span>
+            <span class="week-date">7／17</span>
+            <h3 class="week-topic">課程準備與工具安裝</h3>
+            <p class="week-task">作業：完成個人數位學習工作區</p>
+          </li>
+          <li class="week-item reveal">
+            <span class="week-num">W02</span>
+            <span class="week-date">7／24</span>
+            <h3 class="week-topic">地震儀、加速度、地震動與震度</h3>
+            <p class="week-task">作業：簡易震動觀測活動</p>
+          </li>
+          <li class="week-item reveal">
+            <span class="week-num">W03</span>
+            <span class="week-date">7／31</span>
+            <h3 class="week-topic">P–S 到時差與震央定位</h3>
+            <p class="week-task">作業：震央定位教學範例</p>
+          </li>
+          <li class="week-item reveal">
+            <span class="week-num">W04</span>
+            <span class="week-date">8／7</span>
+            <h3 class="week-topic">課本第 4 章與真實波形</h3>
+            <p class="week-task">作業：導讀與波形分析小報告</p>
+          </li>
+          <li class="week-item reveal">
+            <span class="week-num">W05</span>
+            <span class="week-date">8／14</span>
+            <h3 class="week-topic">規模、震度、場址效應與建物</h3>
+            <p class="week-task">作業：地震防災互動網頁初版</p>
+          </li>
+          <li class="week-item reveal">
+            <span class="week-num">W06</span>
+            <span class="week-date">8／21</span>
+            <h3 class="week-topic">野外實驗、成果整合與發表</h3>
+            <p class="week-task">作業：期末教學作品 · 5–7 分鐘發表</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="flow">
+      <div class="wrap reveal">
+        <h2 class="flow-title">每週四小時怎麼過</h2>
+        <div class="flow-steps">
+          <div class="flow-step"><p>台灣地震案例導入</p></div>
+          <div class="flow-step"><p>核心概念講解</p></div>
+          <div class="flow-step"><p>IRIS／真實資料操作</p></div>
+          <div class="flow-step"><p>數位工具與教材實作</p></div>
+          <div class="flow-step"><p>作業說明與小組分享</p></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="tools" id="tools">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Toolkit</p>
+          <h2 class="section-title">課堂會用到的工具</h2>
+          <p class="section-text">從雲端協作到 AI agent，每樣都服務同一個目的：讓教學作品走得出教室。</p>
+        </div>
+        <div class="tool-flow">
+          <div class="tool-row reveal">
+            <h3 class="tool-name">Google GWS／GAS</h3>
+            <p class="tool-desc">Drive、Forms、Sheets 與 Apps Script——收集資料、自動化與成果整理。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">GitHub · Pages</h3>
+            <p class="tool-desc">保存教材與程式，用 Pages 公開展示互動網頁與期末作品。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">Hugging Face · Vercel</h3>
+            <p class="tool-desc">資料集、Demo Space，以及互動教材的快速部署。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">opencode · Antigravity · Hermes</h3>
+            <p class="tool-desc">AI／Agent 協助產生教材、程式原型、任務拆解與學習紀錄。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">IRIS · jAmaSeis</h3>
+            <p class="tool-desc">地震學教學活動、即時波形觀測與真實事件案例。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources" id="resources">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Reference</p>
+          <h2 class="section-title">課程資料</h2>
+          <p class="section-text">完整計畫、Week 1 講義與安裝檢查表都在 repo 的 reference 資料夾。</p>
+        </div>
+        <ul class="res-links">
+          <li>
+            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/course_plan.md">
+              <span class="res-title">完整 6 週課程計畫 <span class="res-arrow">→</span></span>
+              <span class="res-meta">每週主題、作業繳交內容與檢核標準</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_handout.md">
+              <span class="res-title">Week 1 開課講義 <span class="res-arrow">→</span></span>
+              <span class="res-meta">今日流程、五件事與作業說明</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_install_checklist.md">
+              <span class="res-title">安裝與帳號檢查表 <span class="res-arrow">→</span></span>
+              <span class="res-meta">帳號、軟體、AI agent、GAS、GitHub 逐項確認</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer">
+              <span class="res-title">GitHub Repo <span class="res-arrow">→</span></span>
+              <span class="res-meta">原始碼、README 與後續週次更新</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="brand-mini">北市大暑期地球科學課程 · 2026</p>
+      <p>地震學 · 地球物理 · AI／Agent 輔助教學實作。授權採 <a href="LICENSE">Apache License 2.0</a>。</p>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 6) * 0.06}s`;
+      io.observe(el);
+    });
+  </script>
+</body>
+</html>
