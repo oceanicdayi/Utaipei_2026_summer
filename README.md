@@ -8,7 +8,18 @@
 
 - **GitHub Pages**：[https://oceanicdayi.github.io/Utaipei_2026_summer/](https://oceanicdayi.github.io/Utaipei_2026_summer/)
 - 來源檔：repo 根目錄的 [`index.html`](index.html)
-- 開啟方式：Repo → Settings → Pages → Source 選 `Deploy from a branch` → Branch 選 `main` → `/ (root)` → Save
+- 自動部署：[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)
+
+### 第一次啟用（必做，約 30 秒）
+
+目前 repo 尚未開啟 Pages，因此網址會顯示 *Site not found*。請用 **repo 擁有者帳號**完成一次設定：
+
+1. 開啟：[Settings → Pages](https://github.com/oceanicdayi/Utaipei_2026_summer/settings/pages)
+2. **Build and deployment → Source** 選 **GitHub Actions**
+3. 回到 [Actions](https://github.com/oceanicdayi/Utaipei_2026_summer/actions) 執行工作流程 **Deploy GitHub Pages**（或 push 到 `main` 後會自動跑）
+4. 約 1–2 分鐘後開啟：https://oceanicdayi.github.io/Utaipei_2026_summer/
+
+（替代方式：Source 選 **Deploy from a branch** → Branch `main` → folder `/ (root)` → Save，同樣可上線。）
 
 ## 參考資料
 
