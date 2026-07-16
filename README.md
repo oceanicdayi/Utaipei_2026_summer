@@ -1,6 +1,14 @@
-# Utaipei_2026_summer
+# 北市大暑期地球科學課程（2026）
+
+**課程網站（GitHub Pages）：[https://oceanicdayi.github.io/Utaipei_2026_summer/](https://oceanicdayi.github.io/Utaipei_2026_summer/)**
 
 北市大暑期地球科學課程（2026）教材與參考資料。
+
+## 課程網站
+
+- **GitHub Pages**：[https://oceanicdayi.github.io/Utaipei_2026_summer/](https://oceanicdayi.github.io/Utaipei_2026_summer/)
+- 來源檔：repo 根目錄的 [`index.html`](index.html)
+- 開啟方式：Repo → Settings → Pages → Source 選 `Deploy from a branch` → Branch 選 `main` → `/ (root)` → Save
 
 ## 參考資料
 
