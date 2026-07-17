@@ -71,10 +71,12 @@
     .hero-wave svg {
       position: absolute;
       left: 50%;
-      bottom: 8%;
+      top: 18%;
+      bottom: auto;
       width: min(140vw, 1600px);
       transform: translateX(-50%);
-      opacity: 0.85;
+      opacity: 0.7;
+      mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
     }
 
     .hero-wave path {
@@ -129,12 +131,13 @@
     .brand {
       font-family: "Noto Serif TC", serif;
       font-weight: 700;
-      font-size: clamp(2.6rem, 7vw, 4.6rem);
-      line-height: 1.15;
+      font-size: clamp(2.35rem, 6.2vw, 4.2rem);
+      line-height: 1.2;
       letter-spacing: 0.02em;
       margin: 0 0 1.1rem;
-      max-width: 14ch;
+      max-width: 11em;
       animation: rise 1s var(--ease) both;
+      text-wrap: balance;
     }
 
     .brand span {
@@ -212,6 +215,10 @@
         transition-duration: 0.01ms !important;
       }
       .hero-wave path { stroke-dashoffset: 0; }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     /* —— Sections —— */
@@ -219,13 +226,19 @@
       padding: clamp(4rem, 8vw, 6.5rem) 0;
     }
 
+    /* Visible by default; JS adds .will-reveal only when Observer is available */
     .reveal {
-      opacity: 0;
-      transform: translateY(32px);
+      opacity: 1;
+      transform: none;
       transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
     }
 
-    .reveal.is-in {
+    .reveal.will-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+
+    .reveal.will-reveal.is-in {
       opacity: 1;
       transform: translateY(0);
     }
@@ -530,7 +543,7 @@
     <div class="wrap">
       <h1 class="brand">
         <span>UTaipei · Summer 2026</span>
-        北市大暑期地球科學
+        北市大暑期<br />地球科學
       </h1>
       <p class="hero-lead">把地震學變成可帶回教室的動手實驗——六週，從波形到防災教材。</p>
       <div class="cta-row">
@@ -692,22 +705,33 @@
   </footer>
 
   <script>
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
-    );
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealEls = document.querySelectorAll(".reveal");
 
-    document.querySelectorAll(".reveal").forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 6) * 0.06}s`;
-      io.observe(el);
-    });
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      const fold = window.innerHeight * 0.92;
+      revealEls.forEach((el, i) => {
+        if (el.getBoundingClientRect().top < fold) {
+          el.classList.add("is-in");
+          return;
+        }
+        el.classList.add("will-reveal");
+        el.style.transitionDelay = `${(i % 6) * 0.06}s`;
+        io.observe(el);
+      });
+    }
   </script>
 </body>
 </html>
