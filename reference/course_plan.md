@@ -33,11 +33,11 @@
 | 週次 | 日期 | 主題 | 工具／案例 | 可檢核作業 | 檢核標準 |
 |---|---:|---|---|---|---|
 | Week 1 | 7/17 | 課程介紹、帳號申請、軟體安裝、工作流程建立 | Google GWS、GitHub、Hugging Face、Vercel、GAS、opencode、Antigravity CLI、Hermes agent | **作業 1：完成個人數位學習工作區** | 繳交帳號清單、GitHub repo 連結、Google Drive 資料夾截圖、GAS 測試表單連結 |
-| Week 2 | 7/24 | 地震儀、加速度、地震動與震度 | 手機感測器、Google Sheets、GAS、IRIS ground-shaking activity | **作業 2：完成簡易震動觀測活動** | 繳交一筆震動資料、一張圖表、一份學生學習單、一段 200 字教學說明 |
-| Week 3 | 7/31 | P-S 到時差、旅行時間曲線與震央定位 | IRIS 震央定位活動、Python、opencode、GitHub | **作業 3：完成震央定位教學範例** | 繳交 P/S 到時表、三測站定位圖、GitHub 程式或試算表連結、學生提問設計 |
-| Week 4 | 8/7 | 課本第 4 章精讀與真實地震波形資料 | Introduction to Earthquake Seismology 第 4 章、jAmaSeis、Hugging Face Dataset | **作業 4：完成第 4 章導讀與波形分析小報告** | 繳交一頁中文導讀、一張波形圖、三個教學重點、一段反思 |
-| Week 5 | 8/14 | 規模、震度、場址效應與建物反應 | IRIS Magnitude/Intensity、Buildings in Earthquakes、Vercel、GAS | **作業 5：完成地震防災互動網頁初版** | 繳交網頁連結、規模 vs 震度說明、場址效應示意、學生互動題 |
-| Week 6 | 8/21 | 野外實驗、成果整合與教案發表 | 地震儀或手機感測器、Teachable Moments、Hermes agent、GitHub Pages | **作業 6：完成期末教學作品與 5–7 分鐘發表** | 繳交作品連結、教案、學習單、資料或展示圖、成果簡報 |
+| Week 2 | 7/24 | 折射震測校園實驗：探測校園底下的構造 | 手機感測器、折射震測儀器 | **作業 2：完成折射震測實驗報告** | 繳交實驗數據、一張震測結果圖表、一份教學教案範例、一段 200 字教學心得 |
+| Week 3 | 7/31 | AI工具使用：Antigravity IDE教學 | Antigravity IDE、Python、opencode、GitHub | **作業 3：完成AI輔助教學工具使用報告** | 繳交 P/S 到時圖表、九宮格定位圖、GitHub 程式或試算表連結、教學提問設計 |
+| Week 4 | 8/7 | 地震防災教育探究實作融合CLIL教學（1）：地震波頻率與建築物關係-影片與黏土實驗 | Introduction to Earthquake Seismology 第 4 章、jAmaSeis、Hugging Face Dataset | **作業 4：完成地震波頻率實驗報告** | 繳交一篇下文導讀、一張波形圖、九個教學重點、一段錄製影片 |
+| Week 5 | 8/14 | 地震防災教育探究實作融合CLIL教學（2）：地震波頻率與建築物關係-地震訊號探索 | IRIS Magnitude/Intensity、Buildings in Earthquakes、Vercel、GAS | **作業 5：完成地震訊號分析報告** | 繳交網頁連結、模型 vs 震度說明、場址效應示範、教學互動頁面 |
+| Week 6 | 8/21 | 學習成果報告 | 地震儀或手機感測器、Teachable Moments、Hermes agent、GitHub Pages | **作業 6：完成期末教案作品 · 5—7 分鐘展示** | 繳交作品連結、教案、教學簡報、資料或展示圖、成果簡單報告 |
 
 ---
 
@@ -304,12 +304,12 @@
 
 | 暑期課程內容 | 開學後地球物理學可延伸方向 |
 |---|---|
-| Week 1 工具環境 | 大學課程的 GitHub／資料分析工作流 |
-| Week 2 地震動與震度 | 地震動參數、PGA、PGV、震度換算 |
-| Week 3 震央定位 | 旅行時間、定位反演、不確定性分析 |
-| Week 4 第 4 章精讀 | 理論主軸、指定閱讀、波形分析 |
-| Week 5 場址效應 | 淺層地球物理、地盤放大、地震工程 |
-| Week 6 野外實驗 | 儀器觀測、資料處理、專題報告 |
+| Week 1 工具環境 | 大學課程的 GitHub／資料分析、AI工具使用 |
+| Week 2 地震波、震度 | 地震波形、PGA、PGV、震度計算 |
+| Week 3 震源定位 | 旅行時間、定位方法、不確定性分析 |
+| Week 4 第 4 章精讀 | 論文導讀、震源機制、波形分析 |
+| Week 5 場址效應 | 土壤放大、地形效應、地震危害度 |
+| Week 6 野外實測 | 全震波觀測、資料分析、報告撰寫 |
 
 ---
 
