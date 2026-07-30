@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="北市大 2026 暑期地球科學課程——地震學、地球物理與 AI／Agent 輔助教學實作" />
-  <title>北市大暑期地球科學課程 2026</title>
+  <meta name="description" content="北市大 2026 夏季地球科學課程——地震學、地球物理與 AI／Agent 輔助教學實作" />
+  <title>北市大夏季地球科學課程 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
@@ -94,10 +94,12 @@
     .hero-wave svg {
       position: absolute;
       left: 50%;
-      bottom: 6%;
+      top: 18%;
+      bottom: auto;
       width: min(140vw, 1600px);
       transform: translateX(-50%);
-      opacity: 0.55;
+      opacity: 0.7;
+      mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
     }
 
     .hero-wave path {
@@ -145,13 +147,13 @@
     .brand {
       font-family: "Noto Serif TC", serif;
       font-weight: 700;
-      font-size: clamp(2.4rem, 6.2vw, 4.2rem);
-      line-height: 1.18;
+      font-size: clamp(2.35rem, 6.2vw, 4.2rem);
+      line-height: 1.2;
       letter-spacing: 0.02em;
       margin: 0 0 1.1rem;
-      max-width: 6.2em;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+      max-width: 11em;
       animation: rise 1s var(--ease) both;
+      text-wrap: balance;
     }
 
     .brand span {
@@ -232,6 +234,10 @@
       }
       .hero-wave path { stroke-dashoffset: 0; }
       .hero-media img { transform: none; animation: none; }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     /* —— Sections —— */
@@ -574,9 +580,9 @@
     <div class="wrap">
       <h1 class="brand">
         <span>UTaipei · Summer 2026</span>
-        北市大暑期<br>地球科學
+        北市大夏季<br>地球科學
       </h1>
-      <p class="hero-lead">把地震學變成可帶回教室的動手實驗——六週，從波形到防災教材。</p>
+      <p class="hero-lead">把地震學變成可帶回教室的動手實作——六週，從波形到防災教案。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#weeks">看六週地圖</a>
         <a class="btn btn-ghost" href="#resources">打開課程資料</a>
@@ -589,11 +595,11 @@
       <div class="wrap spirit-grid reveal">
         <div>
           <p class="section-kicker">Course spirit</p>
-          <h2 class="section-title">教學相長，動手做出能用的東西</h2>
-          <p class="section-text">為中小學現職教師設計。主軸是地震學與地球物理，同時導入 AI／Agent 與雲端平台，讓知識長成教材、網頁與專題。</p>
+          <h2 class="section-title">教學生動，動手做出能用的東西</h2>
+          <p class="section-text">為中小學現場教師設計。主軸是地震學與地球物理，同時導入 AI／Agent 與雲端平台，讓知識變成教案、網頁與專題作品。</p>
         </div>
         <blockquote class="spirit-quote">
-          不是只聽完地震學——而是親手把真實資料、工具與教案織在一起，帶回學校啟發學生的興趣與創造力。
+          不只是完成地震學——而是親手把真實資料、工具與教案在一起，帶回學校引發學生的興趣與創造力。
         </blockquote>
       </div>
     </section>
@@ -603,44 +609,44 @@
         <div class="reveal">
           <p class="section-kicker">Six Fridays · 2026</p>
           <h2 class="section-title">六週旅程</h2>
-          <p class="section-text">每週五上午四小時。從建好數位工作區開始，一路走到野外觀測與期末發表。</p>
+          <p class="section-text">每週四上午八點半。從台大地震研究所開放實驗室開始，一路走到野外觀測與期末成果展示。</p>
         </div>
         <ol class="week-list">
           <li class="week-item reveal">
             <span class="week-num">W01</span>
             <span class="week-date">7／17</span>
-            <h3 class="week-topic">課程準備與工具安裝</h3>
-            <p class="week-task">作業：完成個人數位學習工作區</p>
+            <h3 class="week-topic">課程縱貫與工具終端機</h3>
+            <p class="week-task">作業：完成個人地震學實作工具包</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W02</span>
             <span class="week-date">7／24</span>
-            <h3 class="week-topic">地震儀、加速度、地震動與震度</h3>
+            <h3 class="week-topic">地震波、地震規模、地震動與震度</h3>
             <p class="week-task">作業：簡易震動觀測活動</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W03</span>
             <span class="week-date">7／31</span>
-            <h3 class="week-topic">P–S 到時差與震央定位</h3>
-            <p class="week-task">作業：震央定位教學範例</p>
+            <h3 class="week-topic">P—S 到時定位與震源定位</h3>
+            <p class="week-task">作業：震源定位教學教案範例</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W04</span>
             <span class="week-date">8／7</span>
             <h3 class="week-topic">課本第 4 章與真實波形</h3>
-            <p class="week-task">作業：導讀與波形分析小報告</p>
+            <p class="week-task">作業：導引與波形分析小報告</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W05</span>
             <span class="week-date">8／14</span>
-            <h3 class="week-topic">規模、震度、場址效應與建物</h3>
+            <h3 class="week-topic">模型、震度、場址效應與地形</h3>
             <p class="week-task">作業：地震防災互動網頁初版</p>
           </li>
           <li class="week-item reveal">
-            <span class="week-num">W06</span>
+            <span class="week-num">W02</span>
             <span class="week-date">8／21</span>
-            <h3 class="week-topic">野外實驗、成果整合與發表</h3>
-            <p class="week-task">作業：期末教學作品 · 5–7 分鐘發表</p>
+            <h3 class="week-topic">野外實測、成果整合與展示</h3>
+            <p class="week-task">作業：期末教案作品 · 5—7 分鐘展示</p>
           </li>
         </ol>
       </div>
@@ -650,10 +656,10 @@
       <div class="wrap reveal">
         <h2 class="flow-title">每週四小時怎麼過</h2>
         <div class="flow-steps">
-          <div class="flow-step"><p>台灣地震案例導入</p></div>
+          <div class="flow-step"><p>台大地震案例導入</p></div>
           <div class="flow-step"><p>核心概念講解</p></div>
           <div class="flow-step"><p>IRIS／真實資料操作</p></div>
-          <div class="flow-step"><p>數位工具與教材實作</p></div>
+          <div class="flow-step"><p>數位工具與教案實作</p></div>
           <div class="flow-step"><p>作業說明與小組分享</p></div>
         </div>
       </div>
@@ -664,7 +670,7 @@
         <div class="reveal">
           <p class="section-kicker">Toolkit</p>
           <h2 class="section-title">課堂會用到的工具</h2>
-          <p class="section-text">從雲端協作到 AI agent，每樣都服務同一個目的：讓教學作品走得出教室。</p>
+          <p class="section-text">從雲端協作到 AI agent，每樣都服務同一個目的：讓教學作品可以帶出教室。</p>
         </div>
         <div class="tool-flow">
           <div class="tool-row reveal">
@@ -673,19 +679,19 @@
           </div>
           <div class="tool-row reveal">
             <h3 class="tool-name">GitHub · Pages</h3>
-            <p class="tool-desc">保存教材與程式，用 Pages 公開展示互動網頁與期末作品。</p>
+            <p class="tool-desc">保存教案與課程，用 Pages 公開展示互動網頁與期末作品。</p>
           </div>
           <div class="tool-row reveal">
             <h3 class="tool-name">Hugging Face · Vercel</h3>
-            <p class="tool-desc">資料集、Demo Space，以及互動教材的快速部署。</p>
+            <p class="tool-desc">資料集、Demo Space，以及互動教案的快速部署。</p>
           </div>
           <div class="tool-row reveal">
             <h3 class="tool-name">opencode · Antigravity · Hermes</h3>
-            <p class="tool-desc">AI／Agent 協助產生教材、程式原型、任務拆解與學習紀錄。</p>
+            <p class="tool-desc">AI／Agent 協助產生教案、課程大綱、作業解析與課後總結。</p>
           </div>
           <div class="tool-row reveal">
             <h3 class="tool-name">IRIS · jAmaSeis</h3>
-            <p class="tool-desc">地震學教學活動、即時波形觀測與真實事件案例。</p>
+            <p class="tool-desc">地震學教學教學活動，即時波形觀測與真實事件案例模擬。</p>
           </div>
         </div>
       </div>
@@ -696,37 +702,37 @@
         <div class="reveal">
           <p class="section-kicker">Reference</p>
           <h2 class="section-title">課程資料</h2>
-          <p class="section-text">完整計畫、Week 1 講義與安裝檢查表都在 repo 的 reference 資料夾。</p>
+          <p class="section-text">完整 6 週課程計畫、Week 1 講義與安裝檢查表都在 repo 的 reference 資料夾。</p>
         </div>
         <ul class="res-links">
           <li>
             <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/course_plan.md">
-              <span class="res-title">完整 6 週課程計畫 <span class="res-arrow">→</span></span>
-              <span class="res-meta">每週主題、作業繳交內容與檢核標準</span>
+              <span class="res-title">完整 6 週課程計劃 <span class="res-arrow">→</span></span>
+              <span class="res-meta">每週主題、作業內容與評量標準</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_handout.md">
               <span class="res-title">Week 1 開課講義 <span class="res-arrow">→</span></span>
-              <span class="res-meta">今日流程、五件事與作業說明</span>
+              <span class="res-meta">今日流程、四件事與作業說明</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_install_checklist.md">
-              <span class="res-title">安裝與帳號檢查表 <span class="res-arrow">→</span></span>
-              <span class="res-meta">帳號、軟體、AI agent、GAS、GitHub 逐項確認</span>
+              <span class="res-title">安裝與簽到檢查表 <span class="res-arrow">→</span></span>
+              <span class="res-meta">簽到、環境、AI agent、GAS、GitHub 逐項確認</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/course_registration_form_guide.md">
-              <span class="res-title">學員資訊登記設定 <span class="res-arrow">→</span></span>
-              <span class="res-meta">Google 表單＋試算表＋自動寄信一鍵腳本</span>
+              <span class="res-title">學員資料登記表設定 <span class="res-arrow">→</span></span>
+              <span class="res-meta">Google 表單＋試算表＋自動寄信一條龍</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer">
               <span class="res-title">GitHub Repo <span class="res-arrow">→</span></span>
-              <span class="res-meta">原始碼、README 與後續週次更新</span>
+              <span class="res-meta">原始碼、README 與歷次週次更新</span>
             </a>
           </li>
         </ul>
@@ -736,7 +742,7 @@
 
   <footer>
     <div class="wrap">
-      <p class="brand-mini">北市大暑期地球科學課程 · 2026</p>
+      <p class="brand-mini">北市大夏季地球科學課程 · 2026</p>
       <p>地震學 · 地球物理 · AI／Agent 輔助教學實作。授權採 <a href="LICENSE">Apache License 2.0</a>。</p>
     </div>
   </footer>
