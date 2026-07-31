@@ -684,6 +684,79 @@
       </div>
     </section>
 
+    <section class="spirit" id="seismic-journey">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Seismic Journey</p>
+          <h2 class="section-title">地心震波奇幻之旅</h2>
+          <p class="section-text">用地震波來探索地球內部結構的教學之旅，從震波認識到地層厚度計算。</p>
+        </div>
+        <div class="reveal">
+          <h3>第一站：認識震波主角</h3>
+          <p><strong>體波 (Body Waves)</strong> — 在地球內部傳播：</p>
+          <ul>
+            <li><strong>P波（壓縮波）</strong>：速度最快，前後壓縮傳播，像彈簧。地震時最先感覺到上下跳動。</li>
+            <li><strong>S波（剪切波）</strong>：比P波慢，左右搖擺，像繩子甩動。對建築物破壞力強。</li>
+          </ul>
+          <p><strong>表面波 (Surface Waves)</strong> — 沿地表傳播：</p>
+          <ul>
+            <li><strong>洛夫波 (Love Wave)</strong>：水平左右晃動，像蛇扭動。</li>
+            <li><strong>雷利波 (Rayleigh Wave)</strong>：最慢但破壞最大，橢圓形滾動，像海浪，讓地面上下前後搖晃。</li>
+          </ul>
+          <p><em>重點：P波最快 → S波次之 → 表面波最慢。造成災害的主要是表面波。</em></p>
+        </div>
+        <div class="reveal">
+          <h3>第二站：如何「聽」地球的聲音？</h3>
+          <p>在地表放置多個<strong>接收器 (Receivers)</strong>，用<strong>震源 (Source)</strong>（炸藥或重錘）製造人造地震，記錄不同地震波何時抵達。就像在起點鳴槍，沿途碼表記錄不同跑者（P/S/表面波）的通過時間，反推地底構造。</p>
+        </div>
+        <div class="reveal">
+          <h3>第三站：解讀地震圖</h3>
+          <p>單一接收器的紀錄稱為<strong>地震圖 (Seismic Trace)</strong>，Y軸是傳播時間：</p>
+          <ul>
+            <li><strong>最先抵達</strong> → P波，振幅小</li>
+            <li><strong>接著抵達</strong> → S波，振幅中</li>
+            <li><strong>最後抵達</strong> → 表面波，振幅大且持久，具<strong>頻散 (Dispersion)</strong> 特性：低頻跑得快、高頻跑得慢</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3>第四站：多接收器排列</h3>
+          <p>將所有接收器按與震源距離排列：</p>
+          <ul>
+            <li>X軸 = 距離，Y軸 = 傳播時間</li>
+            <li>距離愈遠，抵達時間愈晚</li>
+            <li>P波、S波、表面波各自連成斜線</li>
+            <li><strong>斜率決定波速</strong>：線愈陡（斜率小），速度愈快。P波最陡 > S波 > 表面波最平緩</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3>第五站：走時公式與斜率</h3>
+          <p><strong>直達波走時</strong>：<code>T(X) = X/V₁</code></p>
+          <p><strong>速度與斜率關係</strong>：<code>V = 1/Slope = 1/(dT/dX)</code></p>
+          <p>當地震波經過不同地層時，遵守<strong>司乃耳定律 (Snell's Law)</strong>：<code>sinθ₁/V₁ = sinθ₂/V₂</code></p>
+        </div>
+        <div class="reveal">
+          <h3>第六站：折射法計算地層厚度</h3>
+          <p><strong>必要條件</strong>：V₂ > V₁</p>
+          <p><strong>臨界角</strong> (θ₂ = 90°)：<code>θ_c = sin⁻¹(V₁/V₂)</code></p>
+          <p><strong>折射波走時公式</strong>：<code>T_t = (2h·cosθ_c)/V₁ + X/V₂</code></p>
+          <p><strong>截時 (Intercept Time)</strong>：<code>t_i = (2h·cosθ_c)/V₁</code></p>
+          <p><em>結論：從走時曲線量出兩段斜率（得 V₁, V₂）和截時 t_i，即可反解地層厚度 h。</em></p>
+        </div>
+        <div class="reveal">
+          <h3>第七站：反射波與雙曲線</h3>
+          <p><strong>反射原理</strong>：入射角 = 反射角</p>
+          <p><strong>雙程走時</strong> (X=0 時)：<code>t₀ = 2h/V₁</code></p>
+          <p><strong>反射波走時（雙曲線）</strong>：<code>T² = t₀² + (X/V₁)²</code></p>
+          <p>分析雙曲線形狀與 t₀ 即可求 V₁ 和深度 h。反射法是石油天然氣探勘最主要的技術。</p>
+        </div>
+        <div class="reveal">
+          <h3>第八站：視速度</h3>
+          <p><code>V_ap = ΔX/ΔT = 1/Slope</code></p>
+          <p><em>關鍵：臨界折射波在地表的視速度，等於下層介質真實速度 V_ap = V₂。這解釋了折射波斜率為 1/V₂ 的物理原因。</em></p>
+        </div>
+      </div>
+    </section>
+
     <section class="resources" id="resources">
       <div class="wrap">
         <div class="reveal">
