@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>地心震波奇幻之旅 — 地震波教學投影片</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --border: #ddd;
+        }
+        
+        body {
+            font-family: "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--secondary);
+            background: var(--light-bg);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .header h1 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        .slide {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .slide h2 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .slide h3 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .slide p {
+            margin: 0.5rem 0;
+            color: var(--secondary);
+        }
+        
+        .slide blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        
+        .code-block {
+            background: var(--dark-bg);
+            color: var(--light);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 1rem 0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .slide {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌍 地心震波奇幻之旅 — 地震波教學投影片</h1>
+        <p><strong>適用年齡</strong>：國小四年級～國中 | <strong>時間</strong>：80 分鐘 | <strong>模式</strong>：CLIL 雙語教學</p>
+    </div>
+
+    <p><strong>教師開場</strong>：<br>
+    「四個脚的地震偵探隊，今天我們要用地震波來探索地球的奧秘！Today we are earthquake detectives!」</p>
+    
+    <p><strong>CLIL 熱身</strong>：帶領學生發音「earthquake」「detective」「wave」</p>
+
+    <hr>
+
+    <div class="slide">
+        <h2>Slide 1：封面</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║                                      ║
+║        🌍 地心震波奇幻之旅              ║
+║      Journey to the Center            ║
+║       of Seismic Waves!               ║
+║                                      ║
+║        地球物理小教室                   ║
+║     Geophysics Classroom              ║
+║                                      ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>教師講述</strong>：<br>
+        「四個脚的地震偵探隊，今天我們要用地震波來探索地球的奧秘！Today we are earthquake detectives!」</p>
+        <p><strong>CLIL 熱身</strong>：帶領學生發音「earthquake」「detective」「wave」</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 2：你有感覺過地震嗎？</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║   Have you ever felt an earthquake?               ║
+║         你有感覺過地震嗎？              ║
+║                                      ║
+║   ┌─────────────────────────────────┐    ║
+║   │  地震發生時，你在做什麼？   │       ║
+║   │  What were you doing?    │       ║
+║   └─────────────────────────────────┘    ║
+║                                      ║
+║   地震發生，地表怎麼動？                 ║
+║   How did the ground move?           ║
+║                                      ║
+║   □ 上下跳動  □ 左右搖擺  □ 旋轉       ║
+║      jump     shake      roll        ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>策略</strong>：請 2-3 位同學分享，用肢體動作模擬地震發生時的感覺。</p>
+        <p><strong>CLIL 提問</strong>："Did it jump up and down? Or shake side to side?"</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 3：地震波家族！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║       🌊 地震波 Seismic Waves         ║
+║                                      ║
+║   ┌─────────────┐  ┌─────────────┐   ║
+║   │  體波        │  │  表面波      │   ║
+║   │  Body Waves │  │  Surface    │   ║
+║   │              │  │  Waves      │   ║
+║   │  在地球內部傳播 │  │  沿地表傳播   │   ║
+║   └─────────────┘  └─────────────┘   ║
+║                                      ║
+║   ┌─────────┐  ┌─────────┐            ║
+║   │ P 波    │  │ S 波    │            ║
+║   │ P-wave  │  │ S-wave  │            ║
+║   │ 最快！  │  │ 較快   │            ║
+║   └─────────┘  └─────────┘            ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>教學重點</strong>：用圖卡完成地震波分類，比較 P/S/表面波的特性。</p>
+        <p><strong>手勢教學</strong>：<br>
+        - "P-wave!" → 雙手推拉模擬<br>
+        - "S-wave!" → 手搖左右晃動<br>
+        - "Surface wave!" → 手掌畫圈模擬</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 4：P 波 — 速度最快！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║       🔵 P-wave (Compressional)       ║
+║          壓縮波/ P 波                  ║
+║                                      ║
+║   [示意圖：彈簧被壓縮的波形]      ║
+║                                      ║
+║   →→→→密密疊疊密密疊疊→→→→           ║
+║      密密疊疊疊疊密密                 ║
+║                                      ║
+║   🏃 最快 Fastest!                 ║
+║   📋 第一個 Arrives first!           ║
+║   🤲 推拉推拉 Push and pull            ║
+║                                      ║
+║   "像彈簧被推了一樣！"               ║
+║   Like a slinky being pushed!        ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>比喻</strong>：彈簧玩具前後壓縮傳播，地震時最先感覺到上下跳動。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 5：S 波 — 跳躍搖擺！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║       🟣 S-wave (Shear)              ║
+║          剪切波/ S 波                  ║
+║                                      ║
+║   [示意圖：上下搖擺的波形]      ║
+║                                      ║
+║        ↑↓   ↑↓   ↑↓   ↑↓             ║
+║   ━━━━━━━━━━━━━━━━━━━━━━━━           ║
+║                                      ║
+║   🏃 第二快 Second fastest            ║
+║   📋 第二個 Arrives second          ║
+║   🤲 上下搖擺 Shake up and down       ║
+║                                      ║
+║   "像搖繩子一樣！"                   ║
+║   Like shaking a rope!              ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>關鍵</strong>：S 波只能在固體中傳播，無法穿透液體層！</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 6：表面波 — 破壞最大！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║     🟢 Surface Waves 表面波           ║
+║                                      ║
+║   洛夫波 Love Wave                    ║
+║   → 左右晃動，像蛇                    ║
+║   → Side to side, like a snake      ║
+║                                      ║
+║   雷利波 Rayleigh Wave                ║
+║   → 滾動搖晃，像海浪                  ║
+║   → Rolling motion, like ocean wave ║
+║                                      ║
+║   🐢 最慢 Slowest                     ║
+║   💥 破壞最大 Most destructive!       ║
+║   📋 最晚到 Arrives last              ║
+║                                      ║
+║   你感覺地表搖晃，就是雷利波的功勞！   ║
+║   It's the Rayleigh wave's trick!    ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>提問</strong>：〈為什麼最慢的波造成破壞最大？〉（提示：振幅最大）</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 7：學習單 Part A + B</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║     ✏️ 學習單 Part A + Part B         ║
+║                                      ║
+║   Part A: 連連看 Match!               ║
+║   Part B: 趕快看 Who's the Fastest?   ║
+║                                      ║
+║   時限：5 分鐘                          ║
+║                                      ║
+║   需要幫忙舉手🙋                     ║
+║   Raise your hand if you need help!  ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>觀察重點</strong>：確認學生能正確連結地震波與特性，並按到達順序排序。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 8：科學家的「耳朵」</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║   科學家如何聽地球的聲音？              ║
+║   How do scientists listen           ║
+║   to the Earth?                      ║
+║                                      ║
+║      震源 Source                      ║
+║       💥                             ║
+║       │                              ║
+║   ━━━━━━━━━━━━━━━━━━━━━━━ 地表       ║
+║       │   🎤   🎤   🎤   🎤  接收器   ║
+║       │  🎤  🎤  🎤  🎤  🎤         ║
+║   震源擊發，接收器聽！           ║
+║   The source hits, receivers listen! 
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>比喻</strong>：在起點鳴槍，沿途碼表記錄不同跑者（P/S/表面波）的通過時間，反推地底構造。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 9：彈簧實驗！Slinky Time！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║     🧵 實驗：彈簧模擬地震波！             ║
+║     Slinky Experiment!               ║
+║                                      ║
+║   活動 1:Push! 往前推拉                 ║
+║   活動 2:Shake! 上下搖擺                ║
+║                                      ║
+║   觀察記錄：                           ║
+║   ┌─────────────────────────────────┐    ║
+║   │ 哪一種像 P 波？               │     ║
+║   │ 哪一種像 S 波？               │     ║
+║   │ 哪一種像表面波？             │     ║
+║   └─────────────────────────────────┘    ║
+║                                      ║
+║   ⚠️ 注意事項：Don't hit people!    ║
+║   ⏰ 時限：每組 5 分鐘                       ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>CLIL 口令</strong>：Push! → Shake! → Faster! → Slower!</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 10：學習單 Part C</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║     ✏️ 學習單 Part C                   ║
+║                                      ║
+║   將彈簧實驗的觀察結果記錄下來！      ║
+║   Write down your observations!      ║
+║                                      ║
+║   時限：5 分鐘                          ║
+║                                      ║
+║   完成後舉手，我會看！                 ║
+║   Raise your hand when done!         ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 11：走時圖 — 看圖說故事</h2>
+        <div class="ascii-art">
+  時間 Time (秒)
+    ↑
+   3│              ●P 波               
+    │          ●●                     
+   2│      ●●●                         
+    │  ●●     ●S 波                   
+   1│●●                              
+    │              ●●表面波            
+   0└─────────────────────────────────────────────────▶ 距離 Distance (m)
+    0   100  200  300  400  500        
+
+        </div>
+        <p><strong>斜率 = 斜率！Steeper = Faster!</strong><br>
+        <strong>斜率平緩 = 速度慢！Flatter = Slower!</strong></p>
+        <p><strong>提問</strong>：<br>
+        - 〈哪一條斜率最陡？〉 → P 波 → 最快<br>
+        - 〈哪一條斜率最平緩？〉 → 表面波 → 最慢</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 12：斜率與速度的關係</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║    速度怎麼算？How to find speed?      ║
+║                                      ║
+║             距離 Distance             ║
+║     速度 = ───────────                 ║
+║     Speed   時間 Time                 ║
+║                                      ║
+║    在走時圖上：                        ║
+║             1                        ║
+║     速度 = ───────────                 ║
+║            斜率 Slope                 ║
+║                                      ║
+║    斜率愈陡的線 = 斜率愈小 = 速度愈快    ║
+║    Steeper line = Smaller slope      ║
+║                 = Faster speed!      ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>小技巧</strong>：用尺量斜率，斜率愈陡，速度愈快！</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 13：學習單 Part D</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║     ✏️ 學習單 Part D                   ║
+║                                      ║
+║   看看走時圖，回答斜率問題！             ║
+║   Look at the graph, answer          ║
+║   slope questions!                   ║
+║                                      ║
+║   時限：5 分鐘                          ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 14：波的奇幻旅程 — 折射</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║    波遇到不同地層，會折射！               ║
+║    Waves bend at layers!             ║
+║                                      ║
+║   ━━━━━━━━━━━━━━━━━━━━━━━ 地表       ║
+║       慢地層 Slow layer (沙質)         ║
+║   ━━━━━━━━━━━━━━━━━━━ 介面   ║
+║       快地層 Fast layer (岩層)         ║
+║   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ║
+║                                      ║
+║   就像光線在水中折射一樣！           ║
+║   Just like light bends in water!    ║
+║                                      ║
+║   🎯 人造地震，探測地底！               ║
+║     方位角測量！                       ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>互動</strong>：請 2-3 位同學分享，用肢體動作模擬波在不同地層的折射現象。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 15：折射計算地層厚度！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║    折射計算地層厚度？               ║
+║                                      ║
+║   1. 量出慢地層波速 V₁(走時圖斜率)    ║
+║   2. 量出快地層波速 V₂(走時圖斜率)    ║
+║   3. 量出截距 t₀(走時圖截距)          ║
+║                                      ║
+║   ┌─────────────────────────────────┐    ║
+║   │  h = 厚度！計算看看！        │     ║
+║   │  We found the thickness!   │     ║
+║   └─────────────────────────────────┘    ║
+║                                      ║
+║   不需要挖洞，就能知道地底有多深！       ║
+║   No digging needed!               ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>簡單公式</strong>：不需挖洞，用公式算，就能算出地層厚度！用折射法探勘石油天然氣。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 16：反射波 — 地底的鏡子！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║    反射波 Reflected Wave              ║
+║                                      ║
+║   震源 💥         接收器 🎤            ║
+║     │             │                  ║
+║     │             │                  ║
+║   ━━━━━━━━━━━━━━━━━━━ 地表       ║
+║         │       │   🎤   🎤  🎤  🎤  🎤         ║
+║          │     │                     ║
+║       V₁  │   │   V₁                  ║
+║           │ │                        ║
+║   ━━━━━━━━━━━━━━━ 介面          ║
+║            │                         ║
+║            V₂                        ║
+║                                      ║
+║   就像鏡子！Bounce back!               ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 17：折射 vs 反射</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║        折射            反射            ║
+║     Refraction      Reflection       ║
+║   ┌─────────────┐  ┌─────────────┐   ║
+║                                      ║
+║   波彎折進入       波彈回            ║
+║   next layer                          ║
+║                                      ║
+║   可求地層、厚度   可求地層、深度     ║
+║   Layer thickness  Layer depth       ║
+║                                      ║
+║   工程地質探勘      石油探勘         ║
+║   Engineering      Oil exploration   ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 18：學習單 Part E + F</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║   ✏️ 學習單 Part E：折射                ║
+║   ✏️ 學習單 Part F：計算題！            ║
+║                                      ║
+║   時限：15 分鐘                         ║
+║                                      ║
+║   Part F 需要計算！You need to calculate!     ║
+║   Speed = Distance ÷ Time            ║
+║                                      ║
+║   完成的同學，我會看！                 ║
+║   Raise your hand when done!         ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>差異化</strong>：Part E 在簡單版中可省略，用於深入課程。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 19：我是小小地震偵探！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║   ✏️ 學習單 Part G：反思與收穫         ║
+║                                      ║
+║   寫下你今天學到的 1 件事！        ║
+║   Write ONE thing in English!        ║
+║                                      ║
+║   ┌─────────────────────────────────┐    ║
+║   │ Today I learned that...    │     ║
+║   │                            │     ║
+║   │                            │     ║
+║   └─────────────────────────────────┘    ║
+║                                      ║
+║   時限：5 分鐘                          ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>收集</strong>：收集學習單，檢查學生是否能用英文寫出 1 句完整的句子。</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 20：今天學到了什麼？</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║       🌈 今日總結 Review              ║
+║                                      ║
+║   ✅ P-wave = 最快，壓縮波             ║
+║      P-wave = fastest, compress      ║
+║                                      ║
+║   ✅ S-wave = 第二，剪切波             ║
+║      S-wave = second, shear          ║
+║                                      ║
+║   ✅ Surface wave = 最慢，破壞最大      ║
+║      Surface wave = slowest,         ║
+║      most destructive                ║
+║                                      ║
+║   ✅ 走時圖上，斜率 = 斜率！           ║
+║      Steeper slope = faster speed    ║
+║                                      ║
+║   ✅ 波遇到不同地層，折射/反射          ║
+║      Waves refract/reflect at layers 
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>全班齊誦</strong>：帶領學生齊聲背誦關鍵字詞：P-wave! S-wave! Surface wave! Faster! Steeper!</p>
+    </div>
+
+    <div class="slide">
+        <h2>Slide 21：下集預告！</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║       📝 下集預告 Next Time!          ║
+║                                      ║
+║   我們要學：                           ║
+║                                      ║
+║    🎯 如何用 P 波和 S 波               ║
+║       找到地震發生的位置？              ║
+║                                      ║
+║    🌍 地震震央定位挑戰！                ║
+║       Epicenter Location Challenge! 
+║                                      ║
+║   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ║
+║   記得帶學習單下次上課！               ║
+║   Bring your worksheet next time!    ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>附錄：單字表 (參考)</h2>
+        <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════╗
+║  地心震波奇幻之旅 🌍                         ║
+║                                          ║
+║  P-wave  →  P波         refraction → 折射    ║
+║  S-wave  →  S波         layer → 地層         ║
+║  Surface → 表面波       speed → 速度          ║
+║  receiver → 接收器      distance → 距離       ║
+║  source → 震源         slope → 斜率          ║
+║  travel time → 走時     compress → 壓縮       ║
+║  earthquake → 地震     shake → 搖擺          ║
+║  amplitude → 振幅      interface → 介面      ║
+╚══════════════════════════════════════════════════════════════╝
+        </div>
+    </div>
+
+    <a href="./" class="back-link">← 返回課程首頁</a>
+
+    <div class="footer">
+        北市大暑假地球科學課程 2026 | 地心震波奇幻之旅 — 地震波教學投影片
+    </div>
+</body>
+</html>

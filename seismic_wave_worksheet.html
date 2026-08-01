@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>地心震波奇幻之旅 — 學生工作表</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --border: #ddd;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        body {
+            font-family: "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--secondary);
+            background: var(--light-bg);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .header h1 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        h2, h3, h4 {
+            color: var(--secondary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.3rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.2rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        .part {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .part h3 {
+            margin: 0 0 1rem;
+            color: var(--primary);
+        }
+        
+        .part p {
+            margin: 0.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: rgba(52, 152, 219, 0.1);
+        }
+        
+        .answer-box {
+            border: 2px dashed var(--border);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            min-height: 2rem;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 2rem 0;
+        }
+        
+        code {
+            background: var(--dark-bg);
+            color: var(--light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 0.9rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #555;
+            font-style: italic;
+            background: rgba(52, 152, 219, 0.05);
+        }
+        
+        .vocabulary {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.25rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .vocabulary h3 {
+            margin: 0 0 1rem;
+            color: var(--success);
+        }
+        
+        .vocabulary table {
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>地心震波奇幻之旅！🌍✨</h1>
+        <p><strong>學生工作表</strong> / Student Worksheet</p>
+    </div>
+
+    <p>姓名：______________　　日期：______________</p>
+
+    <hr>
+
+    <div class="part">
+        <h3>Part A：震波主角登場！Meet the Wave Heroes!</h3>
+        <p>地震發生時，地底下有各種地震波在傳播。請把下列地震波和特性連連看：</p>
+        
+        <table>
+            <tr>
+                <th>地震波</th>
+                <th>特性</th>
+            </tr>
+            <tr>
+                <td>P-wave</td>
+                <td class="answer-box"></td>
+            </tr>
+            <tr>
+                <td>S-wave</td>
+                <td class="answer-box"></td>
+            </tr>
+            <tr>
+                <td>Surface wave</td>
+                <td class="answer-box"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>壓縮波，像彈簧</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>剪切波，上下搖擺</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>沿地表傳播，破壞最大</td>
+            </tr>
+        </table>
+        
+        <blockquote>
+            <strong>CLIL Word Bank</strong>：first（第一個）second（第二個）third（第三個）
+        </blockquote>
+    </div>
+
+    <div class="part">
+        <h3>Part B：誰最快？Who's the Fastest?</h3>
+        <p>下面是震波傳播到地表接收器的紀錄圖。請填寫 A、B、C（A=最快，C=最慢）：</p>
+        
+        <div class="ascii-art">
+  時間 Time →→→→→→→→→→→→→→→→
+
+    振幅 Amplitude
+      ↑
+      │              ●P 波               
+      │          ●●                     
+      │      ●●●                         
+      │  ●●     ●S 波                   
+      │●●                              
+      │              ●●表面波            
+   0└─────────────────────────────────────────────────▶ 距離 Distance (m)
+      0   100  200  300  400  500        
+        </div>
+        
+        <p>第一個到：(　　) 波 → <span class="answer-box"></span></p>
+        <p>第二個到：(　　) 波 → <span class="answer-box"></span></p>
+        <p>第三個到：(　　) 波 → <span class="answer-box"></span></p>
+        
+        <blockquote>
+            <strong>CLIL Word Bank</strong>：first（第一個）second（第二個）third（第三個）
+        </blockquote>
+    </div>
+
+    <div class="part">
+        <h3>Part C：聽聽地球的聲音！Listening to the Earth!</h3>
+        <p>科學家在地表放置多個「接收器」🎤，用「震源」💥製造人造地震，記錄不同地震波何時抵達。</p>
+        
+        <h4>小實驗：彈簧模擬地震波！</h4>
+        <p>你需要：一條彈簧（Slinky）+ 一位同學</p>
+        
+        <table>
+            <tr>
+                <th>步驟 Steps</th>
+                <th>你觀察到什麼？What do you observe?</th>
+                <th>地震波</th>
+            </tr>
+            <tr>
+                <td>1. 一人拿彈簧一端，另一人快速往前推拉</td>
+                <td class="answer-box"></td>
+                <td class="answer-box"></td>
+            </tr>
+            <tr>
+                <td>2. 一人拿彈簧一端，另一人快速上下搖擺</td>
+                <td class="answer-box"></td>
+                <td class="answer-box"></td>
+            </tr>
+            <tr>
+                <td>3. 哪一種像彈簧？</td>
+                <td class="answer-box"></td>
+                <td class="answer-box"></td>
+            </tr>
+        </table>
+        
+        <blockquote>
+            <strong>CLIL Key Word</strong>：<strong>compress</strong>（壓縮）<strong>shake</strong>（搖擺）<strong>faster</strong>（更快）
+        </blockquote>
+        
+        <p><strong>想一想</strong>：步驟 1 像哪一種波？步驟 2 像哪一種波？</p>
+        <p>步驟 1 像 ______-wave　　步驟 2 像 ______-wave</p>
+    </div>
+
+    <div class="part">
+        <h3>Part D：看看地底下的奧秘！</h3>
+        <p>科學家把所有接收器按與震源距離排列，畫出下面的圖。請回答：</p>
+        
+        <div class="ascii-art">
+Travel Time (秒)
+ ↑
+3│              ●●●(3)
+ │                ●●●
+2│            ●●●(2)
+ │        ●●●
+1│    ●●●(1)
+ │  ●●●
+0└─────────────────────────────────────────────────▶ Distance (公尺)
+ 0    100   200   300   400   500
+        </div>
+        
+        <h4>問題：</h4>
+        <ol>
+            <li>上面的點 (1)(2)(3) 哪一個的斜率最陡（斜率最小）？<br>
+                <span class="answer-box"></span></li>
+            <li>斜率愈陡，速度愈 <span class="answer-box"></span>？</li>
+            <li>所以，(1)(2)(3) 依速度快到慢排序是：<br>
+                <span class="answer-box"></span> → <span class="answer-box"></span> → <span class="answer-box"></span></li>
+        </ol>
+        
+        <blockquote>
+            <strong>CLIL Key Word</strong>：<strong>slope</strong>（斜率）<strong>steep</strong>（陡）<strong>fast</strong>（快）<strong>slow</strong>（慢）
+        </blockquote>
+    </div>
+
+    <div class="part">
+        <h3>Part E：地震波遇到地層 — 折射！</h3>
+        <p>地震波遇到不同地層時，會像光線一樣產生折射！請看下圖，回答：</p>
+        
+        <div class="ascii-art">
+  地表 Surface
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+               慢地層 V₁ (Slow layer)
+  ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ 介面
+               快地層 V₂ (Fast layer)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        </div>
+        
+        <ol>
+            <li>波遇到慢地層 → <span class="answer-box"></span>？</li>
+            <li>如果同一個地層 → <span class="answer-box"></span>？</li>
+        </ol>
+        
+        <blockquote>
+            <strong>CLIL Key Word</strong>：<strong>refraction</strong>（折射）<strong>layer</strong>（地層）<strong>interface</strong>（介面）<strong>bend</strong>（彎曲）
+        </blockquote>
+    </div>
+
+    <div class="part">
+        <h3>Part F：地震偵探挑戰！Challenge!</h3>
+        <p>如果你是地震偵探，在 0 公尺處擊發震源，記錄到 5 個接收器的資料：</p>
+        
+        <table>
+            <tr>
+                <th>接收器</th>
+                <th>與震源距離</th>
+                <th>第一個波到達時間</th>
+            </tr>
+            <tr>
+                <td>Receiver 1</td>
+                <td>100 m</td>
+                <td>0.2 秒</td>
+            </tr>
+            <tr>
+                <td>Receiver 2</td>
+                <td>200 m</td>
+                <td>0.4 秒</td>
+            </tr>
+            <tr>
+                <td>Receiver 3</td>
+                <td>300 m</td>
+                <td>0.6 秒</td>
+            </tr>
+            <tr>
+                <td>Receiver 4</td>
+                <td>400 m</td>
+                <td>0.8 秒</td>
+            </tr>
+            <tr>
+                <td>Receiver 5</td>
+                <td>500 m</td>
+                <td>1.0 秒</td>
+            </tr>
+        </table>
+        
+        <h4>請回答：</h4>
+        <ol>
+            <li>距離每增加 100 公尺，時間增加 ______ 秒。</li>
+            <li>速度 = 距離 ÷ 時間 = ______ ÷ ______ = ______ m/s<br>
+                <blockquote><strong>公式</strong>：Speed = Distance ÷ Time</blockquote></li>
+            <li>如果第一層地層波速是 800 m/s，第二層波速是多少？<br>
+                □ 第一層　□ 第二層</li>
+            <li>為什麼地震發生時，震央正下方的地表搖晃最厲害？<br>
+                <span class="answer-box"></span><br>
+                <span class="answer-box"></span></li>
+        </ol>
+        
+        <blockquote>
+            <strong>CLIL Key Word</strong>：<strong>distance</strong>（距離）<strong>speed</strong>（速度）<strong>formula</strong>（公式）
+        </blockquote>
+    </div>
+
+    <div class="part">
+        <h3>Part G：我是小小地震偵探！My Reflection</h3>
+        
+        <h4>用中文寫下你今天學到的 3 件事：</h4>
+        <ol>
+            <li><span class="answer-box"></span></li>
+            <li><span class="answer-box"></span></li>
+            <li><span class="answer-box"></span></li>
+        </ol>
+        
+        <h4>Write ONE thing you learned today in English:</h4>
+        <p><span class="answer-box"></span></p>
+    </div>
+
+    <div class="part">
+        <h3>🌈 Bonus：畫畫看</h3>
+        <p>請在下面畫出 P 波和 S 波通過地球各層的路徑：</p>
+        <p><em>提示：P 波可以穿透固體和液體，S 波只能在固體中傳播</em></p>
+        
+        <div class="ascii-art">
+             地球 Earth
+          ┌─────────────────┐
+         │   地核 Core  │
+         └─────────────────┘
+        </div>
+    </div>
+
+    <div class="vocabulary">
+        <h3>CLIL 詞彙表 Vocabulary Bank</h3>
+        <table>
+            <tr>
+                <th>English</th>
+                <th>中文</th>
+                <th>English</th>
+                <th>中文</th>
+            </tr>
+            <tr>
+                <td>P-wave</td>
+                <td>P 波</td>
+                <td>refraction</td>
+                <td>折射</td>
+            </tr>
+            <tr>
+                <td>S-wave</td>
+                <td>S 波</td>
+                <td>layer</td>
+                <td>地層</td>
+            </tr>
+            <tr>
+                <td>surface wave</td>
+                <td>表面波</td>
+                <td>speed</td>
+                <td>速度</td>
+            </tr>
+            <tr>
+                <td>receiver</td>
+                <td>接收器</td>
+                <td>distance</td>
+                <td>距離</td>
+            </tr>
+            <tr>
+                <td>source</td>
+                <td>震源</td>
+                <td>slope</td>
+                <td>斜率</td>
+            </tr>
+            <tr>
+                <td>travel time</td>
+                <td>走時</td>
+                <td>compress</td>
+                <td>壓縮</td>
+            </tr>
+            <tr>
+                <td>earthquake</td>
+                <td>地震</td>
+                <td>shake</td>
+                <td>搖擺</td>
+            </tr>
+            <tr>
+                <td>amplitude</td>
+                <td>振幅</td>
+                <td>interface</td>
+                <td>介面</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="./" class="back-link">← 返回課程首頁</a>
+
+    <div class="footer">
+        北市大暑假地球科學課程 2026 | 地心震波奇幻之旅 — 學生工作表
+    </div>
+</body>
+</html>

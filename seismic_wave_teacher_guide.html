@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>地心震波奇幻之旅 — 教師教學指南</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --border: #ddd;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        body {
+            font-family: "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--secondary);
+            background: var(--light-bg);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .header h1 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        h2, h3, h4 {
+            color: var(--secondary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.3rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.2rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: rgba(52, 152, 219, 0.1);
+        }
+        
+        .info-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .info-box h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 2rem 0;
+        }
+        
+        code {
+            background: var(--dark-bg);
+            color: var(--light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 0.9rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #555;
+            font-style: italic;
+            background: rgba(52, 152, 219, 0.05);
+        }
+        
+        .tip {
+            background: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+        }
+        
+        .tip::before {
+            content: "💡 ";
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>地心震波奇幻之旅 — 教師教學指南</h1>
+        <p><strong>教師片教學指南</strong> | Teacher's Guide</p>
+    </div>
+
+    <section id="overview">
+        <h2>一、課程基本資料</h2>
+        <table>
+            <tr><th>項目</th><th>內容</th></tr>
+            <tr><td>單元名稱</td><td>地心震波奇幻之旅</td></tr>
+            <tr><td>適用年齡</td><td>國小四年級～國中</td></tr>
+            <tr><td>時間</td><td>2 節課（80 分鐘）</td></tr>
+            <tr><td>教學模式</td><td>1 節（40 分鐘見習作） + CLIL 雙語教學</td></tr>
+            <tr><td>教學目標</td><td>實作+探究+學習單+CLIL 雙語融入</td></tr>
+            <tr><td>相關網站</td><td><a href="https://huggingface.co/spaces/oceanicdayi/Geophysics_day2" target="_blank">Geophysics Day2 - Hugging Face Space</a></td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="objectives">
+        <h2>二、學習單目標</h2>
+        <table>
+            <tr><th>階段</th><th>內容</th><th>English Objective (CLIL)</th></tr>
+            <tr><td>記憶</td><td>說出 P 波、S 波、表面波的特性和到達順序</td><td>Name and describe P-waves, S-waves, and surface waves</td></tr>
+            <tr><td>理解</td><td>解釋為何 P 波最先抵達、表面波造成最多破壞</td><td>Explain why P-waves arrive first and surface waves cause most damage</td></tr>
+            <tr><td>應用</td><td>用彈簧模擬 P 波和 S 波的傳播方式</td><td>Demonstrate compressional and shear wave motion with a slinky</td></tr>
+            <tr><td>分析</td><td>從走時圖分析波速</td><td>Interpret travel-time graphs to determine wave speed</td></tr>
+            <tr><td>評鑑</td><td>比較折射法和反射法的用途</td><td>Compare the uses of seismic refraction and reflection</td></tr>
+            <tr><td>創造</td><td>畫出地震波傳播路徑</td><td>Draw seismic wave propagation paths</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="clil">
+        <h2>三、CLIL 雙語教學策略</h2>
+        
+        <h3>3.1 詞彙融入階層</h3>
+        <p>本課程採用 <strong>Content-Driven CLIL</strong> 模式，以科學內容為主，輔以英文詞彙教學。</p>
+        
+        <table>
+            <tr><th>階段</th><th>策略</th><th>實施方式</th></tr>
+            <tr><td>課前暖身</td><td>Bilingual Warm-up</td><td>用 「Have you ever felt an earthquake?」 開啟，讓學生舉手分享</td></tr>
+            <tr><td>詞彙引入</td><td>Keyword Banks</td><td>每個活動提供 3-5 個英文關鍵字，配合動作示範</td></tr>
+            <tr><td>內容講解</td><td>70% 中文 + 30% 英文</td><td>核心概念講解，關鍵詞用英文呈現</td></tr>
+            <tr><td>實作活動</td><td>TPR (Total Physical Response)</td><td>用肢體動作示範 wave、compress、shake、fast、slow</td></tr>
+            <tr><td>討論分享</td><td>Think-Pair-Share</td><td>先個人思考，再討論，最後分享</td></tr>
+            <tr><td>課程收尾</td><td>Exit Ticket</td><td>學習單 Part G 要求用英文寫出 1 句完整的句子</td></tr>
+        </table>
+        
+        <h3>3.2 課堂英文句型</h3>
+        <table>
+            <tr><th>英文句型 Sentence Pattern</th><th>使用時機</th></tr>
+            <tr><td>The _______ is faster than the _______.</td><td>比較波速</td></tr>
+            <tr><td>_______ waves arrive first / second / third.</td><td>描述到達順序</td></tr>
+            <tr><td>When waves go from slow to fast, they bend _______.</td><td>描述折射</td></tr>
+            <tr><td>Speed = Distance ÷ Time</td><td>計算速度</td></tr>
+        </table>
+        
+        <h3>3.3 學生英文能力分階</h3>
+        <table>
+            <tr><th>學生英文程度</th><th>應對方式</th></tr>
+            <tr><td>初階</td><td>只需要聽懂關鍵字詞，不需要寫出完整英文句子</td></tr>
+            <tr><td>中階</td><td>能聽懂關鍵字詞，能寫出簡單英文句子</td></tr>
+            <tr><td>進階</td><td>完成學習單，能寫出完整英文句子</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="flow">
+        <h2>四、教學流程 (80 分鐘)</h2>
+        
+        <div class="info-box">
+            <h4>📌 40 分鐘簡單版流程</h4>
+            <p>若只能上 40 分鐘的課，可省略 Part E（折射），用於深入課程。</p>
+        </div>
+        
+        <h3>[0-5 分鐘] 引起動機：地震經驗分享</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>0-5 分鐘</td><td>提問：〈你有感覺過地震嗎？地震發生時，你在做什麼？〉</td><td>舉手分享（2-3 位）</td></tr>
+            <tr><td></td><td>用英文帶領發音「earthquake」「shake」「wave」</td><td>跟著老師</td></tr>
+        </table>
+        
+        <div class="tip">
+            <strong>CLIL Tip</strong>：介紹 「Today we are going to be earthquake detectives!」 建立趣味學習氛圍。
+        </div>
+        
+        <h3>[5-15 分鐘] 認識震波 — 圖卡教學</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>5-7 分鐘</td><td>展示 P 波、S 波、表面波圖卡，並講解：P波 = 壓縮波，S波 = 剪切波，表面波 = 破壞最大</td><td>觀看，聽講解</td></tr>
+            <tr><td>7-10 分鐘</td><td>引導完成學習單 Part A（連連看）和 Part B（趕快看）</td><td>個別填寫</td></tr>
+        </table>
+        
+        <h4>教學圖卡</h4>
+        <table>
+            <tr><th>波型</th><th>生動描述</th><th>手勢動作</th></tr>
+            <tr><td>P 波 (Compressional)</td><td>壓縮推拉</td><td>雙手推拉模擬</td></tr>
+            <tr><td>S 波 (Shear)</td><td>上下搖擺</td><td>手搖左右晃動</td></tr>
+            <tr><td>表面波 (Surface)</td><td>滾動搖晃</td><td>手掌畫圈模擬</td></tr>
+        </table>
+        
+        <h4>Part B 解答</h4>
+        <ul>
+            <li>第一個到 → P 波</li>
+            <li>第二個到 → S 波</li>
+            <li>第三個到 → 表面波</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>CLIL 口令</strong>：操作彈簧時教師帶領學生齊聲發音「Push!」「Shake!」「Faster!」「Slower!」
+        </div>
+        
+        <h3>[15-30 分鐘] 彈簧實驗 — 動手做地震波！</h3>
+        <div class="info-box">
+            <h4>🎯 課堂緣起</h4>
+            <p>每組 2-3 位學生，用 1 條彈簧（Slinky）或 2-3 條彈簧串聯操作。</p>
+        </div>
+        
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>15-20 分鐘</td><td>示範：彈簧推拉（P 波模擬）、彈簧上下搖擺（S 波模擬）</td><td>觀察、記錄</td></tr>
+            <tr><td>20-25 分鐘</td><td>引導完成學習單 Part C</td><td>討論、填寫</td></tr>
+            <tr><td>25-30 分鐘</td><td>提問：〈哪一種像 P 波？哪一種像 S 波？哪一種像表面波？〉</td><td>小組討論、舉手</td></tr>
+        </table>
+        
+        <h4>Part C 解答</h4>
+        <table>
+            <tr><th>步驟 Steps</th><th>你觀察到什麼？What do you observe?</th><th>地震波</th></tr>
+            <tr><td>1. 一人拿彈簧一端，另一人快速往前推拉</td><td>波像壓縮波的方式傳播</td><td>P 波</td></tr>
+            <tr><td>2. 一人拿彈簧一端，另一人快速上下搖擺</td><td>波像剪切波的方式傳播</td><td>S 波</td></tr>
+            <tr><td>3. 哪一種像彈簧？</td><td>往前推拉的</td><td>P 波</td></tr>
+        </table>
+        
+        <h3>[30-45 分鐘] 看圖說故事 — 走時圖分析</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>30-35 分鐘</td><td>展示多接收器排列圖（第 11 張投影片），解釋：X 軸 = 距離，Y 軸 = 傳播時間，距離愈遠，抵達時間愈晚，P 波、S 波、表面波各自連成斜線</td><td>觀看、提問</td></tr>
+            <tr><td>35-42 分鐘</td><td>引導完成 Part D</td><td>個別填寫或小組討論</td></tr>
+            <tr><td>42-45 分鐘</td><td>強調「slope」概念，帶領發音</td><td>口頭練習</td></tr>
+        </table>
+        
+        <h4>Part D 解答</h4>
+        <ol>
+            <li>上面的點 (1)(2)(3) 的斜率是（1）>（2）>（3）</li>
+            <li>斜率愈陡，速度愈快</li>
+            <li>所以，(1)(2)(3) 依速度快到慢排序是：(1) → (2) → (3)</li>
+        </ol>
+        
+        <div class="ascii-art">
+     斜 Steep = 快 Fast
+       │
+        │
+     緩 Gentle = 慢 Slow
+          │
+           │
+        </div>
+        
+        <h3>[45-55 分鐘] 波的奇幻旅程 — 折射</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>45-50 分鐘</td><td>用「光線遇到水中折射」類比，講解：波遇到不同地層，方位角改變！波在慢地層折射進入快地層</td><td>聽講，思考</td></tr>
+            <tr><td>50-55 分鐘</td><td>引導完成 Part E</td><td>填寫</td></tr>
+        </table>
+        
+        <h4>比喻策略</h4>
+        <ul>
+            <li>同一個地層 → 直線</li>
+            <li>慢地層 → 快地層 → 折射（彎曲）</li>
+            <li>快地層 → 慢地層 → 折射（彎曲）</li>
+        </ul>
+        
+        <h4>Part E 解答</h4>
+        <ol>
+            <li>波遇到慢地層 → 直線</li>
+            <li>波遇到快地層 → 彎曲</li>
+        </ol>
+        
+        <div class="tip">
+            <strong>簡單公式</strong>：不需挖洞，用公式算，就能算出地層厚度！用折射法探勘石油天然氣。
+        </div>
+        
+        <h3>[55-70 分鐘] 地震偵探挑戰</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>55-65 分鐘</td><td>展示 Part F，講解：地震偵探要找到地震發生的位置，需要計算波速</td><td>計算、填寫</td></tr>
+            <tr><td>65-70 分鐘</td><td>公開 Part F 答案，討論 4 題開放問題</td><td>小組討論、舉手</td></tr>
+        </table>
+        
+        <h4>Part F 解答</h4>
+        <ol>
+            <li>距離每 100 m 增加 0.2 秒</li>
+            <li>速度 = 100 ÷ 0.2 = 500 m/s（參考一組數據）</li>
+            <li>第二層地層（波速 800 m/s）</li>
+            <li>開放問題：因為震源在正下方，P 波和 S 波幾乎同時到達地表各接收器（可畫圖或文字說明）</li>
+        </ol>
+        
+        <h4>快速進階挑戰</h4>
+        <p>展示計算題的簡單版：假設第一層波速是 1500 m/s，第二層波速是多少？可讓學生快速計算。</p>
+        
+        <h3>[70-80 分鐘] 總結與反思</h3>
+        <table>
+            <tr><th>時間</th><th>教師活動</th><th>學生活動</th></tr>
+            <tr><td>70-75 分鐘</td><td>引導完成 Part G</td><td>個別填寫</td></tr>
+            <tr><td>75-78 分鐘</td><td>快速溫習英文關鍵字詞：P-wave, S-wave, surface wave, faster, slower, speed</td><td>全班齊誦 + 手勢</td></tr>
+            <tr><td>78-80 分鐘</td><td>收集學習單，下課</td><td>收拾、下課</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="40min">
+        <h2>五、40 分鐘簡單版流程</h2>
+        <p>適合上 40 分鐘的課，可省略 Part E（折射），用於深入課程。</p>
+        
+        <table>
+            <tr><th>時間</th><th>活動</th><th>學習單填寫</th></tr>
+            <tr><td>0-5 分鐘</td><td>地震經驗分享 + 雙語暖身</td><td>—</td></tr>
+            <tr><td>5-12 分鐘</td><td>P/S/表面波認識 + 圖卡教學</td><td>Part A, B</td></tr>
+            <tr><td>12-22 分鐘</td><td>彈簧實驗</td><td>Part C</td></tr>
+            <tr><td>22-30 分鐘</td><td>走時圖分析</td><td>Part D</td></tr>
+            <tr><td>30-37 分鐘</td><td>地震偵探計算題</td><td>Part F</td></tr>
+            <tr><td>37-40 分鐘</td><td>反射 + 雙語總結</td><td>Part G</td></tr>
+        </table>
+        
+        <div class="info-box">
+            <h4>⚠️ 注意</h4>
+            <p>Part E（折射）可在簡單版中省略，用於深入課程。</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="checklist">
+        <h2>六、課堂準備 Check List</h2>
+        <table>
+            <tr><th>物品</th><th>數量</th><th>用途</th></tr>
+            <tr><td>彈簧（Slinky）</td><td>每 4 人 1 條</td><td>Part C 實作</td></tr>
+            <tr><td>學習單（印好）</td><td>每人 1 份</td><td>全課使用</td></tr>
+            <tr><td>投影片/白板</td><td>1 台</td><td>展示 4 張投影片</td></tr>
+            <tr><td><a href="https://huggingface.co/spaces/oceanicdayi/Geophysics_day2" target="_blank">網頁</a></td><td>事前開啟</td><td>展示 4 張投影片</td></tr>
+            <tr><td>白板/紙板（多色）</td><td>3-4 張</td><td>板書、張貼圖卡</td></tr>
+            <tr><td>英文詞彙卡</td><td>1 組</td><td>CLIL 教學</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="vocabulary">
+        <h2>七、常見問題與解答</h2>
+        <table>
+            <tr><th>常見問題</th><th>正確答案</th><th>應對策略</th></tr>
+            <tr><td>〈P 波為什麼最快？〉</td><td>P 波包含 P = Primary（第一個到）</td><td>用英文 P = Primary 帶領學生背誦，配合圖卡分享</td></tr>
+            <tr><td>〈地震包含哪些波？〉</td><td>地震包含 P 波、S 波、表面波等多種波</td><td>用圖卡展示，讓學生分類</td></tr>
+            <tr><td>〈振幅大 = 破壞大？〉</td><td>振幅大 = 能量大，通常破壞大</td><td>用走時圖展示，強調表面波振幅大且持久</td></tr>
+            <tr><td>〈波遇到不同地層，折射/反射？〉</td><td>波遇到不同地層，折射/反射</td><td>用光線類比，展示折射和反射的差異</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="extensions">
+        <h2>八、延伸活動</h2>
+        <table>
+            <tr><th>活動</th><th>說明</th><th>適合課程</th></tr>
+            <tr><td>手機感測器震測</td><td>用手機 App 記錄地震波，分析真實地震</td><td>深入課程</td></tr>
+            <tr><td>P-S 到時震源定位</td><td>IRIS 震源定位活動，計算地震發生位置</td><td>深入課程</td></tr>
+            <tr><td>自製簡易地震儀</td><td>用紙盒、DIY 簡易地震儀，觀察環境振動</td><td>簡單/深入</td></tr>
+            <tr><td>英文地震科普書</td><td>《The Magic School Bus: Inside the Earth》等</td><td>CLIL 延伸</td></tr>
+            <tr><td>IRIS 網站探索</td><td>觀看真實地震波形資料</td><td>資源豐富</td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="tips">
+        <h2>九、教師心得</h2>
+        <ol>
+            <li><strong>彈簧實驗</strong>：提前準備彈簧，確保每組都有操作的機會。</li>
+            <li><strong>英文詞彙</strong>：帶領學生發音，降低對英文的恐懼感。</li>
+            <li><strong>地震經驗分享</strong>：若遇到真實地震，可記錄學生感受，增加課程真實性。</li>
+            <li><strong>差異化教學</strong>：Part F 計算題可讓進階學生挑戰，基礎學生完成 Part A-D。</li>
+            <li><strong>收集學習單</strong>：下課前收集學習單，檢查學生是否能用英文寫出 1 句完整的句子。</li>
+        </ol>
+    </section>
+
+    <a href="./" class="back-link">← 返回課程首頁</a>
+
+    <div class="footer">
+        北市大暑假地球科學課程 2026 | 地心震波奇幻之旅 — 教師教學指南
+    </div>
+</body>
+</html>
