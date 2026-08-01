@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="北市大 2026 暑假地球科學課程 — 地震學、地球物理與 AI/Agent 輔助教學實作。6週課程，從波形到防災教案，動手做，帶回教室應用。" />
+  <meta name="description" content="北市大 2026 暑假地球科學課程 — 地震學、地球物理與 AI/Agent 輔助教學實作。6週課程，包含完整教材、幻燈片、教師指南和學生工作表。" />
   <title>北市大暑假地球科學課程 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -538,6 +538,56 @@
       line-height: 1.5;
     }
 
+    /* Seismic Journey Section */
+    .seismic-journey {
+      background: var(--paper);
+    }
+
+    .journey-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 800px) {
+      .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    .journey-card {
+      background: var(--mist);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .journey-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
+
+    .journey-card p {
+      margin: 0 0 0.75rem;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .journey-card ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .journey-card li {
+      margin: 0.25rem 0;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+
     /* Footer */
     footer {
       padding: 2.75rem 0 3.5rem;
@@ -555,6 +605,80 @@
 
     footer p { margin: 0; max-width: 40ch; }
     footer a { color: var(--foam); }
+
+    /* Info boxes */
+    .info-box {
+      background: linear-gradient(135deg, rgba(46, 168, 164, 0.1), rgba(212, 160, 74, 0.1));
+      border-left: 4px solid var(--teal-bright);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .info-box h3 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+    }
+
+    .info-box p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .info-box a {
+      color: var(--teal);
+    }
+
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 800px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    /* Feature cards */
+    .feature-cards {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .feature-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .feature-card h4 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -584,8 +708,9 @@
       </h1>
       <p class="hero-lead">把地震學變成可帶回教室的動手做實作——6週，從波形到防災教案。</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#weeks">看6週地圖</a>
-        <a class="btn btn-ghost" href="#resources">打開課程資料</a>
+        <a class="btn btn-primary" href="#about">了解課程</a>
+        <a class="btn btn-ghost" href="#materials">教材資源</a>
+        <a class="btn btn-ghost" href="#weeks">6週課程</a>
       </div>
     </div>
   </header>
@@ -594,21 +719,188 @@
     <section class="spirit" id="about">
       <div class="wrap spirit-grid reveal">
         <div>
-          <p class="section-kicker">Course spirit</p>
-          <h2 class="section-title">教學生動，動手做，學習有用的技能讓教師能帶回教室</h2>
-          <p class="section-text">為中小學現職教師設計。主軸是地震學與地球物理，同時導入 AI/Agent 與雲端平台，讓教學作品、網頁與專題作業能快速完成。</p>
+          <p class="section-kicker">About</p>
+          <h2 class="section-title">課程概述</h2>
+          <p class="section-text">為中小學現職教師設計的地震學、地球物理與 AI/Agent 輔助教學實作課程。教學生動，動手做，學習有用的技能讓教師能帶回教室。</p>
         </div>
         <blockquote class="spirit-quote">
-          不只是完成地震學——而是親手操作真實資料、工具與教案，帶領學生發現地震與防災的趣味與知識。
+          不只是學地震學——而是讓教師能夠設計實用的地震教案，並將所學帶回教室應用。
         </blockquote>
       </div>
     </section>
 
+    <section class="seismic-journey" id="seismic-journey">
+      <div class="wrap reveal">
+        <p class="section-kicker">Featured</p>
+        <h2 class="section-title">🌍 地心震波奇幻之旅</h2>
+        <p class="section-text">完整的地震波教學套件，包含 21 張幻燈片、教師指南和學生工作表，採用 CLIL 教學法。</p>
+      </div>
+      <div class="wrap journey-grid">
+        <div class="journey-card reveal">
+          <h3>📚 教材資源</h3>
+          <p><strong>地震波幻燈片</strong>：21 張精美的教學投影片，涵蓋震波認識、彈簧實驗、走時圖分析等內容</p>
+          <p><strong>教師指南</strong>：完整的 80 分鐘課程流程，包含 CLIL 教學策略</p>
+          <p><strong>學生工作表</strong>：7 個部分的互動練習，配合課堂教學</p>
+        </div>
+        <div class="journey-card reveal">
+          <h3>🎯 教學目標</h3>
+          <ul>
+            <li>認識震波主角（P波、S波、表面波）</li>
+            <li>了解地震波的傳播方式</li>
+            <li>學習如何「聽」地球的聲音</li>
+            <li>解讀地震圖和走時曲線</li>
+            <li>掌握折射法和反射法原理</li>
+            <li>計算地層厚度</li>
+          </ul>
+        </div>
+        <div class="journey-card reveal">
+          <h3>👥 適用對象</h3>
+          <p><strong>年級</strong>：國小四年級至國中</p>
+          <p><strong>教學方法</strong>：CLIL (Content and Language Integrated Learning)</p>
+          <p><strong>課程時長</strong>：80 分鐘</p>
+          <p><strong>語言</strong>：中英文雙語教學</p>
+        </div>
+        <div class="journey-card reveal">
+          <h3>✨ 教學特色</h3>
+          <ul>
+            <li>互動實作：彈簧實驗、工作表練習</li>
+            <li>CLIL 教學：內容與語言整合學習</li>
+            <li>雙語教學：中英文並重</li>
+            <li>TPR 方法：肢體動作輔助教學</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources" id="materials">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Materials</p>
+          <h2 class="section-title">教材資源</h2>
+          <p class="section-text">完整的教材套件，包含幻燈片、教師指南、學生工作表和參考資料。</p>
+        </div>
+        
+        <div class="info-box reveal">
+          <h3>📖 主要教材</h3>
+          <p>完整的地震波教學套件，採用 CLIL 教學法，適合國小四年級至國中學生。</p>
+        </div>
+
+        <ul class="res-links">
+          <li>
+            <a class="reveal" href="seismic_wave_slides.md">
+              <span class="res-title">地震波幻燈片 <span class="res-arrow">→</span></span>
+              <span class="res-meta">21 張教學投影片，包含完整的 CLIL 教學內容</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="seismic_wave_teacher_guide.md">
+              <span class="res-title">教師指南 <span class="res-arrow">→</span></span>
+              <span class="res-meta">完整 80 分鐘課程流程，包含教學策略和提示</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="seismic_wave_worksheet.md">
+              <span class="res-title">學生工作表 <span class="res-arrow">→</span></span>
+              <span class="res-meta">7 個部分的互動練習，配合課堂教學</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="reference/course_plan.md">
+              <span class="res-title">6 週課程計畫 <span class="res-arrow">→</span></span>
+              <span class="res-meta">完整的 6 週課程計畫，包含每週主題、工具和作業</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="reference/week01_handout.md">
+              <span class="res-title">Week 1 開課講義 <span class="res-arrow">→</span></span>
+              <span class="res-meta">第一週課程的詳細講義和內容</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="reference/week01_install_checklist.md">
+              <span class="res-title">安裝與環境設定檢查表 <span class="res-arrow">→</span></span>
+              <span class="res-meta">Week 1 環境建置的逐項確認清單</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="reference/course_registration_form_guide.md">
+              <span class="res-title">學員登記表單設定指南 <span class="res-arrow">→</span></span>
+              <span class="res-meta">Google 表單+試算表+自動寄信一條龍設定</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="reference/gas/CourseRegistration.gs">
+              <span class="res-title">Apps Script 程式碼 <span class="res-arrow">→</span></span>
+              <span class="res-meta">一鍵整合表單/試算表/自動寄信的 Google Apps Script</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="info-box reveal">
+          <h3>🔗 外部資源</h3>
+          <p>
+            <a href="https://huggingface.co/spaces/oceanicdayi/Geophysics_day2" target="_blank">震測課程網頁 (Hugging Face Spaces)</a><br>
+            <a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank">折射震測原理教材 (Google Drive)</a><br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank">作業1繳交表單</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spirit" id="knowledge">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Knowledge</p>
+          <h2 class="section-title">地震波知識</h2>
+          <p class="section-text">深入了解地震波的類型、特性和應用。</p>
+        </div>
+        
+        <div class="two-col">
+          <div class="reveal">
+            <h3>震波家族</h3>
+            <p><strong>體波 (Body Waves)</strong> — 在地球內部傳播：</p>
+            <ul>
+              <li><strong>P波（壓縮波）</strong>：速度最快，前後壓縮傳播，像彈簧。地震時最先感覺到上下跳動。</li>
+              <li><strong>S波（剪切波）</strong>：比P波慢，左右搖擺，像繩子甩動。對建築物破壞力強。</li>
+            </ul>
+            <p><strong>表面波 (Surface Waves)</strong> — 沿地表傳播：</p>
+            <ul>
+              <li><strong>洛夫波 (Love Wave)</strong>：水平左右晃動，像蛇扭動。</li>
+              <li><strong>雷利波 (Rayleigh Wave)</strong>：最慢但破壞最大，橢圓形滾動，像海浪，讓地面上下前後搖晃。</li>
+            </ul>
+            <p><em>重點：P波最快 → S波次之 → 表面波最慢。造成災害的主要是表面波。</em></p>
+          </div>
+          <div class="reveal">
+            <h3>走時分析</h3>
+            <p><strong>直達波走時</strong>：<code>T(X) = X/V₁</code></p>
+            <p><strong>速度與斜率關係</strong>：<code>V = 1/Slope = 1/(dT/dX)</code></p>
+            <p><strong>司乃耳定律</strong>：<code>sinθ₁/V₁ = sinθ₂/V₂</code></p>
+            <p><strong>折射波走時公式</strong>：<code>T_t = (2h·cosθ_c)/V₁ + X/V₂</code></p>
+            <p><strong>截時</strong>：<code>t_i = (2h·cosθ_c)/V₁</code></p>
+            <p><strong>反射波走時</strong>：<code>T² = t₀² + (X/V₁)²</code></p>
+            <p><strong>視速度</strong>：<code>V_ap = ΔX/ΔT = 1/Slope</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="flow">
+      <div class="wrap reveal">
+        <h2 class="flow-title">每週四小時怎麼過</h2>
+        <div class="flow-steps">
+          <div class="flow-step"><p>台大地震案例導入</p></div>
+          <div class="flow-step"><p>核心概念講解</p></div>
+          <div class="flow-step"><p>數據工具與教案實作</p></div>
+          <div class="flow-step"><p>作業講解與小組分享</p></div>
+        </div>
+      </div>
+    </div>
+
     <section class="weeks" id="weeks">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Six Fridays · 2026</p>
-          <h2 class="section-title">6週旅程</h2>
+          <p class="section-kicker">Schedule</p>
+          <h2 class="section-title">6 週課程</h2>
           <p class="section-text">每週四上午四節。從台大地震研究所開放實驗室開始，一路走到野外觀測與期末成果展示。</p>
         </div>
         <ol class="week-list">
@@ -652,18 +944,6 @@
       </div>
     </section>
 
-    <div class="flow">
-      <div class="wrap reveal">
-        <h2 class="flow-title">每週四小時怎麼過</h2>
-        <div class="flow-steps">
-          <div class="flow-step"><p>台大地震案例導入</p></div>
-          <div class="flow-step"><p>核心概念講解</p></div>
-          <div class="flow-step"><p>數據工具與教案實作</p></div>
-          <div class="flow-step"><p>作業講解與小組分享</p></div>
-        </div>
-      </div>
-    </div>
-
     <section class="tools" id="tools">
       <div class="wrap">
         <div class="reveal">
@@ -684,118 +964,70 @@
       </div>
     </section>
 
-    <section class="spirit" id="seismic-journey">
+    <section class="spirit" id="clil">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Seismic Journey</p>
-          <h2 class="section-title">地心震波奇幻之旅</h2>
-          <p class="section-text">用地震波來探索地球內部結構的教學之旅，從震波認識到地層厚度計算。</p>
+          <p class="section-kicker">Methodology</p>
+          <h2 class="section-title">CLIL 教學法</h2>
+          <p class="section-text">內容與語言整合學習 (Content and Language Integrated Learning)，讓學生在學習科學知識的同時也能提升英語能力。</p>
         </div>
-        <div class="reveal">
-          <h3>第一站：認識震波主角</h3>
-          <p><strong>體波 (Body Waves)</strong> — 在地球內部傳播：</p>
-          <ul>
-            <li><strong>P波（壓縮波）</strong>：速度最快，前後壓縮傳播，像彈簧。地震時最先感覺到上下跳動。</li>
-            <li><strong>S波（剪切波）</strong>：比P波慢，左右搖擺，像繩子甩動。對建築物破壞力強。</li>
-          </ul>
-          <p><strong>表面波 (Surface Waves)</strong> — 沿地表傳播：</p>
-          <ul>
-            <li><strong>洛夫波 (Love Wave)</strong>：水平左右晃動，像蛇扭動。</li>
-            <li><strong>雷利波 (Rayleigh Wave)</strong>：最慢但破壞最大，橢圓形滾動，像海浪，讓地面上下前後搖晃。</li>
-          </ul>
-          <p><em>重點：P波最快 → S波次之 → 表面波最慢。造成災害的主要是表面波。</em></p>
-        </div>
-        <div class="reveal">
-          <h3>第二站：如何「聽」地球的聲音？</h3>
-          <p>在地表放置多個<strong>接收器 (Receivers)</strong>，用<strong>震源 (Source)</strong>（炸藥或重錘）製造人造地震，記錄不同地震波何時抵達。就像在起點鳴槍，沿途碼表記錄不同跑者（P/S/表面波）的通過時間，反推地底構造。</p>
-        </div>
-        <div class="reveal">
-          <h3>第三站：解讀地震圖</h3>
-          <p>單一接收器的紀錄稱為<strong>地震圖 (Seismic Trace)</strong>，Y軸是傳播時間：</p>
-          <ul>
-            <li><strong>最先抵達</strong> → P波，振幅小</li>
-            <li><strong>接著抵達</strong> → S波，振幅中</li>
-            <li><strong>最後抵達</strong> → 表面波，振幅大且持久，具<strong>頻散 (Dispersion)</strong> 特性：低頻跑得快、高頻跑得慢</li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <h3>第四站：多接收器排列</h3>
-          <p>將所有接收器按與震源距離排列：</p>
-          <ul>
-            <li>X軸 = 距離，Y軸 = 傳播時間</li>
-            <li>距離愈遠，抵達時間愈晚</li>
-            <li>P波、S波、表面波各自連成斜線</li>
-            <li><strong>斜率決定波速</strong>：線愈陡（斜率小），速度愈快。P波最陡 > S波 > 表面波最平緩</li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <h3>第五站：走時公式與斜率</h3>
-          <p><strong>直達波走時</strong>：<code>T(X) = X/V₁</code></p>
-          <p><strong>速度與斜率關係</strong>：<code>V = 1/Slope = 1/(dT/dX)</code></p>
-          <p>當地震波經過不同地層時，遵守<strong>司乃耳定律 (Snell's Law)</strong>：<code>sinθ₁/V₁ = sinθ₂/V₂</code></p>
-        </div>
-        <div class="reveal">
-          <h3>第六站：折射法計算地層厚度</h3>
-          <p><strong>必要條件</strong>：V₂ > V₁</p>
-          <p><strong>臨界角</strong> (θ₂ = 90°)：<code>θ_c = sin⁻¹(V₁/V₂)</code></p>
-          <p><strong>折射波走時公式</strong>：<code>T_t = (2h·cosθ_c)/V₁ + X/V₂</code></p>
-          <p><strong>截時 (Intercept Time)</strong>：<code>t_i = (2h·cosθ_c)/V₁</code></p>
-          <p><em>結論：從走時曲線量出兩段斜率（得 V₁, V₂）和截時 t_i，即可反解地層厚度 h。</em></p>
-        </div>
-        <div class="reveal">
-          <h3>第七站：反射波與雙曲線</h3>
-          <p><strong>反射原理</strong>：入射角 = 反射角</p>
-          <p><strong>雙程走時</strong> (X=0 時)：<code>t₀ = 2h/V₁</code></p>
-          <p><strong>反射波走時（雙曲線）</strong>：<code>T² = t₀² + (X/V₁)²</code></p>
-          <p>分析雙曲線形狀與 t₀ 即可求 V₁ 和深度 h。反射法是石油天然氣探勘最主要的技術。</p>
-        </div>
-        <div class="reveal">
-          <h3>第八站：視速度</h3>
-          <p><code>V_ap = ΔX/ΔT = 1/Slope</code></p>
-          <p><em>關鍵：臨界折射波在地表的視速度，等於下層介質真實速度 V_ap = V₂。這解釋了折射波斜率為 1/V₂ 的物理原因。</em></p>
+        
+        <div class="feature-cards">
+          <div class="feature-card reveal">
+            <h4>雙語暖身</h4>
+            <p>使用中英文混合的問題引導，建立舒適的學習環境</p>
+          </div>
+          <div class="feature-card reveal">
+            <h4>關鍵字庫</h4>
+            <p>每個活動提供 3-5 個英文關鍵字，輔助學生理解</p>
+          </div>
+          <div class="feature-card reveal">
+            <h4>TPR 方法</h4>
+            <p>用肢體動作示範 wave、compress、shake 等動詞</p>
+          </div>
+          <div class="feature-card reveal">
+            <h4>Think-Pair-Share</h4>
+            <p>先個人思考，再討論，最後分享，提升參與度</p>
+          </div>
+          <div class="feature-card reveal">
+            <h4>Exit Ticket</h4>
+            <p>課程結束前完成簡短反思，鞏固所學</p>
+          </div>
+          <div class="feature-card reveal">
+            <h4>70/30 原則</h4>
+            <p>70% 中文 + 30% 英文講解，平衡理解與語言學習</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="resources" id="resources">
+    <section class="spirit" id="grading">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Reference</p>
-          <h2 class="section-title">課程資料</h2>
-          <p class="section-text">完整 6 週課程計畫、Week 1 講義與環境設定檢查表都在 repo 的 reference 資料夾。<br>折射震測原理教材：<a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank">Google Drive 鏈接</a></p>
+          <p class="section-kicker">Evaluation</p>
+          <h2 class="section-title">評分方式</h2>
         </div>
-        <ul class="res-links">
-          <li>
-            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/course_plan.md">
-              <span class="res-title">完整 6 週課程計畫 <span class="res-arrow">→</span></span>
-              <span class="res-meta">每週主題、作業內容與評分標準</span>
-            </a>
-          </li>
-          <li>
-            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_handout.md">
-              <span class="res-title">Week 1 開課講義 <span class="res-arrow">→</span></span>
-              <span class="res-meta">今日流程、4事2作、環境建置</span>
-            </a>
-          </li>
-          <li>
-            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/week01_install_checklist.md">
-              <span class="res-title">安裝與環境設定檢查表 <span class="res-arrow">→</span></span>
-              <span class="res-meta">環境、GAS、GitHub 逐項確認</span>
-            </a>
-          </li>
-          <li>
-            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer/blob/main/reference/course_registration_form_guide.md">
-              <span class="res-title">學員資料登記表單設定 <span class="res-arrow">→</span></span>
-              <span class="res-meta">Google 表單+試算表+自動寄信一條龍</span>
-            </a>
-          </li>
-          <li>
-            <a class="reveal" href="https://github.com/oceanicdayi/Utaipei_2026_summer">
-              <span class="res-title">GitHub Repo <span class="res-arrow">→</span></span>
-              <span class="res-meta">原始碼、README 與逐週更新</span>
-            </a>
-          </li>
-        </ul>
+        
+        <div class="two-col">
+          <div class="reveal">
+            <h3>評分比例</h3>
+            <ul>
+              <li><strong>每週可交作業</strong>：60% (每週 10%，共 6 週)</li>
+              <li><strong>課堂參與與討論</strong>：20% (包含小組討論、工具實作、教案分享)</li>
+              <li><strong>期末成果展示</strong>：20% (第 6 週作業與展示)</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h3>課程目標</h3>
+            <ul>
+              <li>了解地震學的基本概念</li>
+              <li>熟悉地震觀測工具和資料</li>
+              <li>學會使用 AI/Agent 工具輔助教學</li>
+              <li>設計實用的地震教案</li>
+              <li>將所學帶回教室應用</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
