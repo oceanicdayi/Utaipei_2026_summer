@@ -43,13 +43,6 @@
 
 ### 參考資料
 
-| 檔案 | 說明 |
-|---|---|
-| [reference/course_plan.md](reference/course_plan.md) | 6 週課程計畫 |
-| [reference/week01_handout.md](reference/week01_handout.md) | Week 1 開課講義 |
-| [reference/week01_install_checklist.md](reference/week01_install_checklist.md) | Week 1 安裝與環境設定檢查清單 |
-| [reference/course_registration_form_guide.md](reference/course_registration_form_guide.md) | 學員登記：Google 表單+試算表+自動寄信一條龍 |
-| [reference/gas/CourseRegistration.gs](reference/gas/CourseRegistration.gs) | 一鍵整合表單/試算表/自動寄信的 Apps Script |
 
 ---
 
@@ -126,11 +119,9 @@
 ## 🔧 學員登記 (免費且快速)
 
 1. 開啟 https://script.google.com → 新增專案。
-2. 複製 `reference/gas/CourseRegistration.gs`。
 3. 執行 `setupCourseRegistration` 並完成授權。
 4. 從執行記錄取得表單網址，分享給學員填寫。
 
-詳見 [學員資料登記表單設定指南](reference/course_registration_form_guide.md)。
 
 ---
 
