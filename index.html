@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="北市大 2026 暑假地球科學課程 — 地震學、地球物理與 AI/Agent 輔助教學實作。6週課程，包含完整教材、幻燈片、教師指南和學生工作表。" />
+  <meta name="description" content="北市大 2026 暑假地球科學課程——地震學、地球物理與 AI／Agent 輔助教學實作。含地心震波大探險教材套件。" />
   <title>北市大暑假地球科學課程 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +45,7 @@
       margin-inline: auto;
     }
 
-    /* --- Hero --- */
+    /* —— Hero —— */
     .hero {
       position: relative;
       min-height: 100svh;
@@ -94,12 +94,10 @@
     .hero-wave svg {
       position: absolute;
       left: 50%;
-      top: 18%;
-      bottom: auto;
+      bottom: 8%;
       width: min(140vw, 1600px);
       transform: translateX(-50%);
-      opacity: 0.7;
-      mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+      opacity: 0.55;
     }
 
     .hero-wave path {
@@ -125,35 +123,28 @@
       animation-delay: 0.75s, 3.6s;
     }
 
-    @keyframes draw-wave {
-      to { stroke-dashoffset: 0; }
-    }
-
+    @keyframes draw-wave { to { stroke-dashoffset: 0; } }
     @keyframes drift {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
-
     @keyframes kenburns {
       from { transform: scale(1.04); }
       to { transform: scale(1.1); }
     }
 
-    .hero .wrap {
-      position: relative;
-      z-index: 3;
-    }
+    .hero .wrap { position: relative; z-index: 3; }
 
     .brand {
       font-family: "Noto Serif TC", serif;
       font-weight: 700;
-      font-size: clamp(2.35rem, 6.2vw, 4.2rem);
-      line-height: 1.2;
+      font-size: clamp(2.4rem, 6.2vw, 4.2rem);
+      line-height: 1.18;
       letter-spacing: 0.02em;
       margin: 0 0 1.1rem;
-      max-width: 11em;
+      max-width: 8em;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
       animation: rise 1s var(--ease) both;
-      text-wrap: balance;
     }
 
     .brand span {
@@ -172,7 +163,7 @@
       font-size: clamp(1.05rem, 2.4vw, 1.25rem);
       font-weight: 400;
       color: rgba(238, 245, 243, 0.92);
-      max-width: 34ch;
+      max-width: 36ch;
       margin: 0 0 2rem;
       text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
       animation: rise 1s var(--ease) 0.12s both;
@@ -205,10 +196,7 @@
       border: 1px solid transparent;
     }
 
-    .btn-primary:hover {
-      background: #c9652f;
-      color: #fff;
-    }
+    .btn-primary:hover { background: #c9652f; color: #fff; }
 
     .btn-ghost {
       background: transparent;
@@ -216,10 +204,7 @@
       border: 1px solid rgba(184, 224, 216, 0.45);
     }
 
-    .btn-ghost:hover {
-      border-color: var(--foam);
-      color: #fff;
-    }
+    .btn-ghost:hover { border-color: var(--foam); color: #fff; }
 
     @keyframes rise {
       from { opacity: 0.01; transform: translateY(20px); }
@@ -234,22 +219,12 @@
       }
       .hero-wave path { stroke-dashoffset: 0; }
       .hero-media img { transform: none; animation: none; }
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
     }
 
-    /* --- Sections --- */
-    section {
-      padding: clamp(4rem, 8vw, 6.5rem) 0;
-    }
+    /* —— Sections —— */
+    section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
 
-    /* Progressive enhance: content stays visible without JS */
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal { opacity: 1; transform: none; }
 
     html.js .reveal {
       opacity: 0;
@@ -286,12 +261,12 @@
       font-size: clamp(1.85rem, 4vw, 2.55rem);
       line-height: 1.25;
       margin: 0 0 1rem;
-      max-width: 16ch;
+      max-width: 18ch;
     }
 
     .section-text {
       margin: 0;
-      max-width: 42ch;
+      max-width: 44ch;
       color: var(--ink-soft);
       font-size: 1.05rem;
     }
@@ -311,14 +286,14 @@
 
     @media (min-width: 800px) {
       .spirit-grid {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1.15fr 0.85fr;
         gap: 4rem;
       }
     }
 
     .spirit-quote {
       font-family: "Noto Serif TC", serif;
-      font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       line-height: 1.55;
       margin: 0;
       color: var(--ink);
@@ -326,134 +301,20 @@
       padding-left: 1.25rem;
     }
 
-    /* Weeks */
-    .weeks {
-      background: var(--paper);
-    }
-
-    .week-list {
-      list-style: none;
-      margin: 3rem 0 0;
-      padding: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .week-item {
-      display: grid;
-      gap: 0.35rem 1.5rem;
-      padding: 1.35rem 0;
-      border-bottom: 1px solid var(--line);
-      grid-template-columns: auto 1fr;
-      align-items: baseline;
-      transition: background 0.35s var(--ease), padding-left 0.35s var(--ease);
-    }
-
-    .week-item:hover {
-      background: rgba(46, 168, 164, 0.06);
-      padding-left: 0.6rem;
-    }
-
-    @media (min-width: 720px) {
-      .week-item {
-        grid-template-columns: 5.5rem 7rem 1.2fr 1fr;
-        gap: 1rem 1.75rem;
-      }
-    }
-
-    .week-num {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--teal);
-      letter-spacing: -0.02em;
-    }
-
-    .week-date {
-      font-size: 0.92rem;
-      color: var(--ink-soft);
-    }
-
-    .week-topic {
-      font-family: "Noto Serif TC", serif;
-      font-weight: 600;
-      font-size: 1.12rem;
-      margin: 0;
-      grid-column: 1 / -1;
-    }
-
-    @media (min-width: 720px) {
-      .week-topic { grid-column: auto; }
-    }
-
-    .week-task {
-      margin: 0;
+    .meta-line {
+      margin: 1.25rem 0 0;
       font-size: 0.95rem;
       color: var(--ink-soft);
-      grid-column: 1 / -1;
+      max-width: 48ch;
     }
 
-    @media (min-width: 720px) {
-      .week-task { grid-column: auto; }
-    }
-
-    /* Tools */
-    .tools {
-      background:
-        linear-gradient(180deg, var(--teal-deep), #0d2f34 55%, #123a40);
-      color: var(--mist);
-    }
-
-    .tools .section-kicker { color: var(--gold); }
-    .tools .section-title { color: #fff; max-width: 14ch; }
-    .tools .section-text { color: rgba(238, 245, 243, 0.78); }
-
-    .tool-flow {
-      display: grid;
-      gap: 0;
-      margin-top: 2.75rem;
-      border-top: 1px solid rgba(184, 224, 216, 0.2);
-    }
-
-    .tool-row {
-      display: grid;
-      gap: 0.4rem;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid rgba(184, 224, 216, 0.2);
-    }
-
-    @media (min-width: 700px) {
-      .tool-row {
-        grid-template-columns: 11rem 1fr;
-        gap: 2rem;
-        align-items: baseline;
-      }
-    }
-
-    .tool-name {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--foam);
-      margin: 0;
-    }
-
-    .tool-desc {
-      margin: 0;
-      color: rgba(238, 245, 243, 0.72);
-      font-size: 0.98rem;
-    }
-
-    /* Resources */
-    .resources {
-      background: var(--mist);
-    }
+    /* Materials */
+    .materials { background: var(--paper); }
 
     .res-links {
       margin: 2.5rem 0 0;
       padding: 0;
       list-style: none;
-      display: grid;
-      gap: 0;
     }
 
     .res-links a {
@@ -487,7 +348,98 @@
       font-weight: 700;
     }
 
-    /* Flow strip */
+    .ext-links {
+      margin: 2.5rem 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .ext-links li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.98rem;
+      color: var(--ink-soft);
+    }
+
+    .ext-links a { font-weight: 500; }
+
+    /* Weeks */
+    .weeks { background: var(--mist); }
+
+    .week-list {
+      list-style: none;
+      margin: 3rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .week-item {
+      display: grid;
+      gap: 0.35rem 1.5rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+      grid-template-columns: auto 1fr;
+      align-items: baseline;
+      transition: background 0.35s var(--ease), padding-left 0.35s var(--ease);
+    }
+
+    .week-item:hover {
+      background: rgba(46, 168, 164, 0.06);
+      padding-left: 0.6rem;
+    }
+
+    .week-item.is-next {
+      background: rgba(224, 122, 61, 0.08);
+    }
+
+    @media (min-width: 720px) {
+      .week-item {
+        grid-template-columns: 5.5rem 7rem 1.25fr 1fr;
+        gap: 1rem 1.75rem;
+      }
+    }
+
+    .week-num {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .week-item.is-next .week-num { color: var(--magma); }
+
+    .week-date {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .week-topic {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.08rem;
+      margin: 0;
+      grid-column: 1 / -1;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 720px) {
+      .week-topic { grid-column: auto; }
+    }
+
+    .week-task {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 720px) {
+      .week-task { grid-column: auto; }
+    }
+
+    /* Flow */
     .flow {
       padding: 3rem 0;
       background: var(--paper);
@@ -514,11 +466,6 @@
       }
     }
 
-    .flow-step {
-      position: relative;
-      padding-top: 0.25rem;
-    }
-
     .flow-step::before {
       counter-increment: step;
       content: counter(step, decimal-leading-zero);
@@ -538,54 +485,108 @@
       line-height: 1.5;
     }
 
-    /* Seismic Journey Section */
-    .seismic-journey {
-      background: var(--paper);
+    .flow-step time {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--teal);
+      margin-bottom: 0.2rem;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
 
-    .journey-grid {
+    /* Tools */
+    .tools {
+      background: linear-gradient(180deg, var(--teal-deep), #0d2f34 55%, #123a40);
+      color: var(--mist);
+    }
+
+    .tools .section-kicker { color: var(--gold); }
+    .tools .section-title { color: #fff; max-width: 14ch; }
+    .tools .section-text { color: rgba(238, 245, 243, 0.78); }
+
+    .tool-flow {
       display: grid;
-      gap: 2rem;
+      gap: 0;
+      margin-top: 2.75rem;
+      border-top: 1px solid rgba(184, 224, 216, 0.2);
     }
 
-    @media (min-width: 800px) {
-      .journey-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+    .tool-row {
+      display: grid;
+      gap: 0.4rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(184, 224, 216, 0.2);
+    }
+
+    @media (min-width: 700px) {
+      .tool-row {
+        grid-template-columns: 13rem 1fr;
+        gap: 2rem;
+        align-items: baseline;
       }
     }
 
-    .journey-card {
-      background: var(--mist);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--line);
+    .tool-name {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--foam);
+      margin: 0;
     }
 
-    .journey-card h3 {
+    .tool-desc {
+      margin: 0;
+      color: rgba(238, 245, 243, 0.72);
+      font-size: 0.98rem;
+    }
+
+    /* Method + grading */
+    .method { background: var(--mist); }
+
+    .method-list,
+    .grade-list {
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .method-list li,
+    .grade-list li {
+      display: grid;
+      gap: 0.35rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (min-width: 700px) {
+      .method-list li,
+      .grade-list li {
+        grid-template-columns: 10rem 1fr;
+        gap: 1.5rem;
+        align-items: baseline;
+      }
+    }
+
+    .method-list strong,
+    .grade-list strong {
       font-family: "Noto Serif TC", serif;
       font-weight: 600;
-      font-size: 1.25rem;
-      margin: 0 0 1rem;
       color: var(--ink);
     }
 
-    .journey-card p {
-      margin: 0 0 0.75rem;
+    .method-list span,
+    .grade-list span {
       color: var(--ink-soft);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.98rem;
     }
 
-    .journey-card ul {
-      margin: 0.5rem 0 0 0;
-      padding-left: 1.25rem;
-    }
-
-    .journey-card li {
-      margin: 0.25rem 0;
-      color: var(--ink-soft);
-      font-size: 0.9rem;
+    .grade-pct {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      color: var(--teal);
+      font-size: 1.1rem;
     }
 
     /* Footer */
@@ -603,82 +604,8 @@
       margin: 0 0 0.5rem;
     }
 
-    footer p { margin: 0; max-width: 40ch; }
+    footer p { margin: 0; max-width: 42ch; }
     footer a { color: var(--foam); }
-
-    /* Info boxes */
-    .info-box {
-      background: linear-gradient(135deg, rgba(46, 168, 164, 0.1), rgba(212, 160, 74, 0.1));
-      border-left: 4px solid var(--teal-bright);
-      padding: 1.25rem 1.5rem;
-      margin: 2rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .info-box h3 {
-      font-family: "Noto Serif TC", serif;
-      font-weight: 600;
-      font-size: 1.15rem;
-      margin: 0 0 0.75rem;
-      color: var(--ink);
-    }
-
-    .info-box p {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .info-box a {
-      color: var(--teal);
-    }
-
-    /* Two column layout */
-    .two-col {
-      display: grid;
-      gap: 2rem;
-    }
-
-    @media (min-width: 800px) {
-      .two-col {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-    }
-
-    /* Feature cards */
-    .feature-cards {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 700px) {
-      .feature-cards {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-      }
-    }
-
-    .feature-card {
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .feature-card h4 {
-      font-family: "Noto Serif TC", serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin: 0 0 0.75rem;
-      color: var(--ink);
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
   </style>
 </head>
 <body>
@@ -704,13 +631,12 @@
     <div class="wrap">
       <h1 class="brand">
         <span>UTaipei · Summer 2026</span>
-        北市大暑假<br>地球科學課程
+        北市大暑假<br>地球科學
       </h1>
-      <p class="hero-lead">把地震學變成可帶回教室的動手做實作——6週，從波形到防災教案。</p>
+      <p class="hero-lead">把地震學變成可帶回教室的動手實驗——六週，從波形到防災教案。</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#about">了解課程</a>
-        <a class="btn btn-ghost" href="#materials">教材資源</a>
-        <a class="btn btn-ghost" href="#weeks">6週課程</a>
+        <a class="btn btn-primary" href="#materials">打開教材套件</a>
+        <a class="btn btn-ghost" href="#weeks">看六週行程</a>
       </div>
     </div>
   </header>
@@ -719,163 +645,58 @@
     <section class="spirit" id="about">
       <div class="wrap spirit-grid reveal">
         <div>
-          <p class="section-kicker">About</p>
-          <h2 class="section-title">課程概述</h2>
-          <p class="section-text">為中小學現職教師設計的地震學、地球物理與 AI/Agent 輔助教學實作課程。教學生動，動手做，學習有用的技能讓教師能帶回教室。</p>
+          <p class="section-kicker">Course spirit</p>
+          <h2 class="section-title">教學相長，做出能用的東西</h2>
+          <p class="section-text">為中小學現職教師設計。主軸是地震學與地球物理，並導入 AI／Agent 與雲端工具，讓知識長成教案、網頁與課堂活動。</p>
+          <p class="meta-line">2026／7／17 起 · 每週四上午 · 共 6 週 · 每次 4 小時</p>
         </div>
         <blockquote class="spirit-quote">
-          不只是學地震學——而是讓教師能夠設計實用的地震教案，並將所學帶回教室應用。
+          不只是聽完地震學——而是親手把真實資料、工具與教案織在一起，帶回學校啟發學生。
         </blockquote>
       </div>
     </section>
 
-    <section class="seismic-journey" id="seismic-journey">
-      <div class="wrap reveal">
-        <p class="section-kicker">Featured</p>
-        <h2 class="section-title">🌍 地心震波奇幻之旅</h2>
-        <p class="section-text">完整的地震波教學套件，包含 21 張幻燈片、教師指南和學生工作表，採用 CLIL 教學法。</p>
-      </div>
-      <div class="wrap journey-grid">
-        <div class="journey-card reveal">
-          <h3>📚 教材資源</h3>
-          <p><strong>地震波幻燈片</strong>：21 張精美的教學投影片，涵蓋震波認識、彈簧實驗、走時圖分析等內容</p>
-          <p><strong>教師指南</strong>：完整的 80 分鐘課程流程，包含 CLIL 教學策略</p>
-          <p><strong>學生工作表</strong>：7 個部分的互動練習，配合課堂教學</p>
-        </div>
-        <div class="journey-card reveal">
-          <h3>🎯 教學目標</h3>
-          <ul>
-            <li>認識震波主角（P波、S波、表面波）</li>
-            <li>了解地震波的傳播方式</li>
-            <li>學習如何「聽」地球的聲音</li>
-            <li>解讀地震圖和走時曲線</li>
-            <li>掌握折射法和反射法原理</li>
-            <li>計算地層厚度</li>
-          </ul>
-        </div>
-        <div class="journey-card reveal">
-          <h3>👥 適用對象</h3>
-          <p><strong>年級</strong>：國小四年級至國中</p>
-          <p><strong>教學方法</strong>：CLIL (Content and Language Integrated Learning)</p>
-          <p><strong>課程時長</strong>：80 分鐘</p>
-          <p><strong>語言</strong>：中英文雙語教學</p>
-        </div>
-        <div class="journey-card reveal">
-          <h3>✨ 教學特色</h3>
-          <ul>
-            <li>互動實作：彈簧實驗、工作表練習</li>
-            <li>CLIL 教學：內容與語言整合學習</li>
-            <li>雙語教學：中英文並重</li>
-            <li>TPR 方法：肢體動作輔助教學</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="resources" id="materials">
+    <section class="materials" id="materials">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Materials</p>
-          <h2 class="section-title">教材資源</h2>
-          <p class="section-text">完整的教材套件，包含幻燈片、教師指南、學生工作表和參考資料。</p>
+          <p class="section-kicker">Teaching pack</p>
+          <h2 class="section-title">地心震波大探險</h2>
+          <p class="section-text">完整的地震波教學套件：幻燈片、教師指南與學生工作表。採 CLIL 雙語，適用國小五～六年級，約 80 分鐘。</p>
         </div>
-        
-        <div class="info-box reveal">
-          <h3>📖 主要教材</h3>
-          <p>完整的地震波教學套件，採用 CLIL 教學法，適合國小四年級至國中學生。</p>
-        </div>
-
         <ul class="res-links">
           <li>
             <a class="reveal" href="seismic_wave_slides.html">
               <span class="res-title">地震波幻燈片 <span class="res-arrow">→</span></span>
-              <span class="res-meta">21 張教學投影片，包含完整的 CLIL 教學內容</span>
+              <span class="res-meta">21 張投影片：震波認識、彈簧實驗、走時圖與折射／反射</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="seismic_wave_teacher_guide.html">
               <span class="res-title">教師指南 <span class="res-arrow">→</span></span>
-              <span class="res-meta">完整 80 分鐘課程流程，包含教學策略和提示</span>
+              <span class="res-meta">80 分鐘流程、CLIL 策略、關鍵句型與教學提示</span>
             </a>
           </li>
           <li>
             <a class="reveal" href="seismic_wave_worksheet.html">
               <span class="res-title">學生工作表 <span class="res-arrow">→</span></span>
-              <span class="res-meta">7 個部分的互動練習，配合課堂教學</span>
-            </a>
-          </li>
-          <li>
-              <span class="res-meta">一鍵整合表單/試算表/自動寄信的 Google Apps Script</span>
+              <span class="res-meta">7 個部分的互動練習，配合課堂實作</span>
             </a>
           </li>
         </ul>
-
-        <div class="info-box reveal">
-          <h3>🔗 外部資源</h3>
-          <p>
-            <a href="https://huggingface.co/spaces/oceanicdayi/Geophysics_day2" target="_blank">震測課程網頁 (Hugging Face Spaces)</a><br>
-            <a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank">折射震測原理教材 (Google Drive)</a><br>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank">作業1繳交表單</a>
-          </p>
-        </div>
+        <ul class="ext-links reveal">
+          <li><a href="https://huggingface.co/spaces/oceanicdayi/Geophysics_day2" target="_blank" rel="noopener">震測課程網頁</a> · Hugging Face Spaces</li>
+          <li><a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank" rel="noopener">折射震測原理教材</a> · Google Drive</li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank" rel="noopener">作業繳交表單</a> · Google Forms</li>
+        </ul>
       </div>
     </section>
-
-    <section class="spirit" id="knowledge">
-      <div class="wrap">
-        <div class="reveal">
-          <p class="section-kicker">Knowledge</p>
-          <h2 class="section-title">地震波知識</h2>
-          <p class="section-text">深入了解地震波的類型、特性和應用。</p>
-        </div>
-        
-        <div class="two-col">
-          <div class="reveal">
-            <h3>震波家族</h3>
-            <p><strong>體波 (Body Waves)</strong> — 在地球內部傳播：</p>
-            <ul>
-              <li><strong>P波（壓縮波）</strong>：速度最快，前後壓縮傳播，像彈簧。地震時最先感覺到上下跳動。</li>
-              <li><strong>S波（剪切波）</strong>：比P波慢，左右搖擺，像繩子甩動。對建築物破壞力強。</li>
-            </ul>
-            <p><strong>表面波 (Surface Waves)</strong> — 沿地表傳播：</p>
-            <ul>
-              <li><strong>洛夫波 (Love Wave)</strong>：水平左右晃動，像蛇扭動。</li>
-              <li><strong>雷利波 (Rayleigh Wave)</strong>：最慢但破壞最大，橢圓形滾動，像海浪，讓地面上下前後搖晃。</li>
-            </ul>
-            <p><em>重點：P波最快 → S波次之 → 表面波最慢。造成災害的主要是表面波。</em></p>
-          </div>
-          <div class="reveal">
-            <h3>走時分析</h3>
-            <p><strong>直達波走時</strong>：<code>T(X) = X/V₁</code></p>
-            <p><strong>速度與斜率關係</strong>：<code>V = 1/Slope = 1/(dT/dX)</code></p>
-            <p><strong>司乃耳定律</strong>：<code>sinθ₁/V₁ = sinθ₂/V₂</code></p>
-            <p><strong>折射波走時公式</strong>：<code>T_t = (2h·cosθ_c)/V₁ + X/V₂</code></p>
-            <p><strong>截時</strong>：<code>t_i = (2h·cosθ_c)/V₁</code></p>
-            <p><strong>反射波走時</strong>：<code>T² = t₀² + (X/V₁)²</code></p>
-            <p><strong>視速度</strong>：<code>V_ap = ΔX/ΔT = 1/Slope</code></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="flow">
-      <div class="wrap reveal">
-        <h2 class="flow-title">每週四小時怎麼過</h2>
-        <div class="flow-steps">
-          <div class="flow-step"><p>台大地震案例導入</p></div>
-          <div class="flow-step"><p>核心概念講解</p></div>
-          <div class="flow-step"><p>數據工具與教案實作</p></div>
-          <div class="flow-step"><p>作業講解與小組分享</p></div>
-        </div>
-      </div>
-    </div>
 
     <section class="weeks" id="weeks">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Schedule</p>
-          <h2 class="section-title">6 週課程</h2>
-          <p class="section-text">每週四上午四節。從台大地震研究所開放實驗室開始，一路走到野外觀測與期末成果展示。</p>
+          <p class="section-kicker">Six Thursdays · 2026</p>
+          <h2 class="section-title">六週行程</h2>
+          <p class="section-text">從環境建置與工具開始，經折射震測與 AI 教案，走到 CLIL 防災探究與期末發表。</p>
         </div>
         <ol class="week-list">
           <li class="week-item reveal">
@@ -888,42 +709,66 @@
             <span class="week-num">W02</span>
             <span class="week-date">7／24</span>
             <h3 class="week-topic">折射震測原理：探測校園底下的構造</h3>
-            <p class="week-task">作業：完成簡易震測實作 · <a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank">作業1繳交</a></p>
+            <p class="week-task">作業：完成簡易震測實作</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W03</span>
             <span class="week-date">7／31</span>
-            <h3 class="week-topic">AI工具使用：Antigravity IDE教學</h3>
+            <h3 class="week-topic">AI 工具使用：Antigravity IDE</h3>
             <p class="week-task">作業：完成震源定位教案簡報</p>
           </li>
-          <li class="week-item reveal">
+          <li class="week-item reveal is-next">
             <span class="week-num">W04</span>
             <span class="week-date">8／7</span>
-            <h3 class="week-topic">地震防災教學探究CLIL教學（1）：地震波頻率與地層物理特性-影像與聲音實驗</h3>
-            <p class="week-task">作業：地震波頻率實驗報告</p>
+            <h3 class="week-topic">CLIL 防災探究（1）：地震波頻率與地層——影像與聲音實驗</h3>
+            <p class="week-task">作業：地震波頻率實驗報告 · 本週</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W05</span>
             <span class="week-date">8／14</span>
-            <h3 class="week-topic">地震防災教學探究CLIL教學（2）：地震波頻率與地層物理特性-地震探測搜尋</h3>
+            <h3 class="week-topic">CLIL 防災探究（2）：地震波頻率與地層——地震探測搜尋</h3>
             <p class="week-task">作業：地震探測分析報告</p>
           </li>
           <li class="week-item reveal">
             <span class="week-num">W06</span>
             <span class="week-date">8／21</span>
             <h3 class="week-topic">學習成果報告</h3>
-            <p class="week-task">作業：期末教案作品 · 5—7 分鐘展示</p>
+            <p class="week-task">作業：期末教案作品 · 5–7 分鐘展示</p>
           </li>
         </ol>
       </div>
     </section>
+
+    <div class="flow">
+      <div class="wrap reveal">
+        <h2 class="flow-title">每週四小時怎麼過</h2>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <time>0:00–0:20</time>
+            <p>台灣地震案例導入</p>
+          </div>
+          <div class="flow-step">
+            <time>0:20–1:10</time>
+            <p>核心概念講解</p>
+          </div>
+          <div class="flow-step">
+            <time>1:10–3:20</time>
+            <p>資料工具與教案實作</p>
+          </div>
+          <div class="flow-step">
+            <time>3:20–4:00</time>
+            <p>作業說明與小組分享</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="tools" id="tools">
       <div class="wrap">
         <div class="reveal">
           <p class="section-kicker">Toolkit</p>
           <h2 class="section-title">課堂會用到的工具</h2>
-          <p class="section-text">從雲端協作到 AI agent，每樣都服務同一個目的：讓教學作品能帶出教室。</p>
+          <p class="section-text">每樣工具都指向同一件事：讓教案與作品走得出教室。</p>
         </div>
         <div class="tool-flow">
           <div class="tool-row reveal">
@@ -932,76 +777,59 @@
           </div>
           <div class="tool-row reveal">
             <h3 class="tool-name">GitHub · Pages</h3>
-            <p class="tool-desc">保存教案與課程，用 Pages 公開展示互動網頁與期末作品。</p>
+            <p class="tool-desc">保存教案與程式，用 Pages 公開展示互動網頁與期末作品。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">Antigravity IDE</h3>
+            <p class="tool-desc">AI 輔助撰寫教案、簡報與震源定位活動原型。</p>
+          </div>
+          <div class="tool-row reveal">
+            <h3 class="tool-name">Hugging Face · 感測器</h3>
+            <p class="tool-desc">震測 Demo Space、手機或 USB 感測器，把真實資料帶進課堂。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="spirit" id="clil">
+    <section class="method" id="method">
       <div class="wrap">
         <div class="reveal">
-          <p class="section-kicker">Methodology</p>
-          <h2 class="section-title">CLIL 教學法</h2>
-          <p class="section-text">內容與語言整合學習 (Content and Language Integrated Learning)，讓學生在學習科學知識的同時也能提升英語能力。</p>
+          <p class="section-kicker">CLIL · Evaluation</p>
+          <h2 class="section-title">怎麼教、怎麼評</h2>
+          <p class="section-text">內容與語言整合學習（CLIL）：科學概念為主，英語詞彙與句型為輔。</p>
         </div>
-        
-        <div class="feature-cards">
-          <div class="feature-card reveal">
-            <h4>雙語暖身</h4>
-            <p>使用中英文混合的問題引導，建立舒適的學習環境</p>
-          </div>
-          <div class="feature-card reveal">
-            <h4>關鍵字庫</h4>
-            <p>每個活動提供 3-5 個英文關鍵字，輔助學生理解</p>
-          </div>
-          <div class="feature-card reveal">
-            <h4>TPR 方法</h4>
-            <p>用肢體動作示範 wave、compress、shake 等動詞</p>
-          </div>
-          <div class="feature-card reveal">
-            <h4>Think-Pair-Share</h4>
-            <p>先個人思考，再討論，最後分享，提升參與度</p>
-          </div>
-          <div class="feature-card reveal">
-            <h4>Exit Ticket</h4>
-            <p>課程結束前完成簡短反思，鞏固所學</p>
-          </div>
-          <div class="feature-card reveal">
-            <h4>70/30 原則</h4>
-            <p>70% 中文 + 30% 英文講解，平衡理解與語言學習</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="spirit" id="grading">
-      <div class="wrap">
-        <div class="reveal">
-          <p class="section-kicker">Evaluation</p>
-          <h2 class="section-title">評分方式</h2>
-        </div>
-        
-        <div class="two-col">
-          <div class="reveal">
-            <h3>評分比例</h3>
-            <ul>
-              <li><strong>每週可交作業</strong>：60% (每週 10%，共 6 週)</li>
-              <li><strong>課堂參與與討論</strong>：20% (包含小組討論、工具實作、教案分享)</li>
-              <li><strong>期末成果展示</strong>：20% (第 6 週作業與展示)</li>
-            </ul>
-          </div>
-          <div class="reveal">
-            <h3>課程目標</h3>
-            <ul>
-              <li>了解地震學的基本概念</li>
-              <li>熟悉地震觀測工具和資料</li>
-              <li>學會使用 AI/Agent 工具輔助教學</li>
-              <li>設計實用的地震教案</li>
-              <li>將所學帶回教室應用</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="method-list">
+          <li class="reveal">
+            <strong>雙語暖身</strong>
+            <span>中英混合提問，建立安心的發言空間</span>
+          </li>
+          <li class="reveal">
+            <strong>關鍵字庫</strong>
+            <span>每個活動先帶 3–5 個英文關鍵字，配合手勢</span>
+          </li>
+          <li class="reveal">
+            <strong>70／30 原則</strong>
+            <span>約 70% 中文講解核心概念，30% 英文術語與句型</span>
+          </li>
+          <li class="reveal">
+            <strong>TPR · Think-Pair-Share</strong>
+            <span>肢體示範波的運動；先想、再對、後分享</span>
+          </li>
+        </ul>
+        <ul class="grade-list">
+          <li class="reveal">
+            <strong><span class="grade-pct">60%</span> 每週作業</strong>
+            <span>每週 10%，共六週可檢核作業</span>
+          </li>
+          <li class="reveal">
+            <strong><span class="grade-pct">20%</span> 課堂參與</strong>
+            <span>小組討論、工具實作、教案分享</span>
+          </li>
+          <li class="reveal">
+            <strong><span class="grade-pct">20%</span> 期末展示</strong>
+            <span>第 6 週教案作品與 5–7 分鐘口頭報告</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -1009,7 +837,8 @@
   <footer>
     <div class="wrap">
       <p class="brand-mini">北市大暑假地球科學課程 · 2026</p>
-      <p>地震學 · 地球物理 · AI/Agent 輔助教學實作。授權採用 <a href="LICENSE">Apache License 2.0</a>。</p>
+      <p>地震學 · 地球物理 · AI／Agent 輔助教學實作。授權採 <a href="LICENSE">Apache License 2.0</a>。<br>
+      <a href="https://github.com/oceanicdayi/Utaipei_2026_summer">GitHub Repo</a></p>
     </div>
   </footer>
 
