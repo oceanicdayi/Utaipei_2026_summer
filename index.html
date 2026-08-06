@@ -364,6 +364,70 @@
 
     .ext-links a { font-weight: 500; }
 
+    .clil-embed {
+      background: var(--mist);
+    }
+
+    .clil-intro {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 840px) {
+      .clil-intro {
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+        align-items: start;
+      }
+    }
+
+    .clil-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.4rem;
+      box-shadow: 0 18px 48px rgba(10, 61, 66, 0.08);
+    }
+
+    .clil-card h3 {
+      margin: 0 0 0.75rem;
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.2rem;
+    }
+
+    .clil-card p,
+    .clil-card li {
+      color: var(--ink-soft);
+    }
+
+    .clil-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .clil-frame-shell {
+      margin-top: 2rem;
+      padding: 0.8rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(10, 61, 66, 0.08), rgba(46, 168, 164, 0.18));
+      box-shadow: 0 22px 60px rgba(10, 61, 66, 0.12);
+    }
+
+    .clil-frame {
+      display: block;
+      width: 100%;
+      min-height: 1200px;
+      border: 0;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    @media (max-width: 720px) {
+      .clil-frame {
+        min-height: 820px;
+      }
+    }
+
     /* Weeks */
     .weeks { background: var(--mist); }
 
@@ -1042,6 +1106,12 @@
             </a>
           </li>
           <li>
+            <a class="reveal" href="#clil-lesson">
+              <span class="res-title">CLIL 雙語教材內嵌版 <span class="res-arrow">→</span></span>
+              <span class="res-meta">直接在首頁瀏覽 `index_clil.html` 的完整教學內容與活動設計</span>
+            </a>
+          </li>
+          <li>
             <a class="reveal" href="README.md">
               <span class="res-title">學員登記指南 <span class="res-arrow">→</span></span>
               <span class="res-meta">一鍵整合表單/試算表/自動寄信的 Google Apps Script</span>
@@ -1053,6 +1123,38 @@
           <li><a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank" rel="noopener">折射震測原理教材</a> · Google Drive</li>
           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank" rel="noopener">作業繳交表單</a> · Google Forms</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="clil-embed" id="clil-lesson">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Embedded lesson</p>
+          <h2 class="section-title">CLIL 雙語教材全文</h2>
+          <p class="section-text">已將 <code>index_clil.html</code> 直接嵌入首頁，方便在同一頁查看完整英文教學內容、檢核點與活動設計。</p>
+        </div>
+        <div class="clil-intro">
+          <div class="clil-card reveal">
+            <h3>這個區塊包含</h3>
+            <ul>
+              <li>Learning Objectives、Key Vocabulary 與 Warm-up</li>
+              <li>六個地震波主題站點與 CLIL 檢核問題</li>
+              <li>Hands-on activity、self-assessment 與延伸作業</li>
+            </ul>
+          </div>
+          <div class="clil-card reveal">
+            <h3>使用方式</h3>
+            <p>可直接在下方捲動閱讀，若要單獨開啟原始頁面，也可使用 <a href="index_clil.html">CLIL 教材獨立頁面</a>。</p>
+          </div>
+        </div>
+        <div class="clil-frame-shell reveal">
+          <iframe
+            class="clil-frame"
+            src="index_clil.html"
+            title="CLIL 雙語教材全文"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
     </section>
 
