@@ -606,6 +606,359 @@
 
     footer p { margin: 0; max-width: 42ch; }
     footer a { color: var(--foam); }
+
+    /* Info boxes */
+    .info-box {
+      background: linear-gradient(135deg, rgba(46, 168, 164, 0.1), rgba(212, 160, 74, 0.1));
+      border-left: 4px solid var(--teal-bright);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .info-box h3 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+    }
+
+    .info-box p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .info-box a {
+      color: var(--teal);
+    }
+
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 800px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    /* Feature cards */
+    .feature-cards {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .feature-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .feature-card h4 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Focused Weekly Flow Section */
+    .weekly-flow {
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
+      background: var(--paper);
+    }
+
+    .focus-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2.5rem;
+    }
+
+    .focus-item {
+      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-item:last-child {
+      border-bottom: none;
+    }
+
+    .focus-time {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--teal-bright);
+      min-width: 9rem;
+      text-align: right;
+      position: relative;
+    }
+
+    @media (min-width: 800px) {
+      .focus-time {
+        text-align: center;
+        min-width: 11rem;
+      }
+    }
+
+    .focus-content {
+      flex: 1;
+      position: relative;
+    }
+
+    .focus-content::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 0.85rem;
+      width: 10px;
+      height: 10px;
+      background: var(--teal-bright);
+      border-radius: 50%;
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--teal-bright);
+    }
+
+    @media (min-width: 800px) {
+      .focus-content::before {
+        left: 0;
+      }
+    }
+
+    .focus-content h3 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+    }
+
+    .focus-content p {
+      margin: 0 0 1.25rem;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .method-tags,
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .method-tag,
+    .tool-tag {
+      display: inline-block;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: rgba(46, 168, 164, 0.12);
+      color: var(--teal);
+      border: 1px solid rgba(46, 168, 164, 0.2);
+    }
+
+    /* Weekly Flow Section */
+    .weekly-flow {
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
+      background: var(--paper);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      margin-top: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 2rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal-bright), var(--teal));
+      border-radius: 2px;
+    }
+
+    @media (min-width: 800px) {
+      .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-time {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--teal-bright);
+      min-width: 8rem;
+      text-align: right;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 800px) {
+      .timeline-time {
+        text-align: center;
+        min-width: 10rem;
+      }
+    }
+
+    .timeline-content {
+      flex: 1;
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      left: -1.25rem;
+      top: 0.75rem;
+      width: 12px;
+      height: 12px;
+      background: var(--teal-bright);
+      border-radius: 50%;
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--teal-bright);
+    }
+
+    @media (min-width: 800px) {
+      .timeline-content::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-content h3 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+      color: var(--ink);
+    }
+
+    .timeline-content p {
+      margin: 0 0 1rem;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .clil-methods,
+    .tools-used,
+    .assessment-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .clil-badge,
+    .tool-badge,
+    .assessment-badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: rgba(46, 168, 164, 0.12);
+      color: var(--teal);
+      border: 1px solid rgba(46, 168, 164, 0.2);
+    }
+
+    .flow-highlights {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 800px) {
+      .flow-highlights {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .highlight-card {
+      background: var(--mist);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .highlight-card h4 {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
+
+    .highlight-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .highlight-card li {
+      margin: 0 0 0.5rem;
+      padding: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .highlight-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 6px;
+      height: 6px;
+      background: var(--teal-bright);
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
@@ -679,7 +1032,13 @@
           <li>
             <a class="reveal" href="seismic_wave_worksheet.html">
               <span class="res-title">學生工作表 <span class="res-arrow">→</span></span>
-              <span class="res-meta">7 個部分的互動練習，配合課堂實作</span>
+              <span class="res-meta">7 個部分的互動練習，配合課堂教學</span>
+            </a>
+          </li>
+          <li>
+            <a class="reveal" href="README.md">
+              <span class="res-title">學員登記指南 <span class="res-arrow">→</span></span>
+              <span class="res-meta">一鍵整合表單/試算表/自動寄信的 Google Apps Script</span>
             </a>
           </li>
         </ul>
@@ -688,6 +1047,83 @@
           <li><a href="https://drive.google.com/file/d/1PuD_3LgmKCvVPejcI6DjGOpIT6-Qkvyb/view?usp=drivesdk" target="_blank" rel="noopener">折射震測原理教材</a> · Google Drive</li>
           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScdoUDs5DLrZKqvYzcc7H_1mzK6nNUl46Ai7t34xtH6U0iXwQ/viewform" target="_blank" rel="noopener">作業繳交表單</a> · Google Forms</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="spirit" id="knowledge">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="section-kicker">Knowledge</p>
+          <h2 class="section-title">地震波知識</h2>
+          <p class="section-text">深入了解地震波的類型、特性和應用。</p>
+        </div>
+        
+        <div class="two-col">
+          <div class="reveal">
+            <h3>震波家族</h3>
+            <p><strong>體波 (Body Waves)</strong> — 在地球內部傳播：</p>
+            <ul>
+              <li><strong>P波（壓縮波）</strong>：速度最快，前後壓縮傳播，像彈簧。地震時最先感覺到上下跳動。</li>
+              <li><strong>S波（剪切波）</strong>：比P波慢，左右搖擺，像繩子甩動。對建築物破壞力強。</li>
+            </ul>
+            <p><strong>表面波 (Surface Waves)</strong> — 沿地表傳播：</p>
+            <ul>
+              <li><strong>洛夫波 (Love Wave)</strong>：水平左右晃動，像蛇扭動。</li>
+              <li><strong>雷利波 (Rayleigh Wave)</strong>：最慢但破壞最大，橢圓形滾動，像海浪，讓地面上下前後搖晃。</li>
+            </ul>
+            <p><em>重點：P波最快 → S波次之 → 表面波最慢。造成災害的主要是表面波。</em></p>
+          </div>
+          <div class="reveal">
+            <h3>走時分析</h3>
+            <p><strong>直達波走時</strong>：<code>T(X) = X/V₁</code></p>
+            <p><strong>速度與斜率關係</strong>：<code>V = 1/Slope = 1/(dT/dX)</code></p>
+            <p><strong>司乃耳定律</strong>：<code>sinθ₁/V₁ = sinθ₂/V₂</code></p>
+            <p><strong>折射波走時公式</strong>：<code>T_t = (2h·cosθ_c)/V₁ + X/V₂</code></p>
+            <p><strong>截時</strong>：<code>t_i = (2h·cosθ_c)/V₁</code></p>
+            <p><strong>反射波走時</strong>：<code>T² = t₀² + (X/V₁)²</code></p>
+            <p><strong>視速度</strong>：<code>V_ap = ΔX/ΔT = 1/Slope</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="weekly-flow" id="weekly-flow">
+      <div class="wrap reveal">
+        <p class="section-kicker">Weekly Schedule</p>
+        <h2 class="section-title">每週四小時怎麼過</h2>
+        <p class="section-text">完整的地震教學流程，包含理論講解、互動實作和工具應用。</p>
+      </div>
+      
+      <div class="wrap">
+        <div class="focus-timeline">
+          <div class="focus-item reveal">
+            <div class="focus-time">08:10-10:00</div>
+            <div class="focus-content">
+              <h3>地震學與地球物理核心概念講解</h3>
+              <p>包含 CLIL 教學法、互動實作、地震波認識和地球物理認識。</p>
+              <div class="method-tags">
+                <span class="method-tag">雙語暖身</span>
+                <span class="method-tag">TPR 方法</span>
+                <span class="method-tag">Think-Pair-Share</span>
+                <span class="method-tag">Exit Ticket</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="focus-item reveal">
+            <div class="focus-time">10:00-12:00</div>
+            <div class="focus-content">
+              <h3>數據工具與教案製作</h3>
+              <p>使用各種工具發揮教學和學習。包含手機感測器、彈簧實驗、DIY 地震儀等。</p>
+              <div class="tool-tags">
+                <span class="tool-tag">手機 App</span>
+                <span class="tool-tag">彈簧模擬</span>
+                <span class="tool-tag">DIY 地震儀</span>
+                <span class="tool-tag">Google Sheets</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
