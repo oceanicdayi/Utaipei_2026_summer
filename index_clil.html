@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey to the Center of the Earth's Waves - CLIL Geophysics Lesson</title>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #7f8c8d;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .note {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .note p {
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .formula-box {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 25px auto;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #2c3e50;
+            border: 1px solid #ddd;
+        }
+        .derivation-section {
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            margin-top: 25px;
+            padding: 15px;
+        }
+        .derivation-section h3 {
+            color: #3498db;
+            border: none;
+            margin-top: 0;
+        }
+        .derivation-step {
+            text-align: left;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+        .hero-image {
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        /* ===== CLIL Teaching Elements ===== */
+        .clil-objectives {
+            background-color: #e8f5e9;
+            border: 2px solid #2e7d32;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+        .clil-objectives h2 {
+            color: #2e7d32;
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        .clil-objectives h3 {
+            color: #1b5e20;
+            border-bottom: none;
+            margin-top: 12px;
+            font-size: 1.2em;
+        }
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        .vocab-table th, .vocab-table td {
+            border: 1px solid #bbb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vocab-table th {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .vocab-table tr:nth-child(even) {
+            background-color: #f4f9fd;
+        }
+        .vocab-term {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .warmup-box {
+            background-color: #fff8e1;
+            border-left: 5px solid #f9a825;
+            padding: 15px 18px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warmup-box h3 {
+            color: #e65100;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .checkpoint {
+            background-color: #ede7f6;
+            border: 1px dashed #5e35b1;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 20px 0;
+        }
+        .checkpoint h4 {
+            color: #4527a0;
+            margin: 0 0 8px 0;
+        }
+        .checkpoint ol, .checkpoint ul {
+            margin: 5px 0;
+        }
+        .discussion-box {
+            background-color: #fce4ec;
+            border-left: 5px solid #c2185b;
+            padding: 15px 18px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .discussion-box h4 {
+            color: #880e4f;
+            margin: 0 0 8px 0;
+        }
+        .activity-box {
+            background-color: #e1f5fe;
+            border: 2px solid #0277bd;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 25px 0;
+        }
+        .activity-box h3 {
+            color: #01579b;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .lang-tip {
+            background-color: #f1f8e9;
+            border-left: 4px solid #7cb342;
+            padding: 10px 14px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.92em;
+        }
+        .lang-tip strong {
+            color: #33691e;
+        }
+        .assessment-box {
+            background-color: #fbeee0;
+            border: 2px solid #ef6c00;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 25px 0;
+        }
+        .assessment-box h3 {
+            color: #e65100;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .sentence-frame {
+            background-color: #fff;
+            border: 1px dashed #888;
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Journey to the Center of the Earth's Waves 🌍</h1>
+        <p>Alright, class—it's time to start our lesson!</p>
+        <p>Today, we're embarking on a fantastical "journey through the Earth's seismic waves"! Have you ever wondered what actually happens underground when an earthquake occurs? How do we know what the inside of the Earth looks like? The secret weapon is "seismic waves"!</p>
+        <p>These images are like treasure maps for geophysicists, guiding us step by step to unravel the mysteries of the Earth. Next, your teacher will help you understand these diagrams, and you'll discover that geophysics can be so much fun!</p>
+
+        <img src="seismic_exploration_hero.png" alt="Illustration of geophysicists using seismic waves to explore underground structures" class="hero-image">
+        <p style="text-align: center; font-style: italic; color: #555;">Figure: Uncovering secrets buried deep underground through surface detection and data analysis—this is the charm of seismic wave exploration!</p>
+
+        <!-- ===== CLIL: Learning Objectives ===== -->
+        <div class="clil-objectives">
+            <h2>📋 Learning Objectives</h2>
+            <p style="margin-top:0;">By the end of this lesson, you will be able to:</p>
+            <h3>Content Objectives (Geophysics)</h3>
+            <ul>
+                <li>Identify the four main types of seismic waves (P, S, Love, Rayleigh) and describe how each moves.</li>
+                <li>Explain how a source–receiver survey setup is used to probe underground structures.</li>
+                <li>Interpret a travel-time graph and relate its slope to wave velocity.</li>
+                <li>Apply Snell's Law and the critical-angle formula to derive refracted-wave travel time.</li>
+                <li>Distinguish between refraction and reflection methods and their real-world uses.</li>
+            </ul>
+            <h3>Language Objectives (English)</h3>
+            <ul>
+                <li>Use geophysics key vocabulary (e.g., <em>refraction, reflection, travel time, apparent velocity</em>) accurately in speech and writing.</li>
+                <li>Describe wave motion using comparatives and analogies (e.g., "P-waves travel faster than S-waves, just like…").</li>
+                <li>Read and interpret a mathematical formula aloud, explaining each symbol in English.</li>
+                <li>Justify a conclusion using cause-and-effect language (e.g., "Because the slope is steeper, the velocity is…").</li>
+            </ul>
+            <h3>Thinking / 4Cs Objectives</h3>
+            <ul>
+                <li><strong>Culture</strong>: Appreciate how seismic methods protect communities from earthquake and resource risks.</li>
+                <li><strong>Communication</strong>: Collaborate to present a wave-type comparison to peers.</li>
+                <li><strong>Cognition</strong>: Analyze graphs and derive formulas step by step.</li>
+            </ul>
+        </div>
+
+        <!-- ===== CLIL: Key Vocabulary ===== -->
+        <div class="warmup-box">
+            <h3>📖 Key Vocabulary Glossary</h3>
+            <p>Before we start, skim these terms. You'll meet them again along the journey!</p>
+            <table class="vocab-table">
+                <tr><th>Term</th><th>Part of Speech</th><th>Definition</th><th>Chinese 對照</th></tr>
+                <tr><td class="vocab-term">Seismic wave</td><td>n.</td><td>A wave of energy that travels through the Earth, usually caused by an earthquake or an artificial source.</td><td>地震波</td></tr>
+                <tr><td class="vocab-term">Body wave</td><td>n.</td><td>A wave that travels through the Earth's interior (P-waves and S-waves).</td><td>體波</td></tr>
+                <tr><td class="vocab-term">Surface wave</td><td>n.</td><td>A wave that travels along the Earth's surface (Love and Rayleigh waves).</td><td>表面波</td></tr>
+                <tr><td class="vocab-term">Compression</td><td>n.</td><td>A pushing force that squeezes particles together.</td><td>壓縮</td></tr>
+                <tr><td class="vocab-term">Shear</td><td>n.</td><td>A sideways cutting force that deforms a material.</td><td>剪切</td></tr>
+                <tr><td class="vocab-term">Amplitude</td><td>n.</td><td>The size of a wave's oscillation; how "big" the shaking is.</td><td>振幅</td></tr>
+                <tr><td class="vocab-term">Frequency</td><td>n.</td><td>How many wave cycles pass a point per second.</td><td>頻率</td></tr>
+                <tr><td class="vocab-term">Dispersion</td><td>n.</td><td>When waves of different frequencies travel at different speeds.</td><td>頻散</td></tr>
+                <tr><td class="vocab-term">Source</td><td>n.</td><td>The point where seismic energy is released.</td><td>震源</td></tr>
+                <tr><td class="vocab-term">Receiver</td><td>n.</td><td>A sensor that detects arriving seismic waves.</td><td>接收器</td></tr>
+                <tr><td class="vocab-term">Travel time</td><td>n.</td><td>The time it takes for a wave to go from source to receiver.</td><td>走時</td></tr>
+                <tr><td class="vocab-term">Slope</td><td>n.</td><td>The steepness of a line on a graph (rise over run).</td><td>斜率</td></tr>
+                <tr><td class="vocab-term">Refraction</td><td>n.</td><td>The bending of a wave as it passes into a faster medium.</td><td>折射</td></tr>
+                <tr><td class="vocab-term">Reflection</td><td>n.</td><td>The bouncing of a wave off a boundary between two layers.</td><td>反射</td></tr>
+                <tr><td class="vocab-term">Critical angle</td><td>n.</td><td>The incident angle that makes the refracted wave travel along the boundary.</td><td>臨界角</td></tr>
+                <tr><td class="vocab-term">Intercept time</td><td>n.</td><td>Where the refraction travel-time line crosses the time axis.</td><td>截時</td></tr>
+                <tr><td class="vocab-term">Apparent velocity</td><td>n.</td><td>The horizontal speed of a wavefront sweeping across the surface.</td><td>視速度</td></tr>
+            </table>
+            <div class="lang-tip">
+                <strong>Language Tip:</strong> Many geophysics words share roots with everyday English.
+                <em>"Compression"</em> comes from <em>compress</em> (press together).
+                <em>"Dispersed"</em> comes from <em>disperse</em> (spread out).
+                Spotting roots helps you guess meanings!
+            </div>
+        </div>
+
+        <!-- ===== CLIL: Warm-up / Pre-reading ===== -->
+        <div class="warmup-box">
+            <h3>🔥 Warm-up: Think Before You Read</h3>
+            <p>Discuss with a partner before we start. Use the sentence frames below if you need help.</p>
+            <ol>
+                <li>Have you ever felt an earthquake? What did it feel like?</li>
+                <li>If you dropped a stone in a pond, what would you see? How is this like an earthquake?</li>
+                <li>How can scientists know what is deep underground <em>without</em> digging a hole?</li>
+            </ol>
+            <div class="sentence-frame">I think scientists can discover underground structures by ________________________.</div>
+            <div class="sentence-frame">A wave is like ________________________ because ________________________.</div>
+        </div>
+
+        <h2>Station 1: Meet Our Seismic Wave Stars!</h2>
+        <p>First, let's get to know the seismic wave family. Imagine dropping a stone in the middle of a pool—ripples spread out in concentric circles on the water's surface, right? Seismic waves are like ripples inside the Earth, only they're far more complex and travel much faster!</p>
+        <p>They are mainly divided into two major families:</p>
+        <ul>
+            <li><strong>Body Waves</strong>: They are the vanguard, traveling through the Earth's "body" (interior).</li>
+            <li><strong>Surface Waves</strong>: They are the followers, primarily traveling along the Earth's surface, and they're the main culprits behind building shaking!</li>
+        </ul>
+        <p>Let's take a look at the first diagram:</p>
+        <img src="1000030020.jpg" alt="Diagram showing different types of seismic waves">
+        <p>This diagram clearly illustrates the "dance steps" of different seismic waves.</p>
+        <h3>Body Waves</h3>
+        <ul>
+            <li><strong>P-wave (Compressional Wave)</strong>: It's the fastest, like a speed demon! Its propagation mode is "push-pull compression," just like a spring. Imagine a crowded subway where someone pushes from behind, and the force travels wave by wave forward—that's the P-wave. So when an earthquake happens, the first little up-and-down jolt you feel is usually the P-wave arriving!</li>
+            <li><strong>S-wave (Shear Wave)</strong>: It's slower than the P-wave, an elegant dancer. Its dance step is "side-to-side swaying," like a swinging rope, moving up and down or left and right. This kind of shaking is very destructive to buildings!</li>
+        </ul>
+        <h3>Surface Waves</h3>
+        <ul>
+            <li><strong>Love Wave</strong>: It's similar to the S-wave, also swaying side to side, but only moving on the horizontal plane, slithering like a snake along the ground.</li>
+            <li><strong>Rayleigh Wave</strong>: It's the slowest, but the most complex destroyer! Its dance step is "elliptical rolling," just like ocean waves, making the ground roll up and down and back and forth. When you feel the ground swaying like you're on a boat, that's the Rayleigh wave at work.</li>
+        </ul>
+        <div class="note">
+            <p><strong>Key Notes</strong>: P-waves are fastest, S-waves second, and surface waves are slowest. Surface waves cause the most damage!</p>
+        </div>
+
+        <!-- ===== CLIL: Checkpoint 1 ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 1: Wave Types</h4>
+            <ol>
+                <li>Which wave arrives first at a receiver: P, S, Love, or Rayleigh? Why?</li>
+                <li>Sort the four waves from fastest to slowest.</li>
+                <li>Which wave causes the most damage to buildings? Explain using the word <em>amplitude</em>.</li>
+            </ol>
+            <div class="sentence-frame">The ______ wave arrives first because it travels the ______ (fastest / slowest).</div>
+            <div class="sentence-frame">Surface waves cause more damage because their ______ is larger.</div>
+        </div>
+
+        <!-- ===== CLIL: Discussion 1 ===== -->
+        <div class="discussion-box">
+            <h4>💬 Talk About It</h4>
+            <p>Work in pairs. Pick one wave type and explain its "dance" to your partner using a hand gesture. Your partner guesses which wave it is. Swap roles!</p>
+            <div class="sentence-frame">This wave moves by ________________________, so it is a ______ wave.</div>
+        </div>
+
+        <h2>Station 2: How Do Scientists "Listen" to the Earth?</h2>
+        <p>We can't drill down to the Earth's core to explore, so how do we discover the secrets underground? It's simple—we place many super-sensitive "ears" on the surface—<strong>Receivers</strong>—to detect seismic wave signals.</p>
+        <img src="1000030022.jpg" alt="Diagram showing source and receiver setup">
+        <p>This diagram shows the basic setup for geophysical exploration. We use a <strong>Source</strong>, such as controlled explosives or a heavy hammer, to "knock" on the ground and create an artificial mini-earthquake. Then, we place a row of <strong>Receivers</strong> at different distances to record when different types of seismic waves arrive.</p>
+        <p>What is this like? Imagine firing a starting gun at the starting line, with different runners (P-waves, S-waves, surface waves) running forward at different speeds. We set up several stopwatches (receivers) along the way to record when they pass by. With these time records, we can work backwards to determine the condition of the track (the underground structure)!</p>
+
+        <!-- ===== CLIL: Checkpoint 2 ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 2: The Survey Setup</h4>
+            <ol>
+                <li>Label a sketch: mark the <em>source</em>, <em>receiver</em>, and <em>ground surface</em>.</li>
+                <li>Why do we need <em>more than one</em> receiver to understand underground structure?</li>
+                <li>Complete the analogy: The source is like a ____________, and the receivers are like ____________.</li>
+            </ol>
+        </div>
+
+        <h2>Station 3: Decoding the Seismic Wave "Delivery Notice"</h2>
+        <p>The signal received by a receiver, when plotted, is called a <strong>Seismic Trace</strong>. Let's look at this diagram:</p>
+        <img src="1000030030.jpg" alt="Seismogram recorded by a single receiver">
+        <p>This diagram has two parts: part (a) shows the positions of the source and receiver along with the wave propagation path, and part (b) is the seismogram recorded by this receiver. The Y-axis is <strong>Travel Time</strong>.</p>
+        <p>Let's read this "delivery notice" like a package tracking app:</p>
+        <ol>
+            <li><strong>First to arrive (Ding-dong! P-wave is here!)</strong>: P-waves are the fastest, so they're recorded first. Their amplitude (the amount of shaking) is usually relatively small.</li>
+            <li><strong>Next to arrive (Ding-dong! S-wave is here!)</strong>: S-waves follow close behind, and their amplitude is usually larger than P-waves.</li>
+            <li><strong>The last heavyweight package (Surface waves appear!)</strong>: Surface waves (Love waves and Rayleigh waves) travel the slowest, so they arrive last. But look at their amplitude—isn't it large and long-lasting? This is why the most intense surface shaking is usually caused by surface waves.</li>
+        </ol>
+        <p>Did you also notice a characteristic of surface waves called <strong>"Dispersion"</strong>? This means that surface waves of different frequencies (which you can think of as different wavelengths) travel at different speeds! Usually, low-frequency waves travel faster and high-frequency waves travel slower. So the signal gets stretched out, forming a beautiful spindle shape.</p>
+
+        <!-- ===== CLIL: Checkpoint 3 ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 3: Reading a Seismogram</h4>
+            <ol>
+                <li>On a seismogram, which axis shows travel time? Which shows shaking?</li>
+                <li>What does a <em>large amplitude</em> tell us about the shaking?</li>
+                <li>Explain <em>dispersion</em> in your own words in one sentence.</li>
+            </ol>
+            <div class="lang-tip">
+                <strong>Language Tip:</strong> Use <em>"The ______ the ______, the ______ the ______"</em> to compare.
+                Example: <em>The lower the frequency, the faster the wave.</em>
+            </div>
+        </div>
+
+        <h2>Station 4: From Points to Lines—Seeing Through Underground Structures!</h2>
+        <p>If we only place one receiver, the information we get is very limited. So, geophysicists place several, or even thousands, of receivers along a survey line! By arranging all receivers' records in order of their distance from the source, we get this super cool diagram:</p>
+        <img src="1000030034.jpg" alt="Arrangement of seismic records from multiple receivers">
+        <p>The X-axis of this diagram is <strong>Distance from the source</strong>, and the Y-axis is <strong>Travel Time</strong>. Each vertical line represents one receiver's record.</p>
+        <p>What patterns do you notice?</p>
+        <ul>
+            <li><strong>The farther the distance, the later the arrival time</strong>: This makes sense! The farther you run, the more time it takes.</li>
+            <li><strong>P-waves, S-waves, and R-waves form beautiful diagonal lines</strong>: Connecting the P-wave arrival times recorded by each receiver forms a diagonal line. The <strong>slope</strong> of this line is actually related to the wave speed! The smaller the slope (the steeper the line), the faster the speed. You can clearly see that the P-wave line is the steepest, S-waves are second, and R-waves (surface waves) are the gentlest.</li>
+            <li><strong>The dispersion phenomenon is more obvious</strong>: In the surface wave (R-wave) region, you can see the waveform stretched out very wide—this is the "dispersion" mentioned earlier.</li>
+        </ul>
+        <p>By analyzing the slopes and shapes of these lines, scientists can work backwards to determine the velocity and thickness of rock layers at different depths underground, and even infer what type of rock or geological structure might be there. This is how we can "see" through the Earth without drilling!</p>
+
+        <!-- ===== CLIL: Checkpoint 4 ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 4: Travel-Time Patterns</h4>
+            <ol>
+                <li>On a travel-time graph, what does a <em>steeper</em> line mean—faster or slower speed?</li>
+                <li>Why does the P-wave line have the steepest slope?</li>
+                <li>Describe the relationship between distance and travel time using <em>"The farther… the later…"</em>.</li>
+            </ol>
+        </div>
+
+        <h2>Station 5: From Slope to Velocity—Unlocking Underground Secrets</h2>
+        <p>In the previous station, we mentioned that the P-wave line is the "steepest," representing the fastest speed. Now, we're going to turn this into a precise mathematical formula! This is also one of the core skills of geophysicists.</p>
+        <img src="1000030038.jpg" alt="Diagram showing the relationship between travel-time curve slope and velocity">
+        <p>We defined the slope from the diagram, and the velocity happens to be the reciprocal of the slope. For a direct wave traveling along the surface, the relationship between its travel time $T$ and distance $X$ is very simple:</p>
+        <div class="formula-box">
+            Direct Wave Travel Time:
+            $$ T(X) = \frac{X}{V_1} $$
+        </div>
+        <p>This formula tells us that travel time and distance have a linear relationship, so it appears as a straight line passing through the origin on the graph. Its slope, which is $dT/dX$, equals $1/V_1$. Therefore, we can easily determine the velocity of the first layer, $V_1$.</p>
+        <div class="formula-box">
+            Velocity vs. Slope:
+            $$ V = \frac{1}{\text{Slope}} = \frac{1}{dT/dX} $$
+        </div>
+
+        <!-- ===== CLIL: Checkpoint 5 ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 5: Slope & Velocity</h4>
+            <ol>
+                <li>If the slope of a line is 0.002 s/m, what is the wave velocity?</li>
+                <li>Explain in English: why is velocity the <em>reciprocal</em> of slope?</li>
+                <li>Read the formula $T(X) = X/V_1$ aloud and name every symbol.</li>
+            </ol>
+            <div class="sentence-frame">Velocity equals one divided by ______, so a smaller slope means a ______ velocity.</div>
+        </div>
+
+        <h3>Advanced Exploration: When Seismic Waves Encounter Different Rock Layers</h3>
+        <p>When a seismic wave travels from one layer to another faster layer, refraction occurs. This behavior follows the famous Snell's Law from optics.</p>
+        <img src="1000030041.jpg" alt="Diagram showing seismic wave refraction in two-layer media">
+        <div class="formula-box">
+            Snell's Law:
+            $$ \frac{\sin\theta_1}{V_1} = \frac{\sin\theta_2}{V_2} $$
+        </div>
+
+        <h2>Station 6: The Final Chapter of Refraction Method—Calculating Layer Thickness</h2>
+        <p>We know that the necessary condition for the "shortcut" phenomenon in the refraction method is $V_2 > V_1$. When the incident angle $\theta_1$ increases to a special angle where the refraction angle $\theta_2$ exactly equals $90^\circ$, we call this incident angle the critical angle $\theta_c$.</p>
+        <img src="1000030048.jpg" alt="Diagram showing critical angle and critical refraction">
+        <div class="formula-box">
+            Critical Angle:
+            $$ \theta_c = \sin^{-1}\left(\frac{V_1}{V_2}\right) $$
+        </div>
+        <p>The total travel time of the refracted wave is the sum of the times for the two diagonal path segments in the first layer and the horizontal path along the second layer interface. Now, let's follow the diagram and steps below to derive it step by step!</p>
+
+        <div class="derivation-section">
+            <h3>Formula Lab: Refracted Wave Travel-Time Derivation</h3>
+            <p>Our goal is to calculate the total time $T(X)$ that the refracted wave takes from the source to the receiver. Please refer to the path decomposition diagram below at any time.</p>
+            <img src="1000030050.jpg" alt="Three-segment decomposition of the refracted wave path">
+
+            <div class="derivation-step">
+                <h4>Step 1: Decompose Total Time into Three Segments</h4>
+                <p>The total time $T_t$ is the sum of three path segments: $T_1$ (downward propagation) + $T_2$ (propagation along the interface) + $T_3$ (upward propagation).</p>
+                <div class="formula-box">$$ T_t = T_1 + T_2 + T_3 $$</div>
+            </div>
+
+            <div class="derivation-step">
+                <h4>Step 2: Calculate the Time for Each Segment</h4>
+                <p>Time = Distance / Velocity. From the geometric relationships in the diagram, we can obtain:</p>
+                <p><b>Time for $T_1$ and $T_3$</b>: These two path segments are identical, with length $\frac{h}{\cos\theta_c}$, and both travel through the first layer with velocity $V_1$.</p>
+                <div class="formula-box">$$ T_1 = T_3 = \frac{h}{V_1 \cos\theta_c} $$</div>
+                <p><b>Time for $T_2$</b>: The horizontal length of this path segment is the total length $X$ minus the horizontal projections of $T_1$ and $T_3$ ($h \tan\theta_c$). It travels through the second layer with velocity $V_2$.</p>
+                <div class="formula-box">$$ T_2 = \frac{X - 2h \tan\theta_c}{V_2} $$</div>
+            </div>
+
+            <div class="derivation-step">
+                <h4>Step 3: Add the Times of All Segments</h4>
+                <p>Substitute the $T_1$, $T_2$, and $T_3$ obtained above into the total time formula.</p>
+                <div class="formula-box">$$ T_t = \left(\frac{h}{V_1 \cos\theta_c}\right) + \left(\frac{X - 2h \tan\theta_c}{V_2}\right) + \left(\frac{h}{V_1 \cos\theta_c}\right) $$</div>
+                <p>Let's tidy up by combining $T_1$ and $T_3$, and splitting $T_2$:</p>
+                <div class="formula-box">$$ T_t = \frac{2h}{V_1 \cos\theta_c} + \frac{X}{V_2} - \frac{2h \tan\theta_c}{V_2} $$</div>
+            </div>
+
+            <div class="derivation-step">
+                <h4>Step 4: Apply Trigonometric Identities and Snell's Law</h4>
+                <p>We use $\tan\theta_c = \frac{\sin\theta_c}{\cos\theta_c}$ and rearrange the formula by factoring out common terms.</p>
+                <div class="formula-box">$$ T_t = \frac{2h}{V_1 \cos\theta_c} \left(1 - \frac{V_1}{V_2}\sin\theta_c\right) + \frac{X}{V_2} $$</div>
+                <p>Now, the most crucial step: substitute Snell's Law for the critical angle $\sin\theta_c = \frac{V_1}{V_2}$ into the parentheses.</p>
+                <div class="formula-box">$$ T_t = \frac{2h}{V_1 \cos\theta_c} (1 - \sin^2\theta_c) + \frac{X}{V_2} $$</div>
+            </div>
+
+            <div class="derivation-step">
+                <h4>Step 5: Final Simplification</h4>
+                <p>We all know the trigonometric identity $1 - \sin^2\theta_c = \cos^2\theta_c$. Use it to replace the content in the parentheses.</p>
+                <div class="formula-box">$$ T_t = \frac{2h}{V_1 \cos\theta_c} (\cos^2\theta_c) + \frac{X}{V_2} $$</div>
+                <p>Cancel out one $\cos\theta_c$, and we get our final, beautiful linear equation!</p>
+                <div class="formula-box">$$ T_t = \frac{2h\cos\theta_c}{V_1} + \frac{X}{V_2} $$</div>
+            </div>
+        </div>
+
+        <!-- ===== CLIL: Derivation Checkpoint ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 6: Derivation Detective</h4>
+            <p>Work in groups of 3–4. Re-derive the formula on a whiteboard, taking turns to explain each step aloud in English.</p>
+            <ol>
+                <li>What does the symbol $h$ represent? What about $\theta_c$?</li>
+                <li>Which trigonometric identity turns $1 - \sin^2\theta_c$ into $\cos^2\theta_c$?</li>
+                <li>Why can we replace $\sin\theta_c$ with $V_1/V_2$ in Step 4?</li>
+            </ol>
+            <div class="lang-tip">
+                <strong>Speaking Frame:</strong> "In Step ___ we ______, because ______."
+            </div>
+        </div>
+
+        <p>This final formula tells us that the travel-time graph of the refracted wave is a straight line with a slope of $1/V_2$, and it produces an intercept on the Y-axis, which we call the "intercept time $t_i$."</p>
+        <div class="formula-box">
+            Intercept Time:
+            $$ t_i = \frac{2h\cos\theta_c}{V_1} $$
+        </div>
+        <p>The magnitude of this intercept time $t_i$ is related to the thickness $h$ of the first layer!</p>
+        <img src="1000030054.jpg" alt="Complete travel-time curves for direct and refracted waves">
+        <div class="note">
+            <p><strong>Ultimate Secret</strong>: We can measure two slopes from the graph (obtaining $V_1$ and $V_2$) and the intercept time $t_i$, then use the critical angle formula to solve for the thickness $h$ of the first layer. This is the power of the refraction method!</p>
+        </div>
+
+        <h2>Station 7: Another Key Character—Reflection Waves and Hyperbolas</h2>
+        <p>Another portion of the energy will reflect off the layer interface, like looking in a mirror. The principle of reflected waves is: the angle of incidence equals the angle of reflection.</p>
+        <img src="1000030057.jpg" alt="Reflection wave principle and detection setup">
+        <p>Its path forms a V-shape, and the total length can be calculated using the Pythagorean theorem. The resulting travel-time formula describes a hyperbola.</p>
+        <img src="1000030060.jpg" alt="Geometric path of reflected waves and hyperbolic travel-time curve">
+        <p>When the receiver is directly above the source (X=0), the time required is the shortest, called the two-way time $t_0$.</p>
+         <div class="formula-box">
+            Two-way Time:
+            $$ t_0 = \frac{2h}{V_1} $$
+        </div>
+        <p>As the distance $X$ increases, the travel time $T$ varies along a hyperbola:</p>
+        <div class="formula-box">
+            Reflected Wave Travel Time:
+            $$ T(X)^2 = t_0^2 + \left(\frac{X}{V_1}\right)^2 $$
+        </div>
+        <p>Geophysicists love this hyperbola! Because by analyzing the shape of this curve and the time $t_0$, they can very accurately calculate the upper layer wave velocity $V_1$ and the depth $h$ of the interface. In fact, **seismic reflection** is currently the primary and most precise technology for oil and gas exploration!</p>
+
+        <!-- ===== CLIL: Compare Refraction vs Reflection ===== -->
+        <div class="checkpoint">
+            <h4>✅ Checkpoint 7: Refraction vs. Reflection</h4>
+            <p>Complete this comparison table with a partner:</p>
+            <table class="vocab-table">
+                <tr><th>Feature</th><th>Refraction Method</th><th>Reflection Method</th></tr>
+                <tr><td>Wave behavior</td><td>______</td><td>______</td></tr>
+                <tr><td>Travel-time curve shape</td><td>______</td><td>______</td></tr>
+                <tr><td>Main use</td><td>______</td><td>Oil &amp; gas exploration</td></tr>
+                <tr><td>Key formula</td><td>______</td><td>______</td></tr>
+            </table>
+            <div class="sentence-frame">While refraction produces a ______ line, reflection produces a ______.</div>
+        </div>
+
+        <h2>Station 8: The Finale—What is Apparent Velocity?</h2>
+        <p>The horizontal speed at which we observe the wavefront "sweeping" across the surface is called the apparent velocity $V_{ap}$, which is the reciprocal of the travel-time curve slope.</p>
+        <img src="1000030072.jpg" alt="Definition and calculation of apparent velocity">
+        <div class="formula-box">
+            Apparent Velocity Definition:
+            $$ V_{ap} = \frac{\Delta X}{\Delta T} = \frac{1}{\text{Slope}} $$
+        </div>
+        <div class="note">
+            <p><strong>Key Insight</strong>: The most amazing thing is that, mathematically proven, for critically refracted waves, the apparent velocity $V_{ap}$ at which it sweeps across the surface is exactly equal to **the true velocity $V_2$ of the lower layer medium**! This perfectly explains physically why the slope of the refracted wave line is $1/V_2$.</p>
+        </div>
+        <div class="formula-box">
+            Apparent Velocity of Critical Refraction:
+            $$ V_{ap} = V_2 $$
+        </div>
+
+        <!-- ===== CLIL: Hands-on Activity ===== -->
+        <div class="activity-box">
+            <h3>🧪 Hands-on Activity: "Racing Waves" Mini-Lab</h3>
+            <p><strong>Goal:</strong> Model how P, S, and surface waves "race" from a source to receivers.</p>
+            <p><strong>Materials:</strong> A long strip of paper (the "survey line"), 3 markers of different colors, a stopwatch (phone), and a tape measure.</p>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Mark 5 receiver positions along the strip at equal spacing (e.g., every 2 m).</li>
+                <li>Assign three students to be "P-wave", "S-wave", and "Rayleigh-wave" runners with different walking speeds (P = fast walk, S = normal walk, R = slow walk).</li>
+                <li>One student claps (the "source"). All three runners start at the same time.</li>
+                <li>At each receiver, record the arrival time of each runner.</li>
+                <li>Plot a travel-time graph (distance vs. time) for each wave and calculate the slopes.</li>
+            </ol>
+            <p><strong>Report (in English):</strong></p>
+            <div class="sentence-frame">The slope of the ______ wave was ______, so its velocity was ______ m/s.</div>
+            <div class="sentence-frame">The ______ wave had the steepest line because it was the ______.</div>
+            <div class="lang-tip"><strong>Tip:</strong> Use past tense to report results: <em>arrived, traveled, measured, calculated</em>.</div>
+        </div>
+
+        <h2>Summary and Outlook</h2>
+        <p>Our fantastical journey through the Earth's seismic waves is coming to an end! Today, we not only broke down the mathematical details of refracted and reflected waves in depth, but also learned how to analyze the velocity and thickness of rock layers from their travel-time curves like detectives.</p>
+        <p>We learned about the key critical angle and understood how the beautiful hyperbola of reflected waves is derived. Finally, we also unveiled the mystery of "apparent velocity," giving us a more thorough understanding of the physical meaning behind the slopes of these graphs.</p>
+        <p>These two powerful tools are the secret weapons that allow geophysicists to map the Earth's internal structure without any excavation. From finding oil and minerals to evaluating the safety of engineering sites—they are indispensable.</p>
+        <p>I hope this journey has filled you with more curiosity about the Earth beneath your feet! Our adventure will continue!</p>
+
+        <!-- ===== CLIL: Self-Assessment ===== -->
+        <div class="assessment-box">
+            <h3>📝 Self-Assessment Checklist</h3>
+            <p>Tick the box that matches your confidence. Be honest!</p>
+            <table class="vocab-table">
+                <tr><th>"I can…"</th><th>😊 Confident</th><th>🙂 Okay</th><th>😕 Need help</th></tr>
+                <tr><td>Name the 4 seismic wave types and how they move.</td><td></td><td></td><td></td></tr>
+                <tr><td>Explain how a source–receiver survey works.</td><td></td><td></td><td></td></tr>
+                <tr><td>Relate the slope of a travel-time line to velocity.</td><td></td><td></td><td></td></tr>
+                <tr><td>Use Snell's Law and the critical-angle formula.</td><td></td><td></td><td></td></tr>
+                <tr><td>Derive the refracted-wave travel-time equation.</td><td></td><td></td><td></td></tr>
+                <tr><td>Compare refraction and reflection methods.</td><td></td><td></td><td></td></tr>
+                <tr><td>Explain apparent velocity in English.</td><td></td><td></td><td></td></tr>
+                <tr><td>Use geophysics vocabulary correctly in speaking.</td><td></td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- ===== CLIL: Final Assessment Questions ===== -->
+        <div class="assessment-box">
+            <h3>🎯 Exit Ticket</h3>
+            <p>Answer in complete English sentences before you leave.</p>
+            <ol>
+                <li>Which seismic wave is the fastest, and why is it usually the first to arrive?</li>
+                <li>On a travel-time graph, what does the <em>slope</em> tell us? Write the formula that links slope and velocity.</li>
+                <li>Why must $V_2$ be greater than $V_1$ for the refraction method to work?</li>
+                <li>Give one real-world reason why the reflection method is so important for finding oil.</li>
+                <li>What is "apparent velocity," and why does it equal $V_2$ for a critical refraction?</li>
+            </ol>
+            <div class="lang-tip">
+                <strong>Writing Tip:</strong> Start each answer with a subject + verb, e.g.,
+                <em>"The P-wave is the fastest because…"</em>, <em>"The slope tells us…"</em>
+            </div>
+        </div>
+
+        <!-- ===== CLIL: Extension / Homework ===== -->
+        <div class="discussion-box">
+            <h4>🏠 Take It Further (Homework)</h4>
+            <ol>
+                <li>Research one real earthquake that happened in your country or region. Write 3–5 sentences describing which waves were recorded and how scientists used them.</li>
+                <li>Design a poster comparing refraction and reflection methods for a younger student. Use at least 5 vocabulary words from today's glossary.</li>
+                <li>Bonus: Find out what a <em>seismograph</em> is and draw a simple labelled diagram.</li>
+            </ol>
+            <div class="sentence-frame">In the ______ earthquake, scientists recorded ______ waves, which showed that ______.</div>
+        </div>
+
+        <footer>
+            <p>Geophysics Classroom — CLIL Edition &copy; 2025</p>
+        </footer>
+    </div>
+
+</body>
+</html>
