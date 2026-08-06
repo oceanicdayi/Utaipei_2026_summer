@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIL 校園地震波探測實驗 - Seismic Wave Experiment on Campus</title>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 820px;
+            margin: 20px auto;
+            padding: 24px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.1em;
+        }
+        h2 {
+            font-size: 1.7em;
+            margin-top: 36px;
+        }
+        h3 {
+            font-size: 1.3em;
+            border-bottom: 1px solid #aaa;
+        }
+
+        /* ===== 句卡 sentence card ===== */
+        .sentence-card {
+            border: 1px solid #cfd8dc;
+            border-left: 6px solid #3498db;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            background-color: #fafdff;
+        }
+        .cn {
+            font-size: 1.15em;
+            color: #1a237e;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+        .en {
+            font-size: 1.05em;
+            color: #2e7d32;
+            margin: 0 0 10px 0;
+        }
+        .vocab {
+            background-color: #fff8e1;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        .vocab strong {
+            color: #e65100;
+        }
+        .pattern {
+            background-color: #e8f5e9;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        .pattern strong {
+            color: #1b5e20;
+        }
+        .pattern .frame {
+            font-style: italic;
+            color: #33691e;
+            background: #fff;
+            border: 1px dashed #7cb342;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        /* ===== 答案卡 answer card ===== */
+        .answer-card {
+            border: 1px solid #b0bec5;
+            border-left: 6px solid #ef6c00;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            background-color: #fff8f0;
+        }
+        .answer-card .label {
+            color: #e65100;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .note {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 5px;
+        }
+        .formula-box {
+            background-color: #f2f2f2;
+            padding: 14px;
+            margin: 18px auto;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #2c3e50;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>CLIL 校園地震波探測實驗<br>Seismic Wave Experiment on Campus</h1>
+
+    <div class="note">
+        <p><strong>使用方式 How to use:</strong> 每張句卡包含「中文句 → 英文翻譯 → 所需單字 → 所需句型」。先讀中文，再試著用單字和句型自己說出英文，最後對照翻譯。</p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 現象描述                       -->
+    <!-- ============================= -->
+    <h2>一、現象描述 Phenomenon Description</h2>
+
+    <!-- 句1 -->
+    <div class="sentence-card">
+        <p class="cn">1. 我們在地面上每隔一公尺插入一個地震儀，共有24個，排成一直線。</p>
+        <p class="en">We insert a seismometer into the ground every one meter. There are 24 seismometers in total, arranged in a straight line.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            insert (v.) 插入　|　seismometer (n.) 地震儀　|　ground (n.) 地面　|　every one meter 每隔一公尺　|　in total 總共　|　arrange (v.) 排列　|　straight line (n.) 直線
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 描述排列方式<br>
+            <span class="frame">We insert [物品] every [距離]. There are [數量] in total, arranged in a [形狀].</span>
+        </div>
+    </div>
+
+    <!-- 句2 -->
+    <div class="sentence-card">
+        <p class="cn">2. 我們用鐵鎚敲擊地面上的鐵板產生震波。</p>
+        <p class="en">We use a hammer to strike an iron plate on the ground to generate seismic waves.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            hammer (n.) 鐵鎚　|　strike / hit (v.) 敲擊　|　iron plate (n.) 鐵板　|　generate (v.) 產生　|　seismic wave (n.) 震波
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 用工具做某事以達成目的<br>
+            <span class="frame">We use [工具] to [動作] [對象] to [目的].</span><br>
+            <span style="font-size:0.9em; color:#555;">（to + V 表「為了…」，兩個 to 用法不同：第一個 to 是「用…來…」，第二個 to 是「為了…」）</span>
+        </div>
+    </div>
+
+    <!-- 句3 -->
+    <div class="sentence-card">
+        <p class="cn">3. 震波在地底往四面八方傳遞。</p>
+        <p class="en">The seismic waves travel in all directions underground.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            travel (v.) 傳遞／傳播　|　in all directions 往四面八方　|　underground (adv.) 在地底
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 描述物體運動方向與位置<br>
+            <span class="frame">[主詞] travel(s) in all directions [位置].</span>
+        </div>
+    </div>
+
+    <!-- 句4 -->
+    <div class="sentence-card">
+        <p class="cn">4. 依照地震儀與鐵槌敲擊位置的距離不同，愈靠近的地震儀愈早接收到震波。</p>
+        <p class="en">Depending on the distance between the seismometer and the hammer strike point, the closer the seismometer is, the earlier it receives the seismic waves.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            depending on 依照／取決於　|　distance (n.) 距離　|　between A and B 在 A 與 B 之間　|　strike point (n.) 敲擊位置　|　close (adj.) 靠近　|　early (adv.) 早　|　receive (v.) 接收
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 「愈…愈…」雙重比較句型<br>
+            <span class="frame">Depending on [因素], the + 比較級 ..., the + 比較級 ...</span><br>
+            <span style="font-size:0.9em; color:#555;">（The closer …, the earlier … 愈靠近…，愈早…）</span>
+        </div>
+    </div>
+
+    <!-- 句5 -->
+    <div class="sentence-card">
+        <p class="cn">5. 製作一張距離與時間的關係圖。</p>
+        <p class="en">We make a graph showing the relationship between distance and time.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            make / plot (v.) 製作／繪製　|　graph (n.) 圖　|　show (v.) 顯示　|　relationship (n.) 關係　|　distance (n.) 距離　|　time (n.) 時間
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 製作一張表示兩變數關係的圖<br>
+            <span class="frame">We make a graph showing the relationship between [A] and [B].</span><br>
+            <span style="font-size:0.9em; color:#555;">（showing… 是分詞片語，用來補充說明 graph 的內容）</span>
+        </div>
+    </div>
+
+    <!-- 句6 -->
+    <div class="sentence-card">
+        <p class="cn">6. 距離是指地震儀與鐵槌敲擊處的距離。</p>
+        <p class="en">Distance refers to the distance between the seismometer and the hammer strike point.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            refer to (v.) 是指　|　distance (n.) 距離　|　between A and B 在 A 與 B 之間　|　strike point (n.) 敲擊處
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 下定義「…是指…」<br>
+            <span class="frame">[名詞] refers to [定義內容].</span>
+        </div>
+    </div>
+
+    <!-- 句7 -->
+    <div class="sentence-card">
+        <p class="cn">7. 時間是指地震儀開始紀錄的時間（與鐵槌敲擊時間相同）。</p>
+        <p class="en">Time refers to when the seismometer starts recording. It is the same as the time of the hammer strike.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            refer to (v.) 是指　|　start (v.) 開始　|　record (v.) 紀錄　|　the same as 與…相同　|　hammer strike (n.) 鐵槌敲擊
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 定義 + 補充說明「與…相同」<br>
+            <span class="frame">[名詞] refers to when [主詞] [動作]. It is the same as [參考點].</span><br>
+            <span style="font-size:0.9em; color:#555;">（when 引導名詞子句，當 refers to 的受詞）</span>
+        </div>
+    </div>
+
+    <!-- 句8 -->
+    <div class="sentence-card">
+        <p class="cn">8. 此關係圖稱作走時曲線圖（travel-time curve）。</p>
+        <p class="en">This graph is called a travel-time curve.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            graph (n.) 圖　|　be called (v.) 稱作　|　travel-time curve (n.) 走時曲線圖
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 被動式命名「…被稱作…」<br>
+            <span class="frame">[主詞] is/are called [名稱].</span>
+        </div>
+    </div>
+
+    <!-- 句9 -->
+    <div class="sentence-card">
+        <p class="cn">9. 分析這張圖可以知道震波在地底下傳遞的速度與地底下介面的深度。</p>
+        <p class="en">By analyzing this graph, we can find out the speed of seismic waves underground and the depth of the underground interface.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            analyze (v.) 分析　|　find out (v.) 知道／找出　|　speed (n.) 速度　|　underground (adv.) 在地底　|　interface (n.) 介面　|　depth (n.) 深度
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 「藉由…，我們可以…」<br>
+            <span class="frame">By [V-ing] [方法], we can [動作] [結果].</span><br>
+            <span style="font-size:0.9em; color:#555;">（By + V-ing 表「藉由做某事」）</span>
+        </div>
+    </div>
+
+    <div class="note">
+        <p><strong>小提示 Tip:</strong> 句型 6、7、8 三句其實是一組定義流程：先說「製作圖(5)」→ 定義 X 軸(6) → 定義 Y 軸(7) → 命名圖表(8) → 說明用途(9)。同學報告時可以連著說！</p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 問題                           -->
+    <!-- ============================= -->
+    <h2>二、問題 Questions</h2>
+
+    <!-- 問題1 -->
+    <div class="sentence-card">
+        <p class="cn">Q1. 用鐵槌敲擊，製造震波時，為何不直接敲擊地面？而是敲擊鐵板？</p>
+        <p class="en">When using a hammer to generate seismic waves, why don't we strike the ground directly? Why do we strike an iron plate instead?</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            generate (v.) 製造／產生　|　why (adv.) 為何　|　directly (adv.) 直接　|　instead (adv.) 而是／代替
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 否定疑問句 + instead 表「為何不…而是…」<br>
+            <span class="frame">Why don't we [動作1] directly? Why do we [動作2] instead?</span>
+        </div>
+    </div>
+
+    <!-- 問題1 答案 -->
+    <div class="answer-card">
+        <p class="label">參考答案 Sample Answer</p>
+        <p class="cn">如果直接敲擊地面，力量會分散、鬆軟的泥土會吸收能量，產生的震波很弱也不清楚。敲擊鐵板可以把力量集中，再均勻傳到地面，產生更強、更清楚的震波訊號。</p>
+        <p class="en">If we strike the ground directly, the force will spread out and the soft soil will absorb the energy, so the seismic waves will be weak and unclear. Striking an iron plate can concentrate the force and transfer it evenly into the ground, generating a stronger and clearer seismic signal.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            if (conj.) 如果　|　force (n.) 力量　|　spread out 分散　|　soft (adj.) 鬆軟的　|　soil (n.) 泥土　|　absorb (v.) 吸收　|　energy (n.) 能量　|　weak (adj.) 弱的　|　unclear (adj.) 不清楚的　|　concentrate (v.) 集中　|　transfer (v.) 傳遞　|　evenly (adv.) 均勻地　|　strong (adj.) 強的　|　clear (adj.) 清楚的　|　signal (n.) 訊號
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong><br>
+            條件句：<span class="frame">If we [動作], [結果].</span><br>
+            對比說明：<span class="frame">[動作A] can [效果A], while [動作B] can [效果B].</span><br>
+            原因：<span class="frame">…, so …（所以）</span>
+        </div>
+    </div>
+
+    <!-- 問題2 -->
+    <div class="sentence-card">
+        <p class="cn">Q2. 鐵板旁有一個感測器，感測器上有一條傳輸線連接到記錄器，請問這樣做的目的是什麼？</p>
+        <p class="en">Next to the iron plate, there is a sensor. The sensor has a cable connected to a recorder. What is the purpose of doing this?</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            next to 在…旁邊　|　sensor (n.) 感測器　|　cable / transmission line (n.) 傳輸線　|　connect (v.) 連接　|　recorder (n.) 記錄器　|　purpose (n.) 目的
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 描述存在 + 連接關係 + 詢問目的<br>
+            <span class="frame">There is [物品] next to [位置]. [物品] has [部分] connected to [目標]. What is the purpose of doing this?</span>
+        </div>
+    </div>
+
+    <!-- 問題2 答案 -->
+    <div class="answer-card">
+        <p class="label">參考答案 Sample Answer</p>
+        <p class="cn">感測器的作用是偵測鐵鎚敲擊鐵板的「那一刻」。透過傳輸線，感測器把「開始時間（t = 0）」的訊號傳給記錄器，讓記錄器知道從什麼時候開始計時。這樣所有地震儀記錄到的時間才有共同的起點，走時才會準確。</p>
+        <p class="en">The purpose of the sensor is to detect the exact moment the hammer strikes the iron plate. Through the cable, the sensor sends a "start signal" (t = 0) to the recorder, so the recorder knows when to start timing. This gives all seismometers a common starting point, so the travel times will be accurate.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            purpose (n.) 目的　|　detect (v.) 偵測　|　exact moment 那一刻　|　through (prep.) 透過　|　send (v.) 傳送　|　start signal (n.) 起始訊號　|　recorder (n.) 記錄器　|　start timing 開始計時　|　common starting point (n.) 共同起點　|　accurate (adj.) 準確的
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong><br>
+            說明目的：<span class="frame">The purpose of [物品] is to [動作].</span><br>
+            說明鏈結關係：<span class="frame">Through [媒介], [主詞] sends [訊號] to [目標].</span><br>
+            說明結果：<span class="frame">This gives [受詞] [結果], so [結論].</span>
+        </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 小總結                         -->
+    <!-- ============================= -->
+    <h2>三、實驗流程一句話總結 One-Sentence Summary</h2>
+    <div class="sentence-card">
+        <p class="cn">我們在校園排一排地震儀，用鐵鎚敲鐵板產生震波，記錄各地震儀收到震波的時間，畫出走時曲線圖，進而推算地下構造的速度與深度。</p>
+        <p class="en">We line up seismometers on campus, strike an iron plate with a hammer to generate seismic waves, record the arrival times at each seismometer, plot a travel-time curve, and then calculate the underground velocity and depth of the structure.</p>
+        <div class="vocab">
+            <strong>所需單字 Vocabulary:</strong><br>
+            line up (v.) 排成一排　|　strike (v.) 敲擊　|　arrival time (n.) 抵達時間　|　plot (v.) 繪製　|　calculate (v.) 推算／計算　|　velocity (n.) 速度　|　depth (n.) 深度　|　structure (n.) 構造
+        </div>
+        <div class="pattern">
+            <strong>所需句型 Sentence Pattern:</strong> 一連串動作（用 and 連接多個動詞）<br>
+            <span class="frame">We [V1], [V2], [V3], and then [V4].</span><br>
+            <span style="font-size:0.9em; color:#555;">（多個動作依序列出，最後用 and then 連接結果）</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>CLIL 校園地震波探測實驗 &copy; 2025</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
