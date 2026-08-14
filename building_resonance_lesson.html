@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="建築共振教案 — 建築物在地震中的共振現象（Building Resonance），四節課完整教學流程，含 CLIL 雙語教學元素與 IRIS 教材資源。" />
+    <title>建築共振教案 — Building Resonance Lesson Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #1a6b72;
+            --primary-dark: #0a3d42;
+            --primary-light: #2ea8a4;
+            --secondary: #0f2a2e;
+            --light: #eef5f3;
+            --light-bg: #f7fbf9;
+            --dark-bg: #0a3d42;
+            --border: #b8e0d8;
+            --success: #27ae60;
+            --warning: #e07a3d;
+            --gold: #d4a04a;
+            --magma: #e07a3d;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--secondary);
+            background: var(--light-bg);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 1rem 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .header h1 {
+            color: var(--primary-dark);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem;
+        }
+
+        .header p {
+            color: #5a7a7e;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0 0.3rem;
+        }
+
+        h2, h3, h4 {
+            color: var(--primary-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        p { margin: 0.8rem 0; }
+
+        ul, ol { padding-left: 1.5rem; }
+        li { margin: 0.4rem 0; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(10, 61, 66, 0.08);
+        }
+
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: var(--light);
+        }
+
+        .info-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+        }
+
+        .tip {
+            background: rgba(224, 122, 61, 0.08);
+            border-left: 4px solid var(--warning);
+            padding: 0.85rem 1.1rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .tip::before {
+            content: "💡 ";
+        }
+
+        .clil-box {
+            background: rgba(212, 160, 74, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .clil-box h4 {
+            margin: 0 0 0.5rem;
+            color: var(--gold);
+        }
+
+        .lesson-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 1px 6px rgba(10, 61, 66, 0.06);
+        }
+
+        .lesson-card > h2 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: var(--primary-dark);
+        }
+
+        .footer {
+            text-align: center;
+            color: #5a7a7e;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary);
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 2.5rem 0;
+        }
+
+        code {
+            background: var(--dark-bg);
+            color: var(--light);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 0.9rem;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--primary-light);
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            color: #4a6a6e;
+            font-style: italic;
+            background: var(--light);
+            border-radius: 0 4px 4px 0;
+        }
+
+        a {
+            color: var(--primary);
+        }
+
+        a:hover {
+            color: var(--warning);
+        }
+
+        .toc {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            border: none;
+            color: var(--primary-dark);
+        }
+
+        .toc ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .meta-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .meta-card .label {
+            display: block;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-card .value {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>建築物在地震中的共振現象</h1>
+        <p><strong>Building Resonance Lesson Plan</strong> · 四節課完整教案</p>
+        <p>
+            <span class="badge">CLIL 雙語教學</span>
+            <span class="badge">IRIS 教材資源</span>
+            <span class="badge">動手實作</span>
+        </p>
+    </div>
+
+    <a href="./" class="back-link">← 返回課程首頁</a>
+
+    <section id="overview">
+        <h2>課程總覽</h2>
+        <p>本教案以美國地震學教育機構 IRIS (Incorporated Research Institutions for Seismology) 之教育資源為主軸，透過動畫、影片與模型實作，引導學生理解「為什麼地震時有些建築會倒塌、有些卻安然無恙」，建立地震波、頻率／週期、共振、地盤效應與土壤液化等核心概念。</p>
+
+        <div class="meta-grid">
+            <div class="meta-card">
+                <span class="label">適用對象</span>
+                <span class="value">國中／高中</span>
+            </div>
+            <div class="meta-card">
+                <span class="label">節數</span>
+                <span class="value">四節課（45–50 分鐘／節）</span>
+            </div>
+            <div class="meta-card">
+                <span class="label">核心概念</span>
+                <span class="value">頻率、週期、共振、地震波、地盤放大、液化</span>
+            </div>
+            <div class="meta-card">
+                <span class="label">教學方法</span>
+                <span class="value">CLIL + 動手實作 + IRIS 資源</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h4>學習目標（整體）</h4>
+            <p>學生能描述建築物自然週期的意義；能說明當地震波週期與建築物自然週期吻合時會發生共振而造成嚴重破壞；能運用 BOSS 模型模擬不同高度建築在地震中的反應；能評估地質條件（基岩 vs. 沉積層）與液化對建築安全的影響。</p>
+        </div>
+    </section>
+
+    <div class="toc">
+        <h3>📋 教學目錄 Table of Contents</h3>
+        <ol>
+            <li><a href="#clil">CLIL 雙語教學元素</a></li>
+            <li><a href="#resources">教材來源（IRIS 資源）</a></li>
+            <li><a href="#lesson1">第一節課：地震波與波動的語言（頻率、週期）</a></li>
+            <li><a href="#lesson2">第二節課：建築物的自然週期與共振</a></li>
+            <li><a href="#lesson3">第三節課：動手做——BOSS 模型（建築震動模擬）</a></li>
+            <li><a href="#lesson4">第四節課：地盤效應、土壤液化與防災應用</a></li>
+            <li><a href="#assessment">評量方式總表</a></li>
+            <li><a href="#extensions">延伸資源</a></li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <section id="clil">
+        <h2>CLIL 雙語教學元素（全單元）</h2>
+        <p>本單元融入 CLIL（Content and Language Integrated Learning，內容與語言整合學習），以「最簡單、最必要」的英文單字與句型，讓學生踏出用英文說科學的第一步。<strong>目標不是完美文法，而是敢開口。</strong></p>
+
+        <h3>核心單字（全單元必備，共 12 個）</h3>
+        <table>
+            <tr><th>英文 English</th><th>中文 Chinese</th><th>英文 English</th><th>中文 Chinese</th></tr>
+            <tr><td>earthquake</td><td>地震</td><td>wave</td><td>波</td></tr>
+            <tr><td>building</td><td>建築物</td><td>tall / short</td><td>高的／矮的</td></tr>
+            <tr><td>shake</td><td>搖晃</td><td>frequency</td><td>頻率</td></tr>
+            <tr><td>period</td><td>週期</td><td>resonance</td><td>共振</td></tr>
+            <tr><td>ground</td><td>地面</td><td>bedrock</td><td>基岩</td></tr>
+            <tr><td>sediment</td><td>沉積層</td><td>damage</td><td>破壞</td></tr>
+        </table>
+
+        <h3>萬用句型（全單元通用）</h3>
+        <table>
+            <tr><th>功能 Function</th><th>句型 Frame</th><th>例句 Example</th></tr>
+            <tr><td>描述現象（3 句）</td><td>The ______ is/are ______.</td><td>The P wave is fast.</td></tr>
+            <tr><td></td><td>The ______ shakes a lot / a little.</td><td>The tall building shakes a lot.</td></tr>
+            <tr><td></td><td>When ______, ______.</td><td>When the periods match, the building shakes the most.</td></tr>
+            <tr><td>提出問題（1 句）</td><td>Why / Which / What + 疑問句？</td><td>Why does the building fall?</td></tr>
+            <tr><td>回答問題（1 句）</td><td>Because ______. / The ______ is ______.</td><td>Because the periods match.</td></tr>
+        </table>
+
+        <h3>口說任務（每節課 5 分鐘，全班／小組輪流）</h3>
+        <p>每位學生完成「<strong>3 句描述 + 1 個提問 + 1 個回答</strong>」：</p>
+        <ol>
+            <li>用 3 句英文描述剛才看到的現象（可看黑板上的句型提示）。</li>
+            <li>用 1 句英文提出一個問題。</li>
+            <li>由另一位同學用 1 句英文回答。</li>
+        </ol>
+        <blockquote>教師提示卡範例：<em>"The building shakes." → "The tall building shakes a lot." → "When the periods match, it shakes the most." → "Why does it fall?" → "Because the periods match."</em></blockquote>
+    </section>
+
+    <hr>
+
+    <section id="resources">
+        <h2>教材來源（IRIS 資源）</h2>
+        <table>
+            <tr><th>資源</th><th>類型</th><th>用途</th><th>連結</th></tr>
+            <tr>
+                <td>Building Resonance: Structural stability during earthquakes</td>
+                <td>動畫（5分31秒）</td>
+                <td>第一、二節課引入與概念講解</td>
+                <td><a href="https://www.iris.edu/hq/inclass/animation/building_resonance_the_resonant_frequency_of_different_seismic_waves" target="_blank" rel="noopener">IRIS 動畫 ↗</a></td>
+            </tr>
+            <tr>
+                <td>Building Resonance: BOSS model construction &amp; use</td>
+                <td>影片（2分37秒）</td>
+                <td>第三節課 BOSS 模型組裝教學</td>
+                <td><a href="https://www.iris.edu/hq/inclass/video/building_resonance__boss_model_construction__use" target="_blank" rel="noopener">IRIS 影片 ↗</a></td>
+            </tr>
+            <tr>
+                <td>Buildings &amp; Bedrock: Effects of amplification &amp; liquefaction</td>
+                <td>動畫（1分25秒）</td>
+                <td>第四節課地盤效應與液化</td>
+                <td><a href="https://www.iris.edu/hq/inclass/animation/buildings__bedrock_effects_of_amplification__liquefaction" target="_blank" rel="noopener">IRIS 動畫 ↗</a></td>
+            </tr>
+            <tr>
+                <td>Seismic Waves: P, S, and Surface</td>
+                <td>影片（3分04秒）</td>
+                <td>第一節課地震波類型</td>
+                <td><a href="https://www.iris.edu/hq/inclass/video/seismic_waves_p_s_and_surface" target="_blank" rel="noopener">IRIS 影片 ↗</a></td>
+            </tr>
+            <tr>
+                <td>Liquefaction during the 1906 San Francisco Earthquake</td>
+                <td>動畫（43秒）</td>
+                <td>第四節課液化案例</td>
+                <td><a href="https://www.iris.edu/hq/inclass/animation/liquefaction_during_the_1906_san_francisco_earthquake" target="_blank" rel="noopener">IRIS 動畫 ↗</a></td>
+            </tr>
+        </table>
+        <p><em>資源皆遵循 CC BY 4.0 授權，可重製與分享，請保留出處標註。</em></p>
+    </section>
+
+    <hr>
+
+    <div class="lesson-card" id="lesson1">
+        <h2>第一節課：地震波與波動的語言（頻率、週期）</h2>
+        <p><strong>Lesson 1: Seismic Waves &amp; the Language of Vibration (Frequency, Period)</strong></p>
+
+        <h3>教學目標</h3>
+        <ol>
+            <li>認識三種基本地震波：P 波、S 波、表面波。</li>
+            <li>能區分「頻率」與「週期」並互相換算。</li>
+            <li>能說明地震波透過不同物質傳播時的差異。</li>
+        </ol>
+
+        <h3>引起動機（5 分鐘）</h3>
+        <p>提問：「大家搖過搖椅或盪過鞦韆嗎？為什麼輕輕推，搖椅會越搖越高？」<br>
+        播放影片《Seismic Waves: P, S, and Surface》（3分04秒）<a href="https://www.iris.edu/hq/inclass/video/seismic_waves_p_s_and_surface" target="_blank" rel="noopener">IRIS 影片 ↗</a> 片段，引出「地震波」。</p>
+
+        <h3>主要活動</h3>
+
+        <h4>活動一：地震波大解密（15 分鐘）</h4>
+        <ul>
+            <li>播放 IRIS《Seismic Waves: P, S, and Surface》影片（<a href="https://www.iris.edu/hq/inclass/video/seismic_waves_p_s_and_surface" target="_blank" rel="noopener">連結 ↗</a>），教師邊播邊講解：
+                <ul>
+                    <li><strong>P 波（Primary，縱波／壓力波）</strong>：最快抵達，讓物質沿傳播方向前後壓縮伸長，可穿過固體、液體。</li>
+                    <li><strong>S 波（Secondary，橫波／剪力波）</strong>：較慢，振動方向與傳播方向垂直，只能穿過固體。</li>
+                    <li><strong>表面波（Surface wave，雷利波與洛夫波）</strong>：沿地表傳播、最慢，振幅大、破壞力強，是造成建築搖晃的主因。</li>
+                </ul>
+            </li>
+            <li>用<strong>彈簧（Slinky）</strong>示範縱波與橫波的傳播方式（IRIS 相關課程《Exploring Seismic Waves with Slinkys》：<a href="https://www.iris.edu/hq/inclass/lesson/exploring_seismic_waves_with_slinkys" target="_blank" rel="noopener">連結 ↗</a>）。</li>
+        </ul>
+
+        <h4>活動二：頻率與週期（15 分鐘）</h4>
+        <ul>
+            <li>定義：
+                <ul>
+                    <li><strong>頻率（Frequency）</strong>：一秒鐘內通過某點的波數，單位為赫茲（Hz）。</li>
+                    <li><strong>週期（Period）</strong>：一個完整波通過某點所需的時間，單位為秒（s）。關係：<strong>週期 = 1 ÷ 頻率</strong>。</li>
+                </ul>
+            </li>
+            <li>播放 IRIS《Building Resonance》動畫（<a href="https://www.iris.edu/hq/inclass/animation/building_resonance_the_resonant_frequency_of_different_seismic_waves" target="_blank" rel="noopener">連結 ↗</a>）中的「Frequency Vs Period」短片（可下載 GIF）。</li>
+            <li>全班實作：請學生站起，由教師下口令「手臂繞圈」，分別以「每秒 1 圈」與「每秒 5 圈」進行，感受快慢（頻率高→週期短）。</li>
+        </ul>
+
+        <h3>評量與總結（10 分鐘）</h3>
+        <ul>
+            <li>隨堂問答：P 波、S 波、表面波誰最快？誰破壞力最強？頻率 2 Hz 的波週期是多少？</li>
+            <li>回家作業：畫出 P 波與 S 波的示意圖，並標示一個波的「週期」。</li>
+        </ul>
+
+        <div class="clil-box">
+            <h4>CLIL 口說任務（5 分鐘）</h4>
+            <ul>
+                <li><strong>本節單字</strong>：wave、P wave、S wave、surface wave、fast、slow、frequency、period</li>
+                <li><strong>句型提示</strong>：<em>The P wave is fast. / The S wave is slow. / The surface wave shakes the ground a lot.</em></li>
+                <li><strong>任務</strong>：看完影片後，用 3 句英文描述地震波（例：<em>The P wave is fast. The S wave is slow. The surface wave shakes the ground a lot.</em>），再問 1 題（<em>Which wave is the fastest?</em>），由同學回答（<em>The P wave is the fastest.</em>）。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lesson-card" id="lesson2">
+        <h2>第二節課：建築物的自然週期與共振</h2>
+        <p><strong>Lesson 2: Natural Period &amp; Resonance of Buildings</strong></p>
+
+        <h3>教學目標</h3>
+        <ol>
+            <li>說出「自然週期／共振頻率」的定義。</li>
+            <li>理解當地震波週期等於建築自然週期時會發生共振，振幅最大、破壞最嚴重。</li>
+            <li>能說明不同高度建築對不同地震波的反應差異。</li>
+        </ol>
+
+        <h3>引起動機（5 分鐘）</h3>
+        <p>播放 IRIS 動畫《Building Resonance: Structural stability during earthquakes》（5分31秒）<a href="https://www.iris.edu/hq/inclass/animation/building_resonance_the_resonant_frequency_of_different_seismic_waves" target="_blank" rel="noopener">連結 ↗</a> 開頭，提問：「為什麼同一場地震中，有些建築倒了，旁邊的建築卻完好？」</p>
+
+        <h3>主要活動</h3>
+
+        <h4>活動一：動畫完整觀看與討論（20 分鐘）</h4>
+        <ul>
+            <li>完整播放動畫，重點說明：
+                <ul>
+                    <li>每棟建築都有<strong>自然週期</strong>：建築來回自然搖晃一圈所需的秒數。</li>
+                    <li>地面也有其<strong>共振頻率</strong>：堅硬基岩的頻率高、鬆軟沉積層的頻率低。</li>
+                    <li>若<strong>地震波的週期 ＝ 建築的自然週期</strong>，建築會產生最大幅度的搖晃（共振），受損最嚴重。</li>
+                    <li>高樓（柔軟、週期長）易受遠處低頻地震波影響；矮樓（堅硬、週期短）易受近處高頻地震波影響。</li>
+                </ul>
+            </li>
+            <li>以「推鞦韆」類比：鞦韆有自然頻率，只有配合節奏推，才會越盪越高——這就是共振。</li>
+        </ul>
+
+        <h4>活動二：共振頻率配對任務（15 分鐘）</h4>
+        <ul>
+            <li>分組完成配對卡（如圖卡）：將「高樓／中樓／矮樓」與「低頻波／中頻波／高頻波」正確配對，並預測哪種組合最危險。</li>
+            <li>各組發表並由教師統整（呼應 BOSS 模型示範影片之重點：高頻低振幅波影響矮建築；低頻高振幅波影響高建築；中高度建築受週期 2–3 秒的波影響）。</li>
+        </ul>
+
+        <h3>評量與總結（5 分鐘）</h3>
+        <ul>
+            <li>小組配對結果即為形成性評量。</li>
+            <li>作業：想一想並記錄——台灣 101 大樓若遇到地震，屬於低頻還是高頻的波對它威脅最大？為什麼？</li>
+        </ul>
+
+        <div class="clil-box">
+            <h4>CLIL 口說任務（5 分鐘）</h4>
+            <ul>
+                <li><strong>本節單字</strong>：building、tall、short、resonance、period、match、shake、damage</li>
+                <li><strong>句型提示</strong>：<em>Every building has a natural period. / When the periods match, the building shakes the most. / The tall building shakes a lot.</em></li>
+                <li><strong>任務</strong>：用 3 句英文描述共振現象（例：<em>Every building has a natural period. When the periods match, the building shakes the most. The tall building shakes a lot.</em>），再問 1 題（<em>Why does the building fall?</em>），由同學回答（<em>Because the periods match.</em>）。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lesson-card" id="lesson3">
+        <h2>第三節課：動手做——BOSS 模型（建築震動模擬）</h2>
+        <p><strong>Lesson 3: Hands-on — BOSS Model (Building Oscillation Seismic Simulation)</strong></p>
+
+        <h3>教學目標</h3>
+        <ol>
+            <li>能依照步驟組裝 BOSS（Building Oscillation Seismic Simulation）模型。</li>
+            <li>能透過操作發現：在不同搖晃頻率下，不同高度建築的搖晃幅度不同。</li>
+            <li>能說明「建築以自然頻率被搖晃時振幅最大」的實驗證據。</li>
+        </ol>
+
+        <h3>教材與材料</h3>
+        <ul>
+            <li>播放 IRIS 影片《Building Resonance: BOSS model construction &amp; use》（2分37秒）<a href="https://www.iris.edu/hq/inclass/video/building_resonance__boss_model_construction__use" target="_blank" rel="noopener">連結 ↗</a> 進行組裝教學。</li>
+            <li>材料：木板底座、不同高度的建築支架（可參考 IRIS「簡化版 BOSS 模型」：厚紙板或壓克力板＋彈性支腳＋頂部配重）、搖晃平台、橡皮筋等。</li>
+            <li>亦可採用更簡易替代方案：義大利麵建築模型（<a href="https://www.iris.edu/hq/inclass/video/resonance__modeling_resonance_in_buildings_using_spaghetti_noodles" target="_blank" rel="noopener">連結 ↗</a>）或紙板模型（<a href="https://www.iris.edu/hq/inclass/video/resonance__modeling_resonance_in_buildings_using_paper_model" target="_blank" rel="noopener">連結 ↗</a>）。</li>
+        </ul>
+
+        <h3>主要活動</h3>
+
+        <h4>活動一：組裝（15 分鐘）</h4>
+        <ul>
+            <li>播放 BOSS 組裝影片，教師逐步示範，學生分組動手組裝「矮、中、高」三種高度的模型。</li>
+        </ul>
+
+        <h4>活動二：實驗與記錄（20 分鐘）</h4>
+        <ul>
+            <li>操作流程：固定底座，分別以<strong>慢速（低頻）</strong>、<strong>中速</strong>、<strong>快速（高頻）</strong>搖晃，觀察各高度建築的搖晃幅度。</li>
+            <li>學生記錄表：</li>
+        </ul>
+        <table>
+            <tr><th>搖晃速度（頻率）</th><th>矮建築反應</th><th>中建築反應</th><th>高建築反應</th></tr>
+            <tr><td>慢速（低頻）</td><td></td><td></td><td></td></tr>
+            <tr><td>中速</td><td></td><td></td><td></td></tr>
+            <tr><td>快速（高頻）</td><td></td><td></td><td></td></tr>
+        </table>
+        <ul>
+            <li>教師引導發現：每棟建築只有在「某一個頻率」搖晃時振幅最大（該建築的自然頻率）。</li>
+        </ul>
+
+        <h3>評量與總結（10 分鐘）</h3>
+        <ul>
+            <li>提問：「從實驗中，你怎麼知道每棟建築有自己的自然頻率？」（答：只有在特定搖晃頻率下振幅最大）</li>
+            <li>整合實驗結論與地震防災的關聯：建築設計須「避開」共振頻率。</li>
+            <li>延伸（可選）：讓學生挑戰將模型加斜撐，比較加固前後搖晃幅度的差異（呼應 IRIS《Build a Better Wall》：<a href="https://www.iris.edu/hq/inclass/video/build_a_better_wall_demo_why_buildings_fail" target="_blank" rel="noopener">連結 ↗</a>）。</li>
+        </ul>
+
+        <div class="clil-box">
+            <h4>CLIL 口說任務（5 分鐘）</h4>
+            <ul>
+                <li><strong>本節單字</strong>：model、shake、fast、slow、a lot、a little、tall、short</li>
+                <li><strong>句型提示</strong>：<em>I shake the model fast / slow. / The tall building shakes a lot. / The short building shakes a little.</em></li>
+                <li><strong>任務</strong>：實驗後，用 3 句英文描述你的發現（例：<em>I shake the model fast. The tall building shakes a lot. The short building shakes a little.</em>），再問 1 題（<em>Which building shakes the most?</em>），由同學回答（<em>The tall building shakes the most.</em>）。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lesson-card" id="lesson4">
+        <h2>第四節課：地盤效應、土壤液化與防災應用</h2>
+        <p><strong>Lesson 4: Site Amplification, Liquefaction &amp; Disaster Preparedness</strong></p>
+
+        <h3>教學目標</h3>
+        <ol>
+            <li>能比較地震波在基岩與沉積層中的傳播差異（放大效應）。</li>
+            <li>能說明土壤液化的成因與危害。</li>
+            <li>能整合前三節概念，評估建築耐震設計與都市防災策略。</li>
+        </ol>
+
+        <h3>引起動機（5 分鐘）</h3>
+        <p>提問：「三棟『建造方式完全相同』的建築，建在基岩、沉積層、海邊沙地，哪一棟最危險？」<br>
+        播放 IRIS 動畫《Buildings &amp; Bedrock: Effects of amplification &amp; liquefaction》（1分25秒）<a href="https://www.iris.edu/hq/inclass/animation/buildings__bedrock_effects_of_amplification__liquefaction" target="_blank" rel="noopener">連結 ↗</a>。</p>
+
+        <h3>主要活動</h3>
+
+        <h4>活動一：地盤放大效應（15 分鐘）</h4>
+        <ul>
+            <li>完整播放動畫並解說關鍵點：
+                <ul>
+                    <li>地震波在不同物質中傳播速率與振幅不同。</li>
+                    <li><strong>基岩</strong>：高頻、低振幅（破壞性較低）。</li>
+                    <li><strong>沉積層</strong>：低頻、高振幅（破壞性較高）——沉積層會「放大」地震波的振幅。</li>
+                    <li>動畫結尾展示 1989 年 Loma Prieta 地震中，建於基岩與建於沉積填土上建築物的實際地震紀錄差異。</li>
+                </ul>
+            </li>
+            <li>生活連結：台北盆地因鬆軟沉積層，常被放大地震波，故有「盆地效應」的討論。</li>
+        </ul>
+
+        <h4>活動二：土壤液化（10 分鐘）</h4>
+        <ul>
+            <li>播放 IRIS 動畫《Liquefaction during the 1906 San Francisco Earthquake》（43秒）<a href="https://www.iris.edu/hq/inclass/animation/liquefaction_during_the_1906_san_francisco_earthquake" target="_blank" rel="noopener">連結 ↗</a>。</li>
+            <li>解說：<strong>液化</strong>＝含水量高的鬆軟沉積物在地震搖晃下暫時失去強度、像液體般流動，導致建築傾斜或下陷（如 1906 年舊金山維多利亞式房屋傾倒、1989 年 Loma Prieta 地震案例）。</li>
+            <li>簡易示範（可選）：在裝滿濕沙的盆中放置小模型建築，搖晃觀察建築下陷傾斜。</li>
+        </ul>
+
+        <h4>活動三：防災工程討論（10 分鐘）</h4>
+        <ul>
+            <li>整合本單元重點，引導學生討論：
+                <ul>
+                    <li>建築師／工程師如何「避開共振」？（改變自然週期、加阻尼器、調整剛度）</li>
+                    <li>選址時為何要避免蓋在液化與沉積層？若無法避免該如何補救（基樁、改良地盤）？</li>
+                    <li>防災教育：地震發生時的避難原則（趴下、掩護、穩住）。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>評量與總結（5 分鐘）</h3>
+        <ul>
+            <li>總結測驗（選擇＋申論）：
+                <ol>
+                    <li>地震波在基岩與沉積層中傳播有何不同？</li>
+                    <li>何謂共振？為什麼會造成建築破壞？</li>
+                    <li>土壤液化如何造成建築傾倒？</li>
+                </ol>
+            </li>
+            <li>完成單元概念圖（可參考 IRIS「Concept Map – BOSS Model」）。</li>
+        </ul>
+
+        <div class="clil-box">
+            <h4>CLIL 口說任務（5 分鐘）</h4>
+            <ul>
+                <li><strong>本節單字</strong>：ground、bedrock、sediment、liquefaction、soft、hard、dangerous</li>
+                <li><strong>句型提示</strong>：<em>Bedrock is hard. / Sediment is soft. / Soft ground is dangerous.</em></li>
+                <li><strong>任務</strong>：用 3 句英文描述地盤效應（例：<em>Bedrock is hard. Sediment is soft. Soft ground is dangerous.</em>），再問 1 題（<em>Which ground is dangerous?</em>），由同學回答（<em>Soft sediment is dangerous.</em>）。</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <section id="assessment">
+        <h2>評量方式總表</h2>
+        <table>
+            <tr><th>評量類型</th><th>內容</th></tr>
+            <tr><td>形成性評量</td><td>隨堂問答、配對活動、實驗紀錄表、分組發表</td></tr>
+            <tr><td>總結性評量</td><td>第四節課總結測驗、單元概念圖</td></tr>
+            <tr><td>實作評量</td><td>BOSS 模型組裝與實驗操作</td></tr>
+            <tr><td>CLIL 口說評量</td><td>每節課「3 句描述＋1 提問＋1 回答」口說任務（以敢開口、能達意為原則，不苛求文法）</td></tr>
+        </table>
+    </section>
+
+    <section id="extensions">
+        <h2>延伸資源（IRIS）</h2>
+        <ul>
+            <li>動畫《Take 2: Hazard vs. Risk》（災害 vs. 風險）</li>
+            <li>動畫《Take 2: Magnitude vs. Intensity》（規模 vs. 震度）</li>
+            <li>影片《Resonance: Modeling Resonance in Buildings Using Paper Model》（紙板模型）</li>
+            <li>影片《Resonance: Modeling Resonance in Buildings using Spaghetti Noodles》（義大利麵模型）</li>
+            <li>課程《Build a Better Wall》（建築加固工程）</li>
+            <li>軟體《Seismic Waves Viewer》（地震波瀏覽工具）</li>
+        </ul>
+        <p><em>教材來源：IRIS EarthScope Consortium，InClass 教育資源，CC BY 4.0。</em></p>
+    </section>
+
+    <a href="./" class="back-link">← 返回課程首頁</a>
+
+    <div class="footer">
+        <p>北市大暑假地球科學課程 (2026) · Building Resonance Lesson Plan</p>
+        <p>教材來源：<a href="https://www.iris.edu/hq/inclass/" target="_blank" rel="noopener">IRIS EarthScope Consortium · InClass</a>（CC BY 4.0）</p>
+    </div>
+</body>
+</html>
