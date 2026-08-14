@@ -40,6 +40,7 @@
 | [seismic_wave_slides.md](seismic_wave_slides.md) | 地心震波奇幻之旅 — 21 張教學幻燈片 | 教師講授 |
 | [seismic_wave_teacher_guide.md](seismic_wave_teacher_guide.md) | 地震波教師指南 — 完整 80 分鐘課程流程 | 教師參考 |
 | [seismic_wave_worksheet.md](seismic_wave_worksheet.md) | 地震波學生工作表 — 7 個部分的互動練習 | 學生作業 |
+| [學習回顧單_五週課程總整理.md](學習回顧單_五週課程總整理.md) | 五週課程學習回顧單 — 整合所學製作第 6 週互動式網頁 | 學生複習 |
 
 ### 參考資料
 
