@@ -262,7 +262,65 @@
       padding: 0.15rem 0.6rem;
     }
     .tag.warn { color: #8a3d12; background: rgba(224, 122, 61, 0.15); }
-    .versions { display: inline-flex; gap: 0.4rem; font-size: 0.9rem; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed var(--line);
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      background: var(--magma);
+      color: #fff8f2;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta:hover { background: #c9652f; color: #fff; transform: translateY(-1px); }
+    .cta::after { content: "↗"; font-family: "Bricolage Grotesque", sans-serif; }
+    .cta.alt { background: var(--teal); }
+    .cta.alt:hover { background: var(--teal-deep); }
+    .cta.muted { background: #fff; color: var(--ink-soft); border: 1px solid var(--line); }
+    .cta.muted:hover { background: var(--mist); color: var(--ink); }
+
+    /* Group photo */
+    .photo {
+      margin: 2rem 0 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--teal-deep);
+      box-shadow: 0 22px 56px rgba(10, 61, 66, 0.18);
+    }
+    .photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2048 / 1153;
+      object-fit: cover;
+    }
+    .photo figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.35rem 1.25rem;
+      padding: 0.85rem 1.25rem;
+      color: var(--mist);
+      font-size: 0.92rem;
+    }
+    .photo figcaption strong {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      color: #fff;
+    }
+    .photo figcaption span { color: var(--foam); }
 
     footer {
       padding: 2rem 0 2.5rem;
@@ -330,7 +388,22 @@
       <div class="wrap">
         <p class="kicker">Final Reports</p>
         <h2>學習成果報告：每位老師的成果與網頁特點</h2>
-        <p class="intro">以下依報告順序整理每位老師的期末網頁。點名字可開啟原始報告。</p>
+        <p class="intro">以下依報告順序整理每位老師的期末網頁。每張卡片底部的「開啟報告網頁」按鈕可直接前往老師的作品。</p>
+
+        <figure class="photo">
+          <img
+            src="assets/utaipei-2026-%E6%9A%91%E6%9C%9F-%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A%E5%AE%8C%E5%A4%A7%E5%90%88%E7%85%A7.jpg"
+            alt="2026 暑期地球科學課程期末報告結束後，全體老師與授課教師在電腦教室的大合照"
+            width="2048"
+            height="1153"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <strong>期末報告完成大合照</strong>
+            <span>2026／8／21 · 北市大電腦教室 · 六週課程圓滿結束</span>
+          </figcaption>
+        </figure>
 
         <ul class="cards">
           <li class="card">
@@ -344,6 +417,7 @@
             <h4>網頁特點</h4>
             <p>「趣味互動實驗室」：一鍵觸發人工震源，動畫比較直達波與折射波抵達時差；建築共振測試可切換高／低頻震波，觀察低樓層與高樓層的搖晃差異。</p>
             <div class="tags"><span class="tag">震波動畫</span><span class="tag">共振模擬</span><span class="tag">CLIL</span></div>
+            <div class="cta-row"><a class="cta" href="https://knowledge6211-hub.github.io/2026_earthscience/#simulators" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -357,6 +431,7 @@
             <h4>網頁特點</h4>
             <p>探險隊闖關式敘事、雙語單字翻牌卡、句型跟讀、「Earthquake Detective」互動挑戰與今日口訣，適合直接帶進課堂。</p>
             <div class="tags"><span class="tag">闖關敘事</span><span class="tag">翻牌單字卡</span><span class="tag">Mini CLIL</span></div>
+            <div class="cta-row"><a class="cta" href="https://eric1987eric-hash.github.io/1150821final-/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -369,6 +444,7 @@
             <h4>網頁特點</h4>
             <p>心得敘事搭配知識小方塊與探究式提問，附「發射模擬地震波」互動按鈕，表情符號導覽親切易讀。</p>
             <div class="tags"><span class="tag">Geophone 解說</span><span class="tag">探究提問</span><span class="tag">工具箱</span></div>
+            <div class="cta-row"><a class="cta" href="https://genebaby0627-create.github.io/Chun115_earthscience_final/#resources" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -381,6 +457,7 @@
             <h4>網頁特點</h4>
             <p>「Building Resonance Laboratory」：滑桿調整樓層高度與震波頻率，即時算出建築固有頻率（f₀ ≈ 10/N）、共振匹配度與頂樓位移，並有典型情境預設。</p>
             <div class="tags"><span class="tag">共振實驗室</span><span class="tag">參數滑桿</span><span class="tag">作品庫</span></div>
+            <div class="cta-row"><a class="cta" href="https://yao2895-moonwolf.github.io/earth-science-2026-finalreport2/#resources" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -393,6 +470,7 @@
             <h4>網頁特點</h4>
             <p>以課程計畫文件化為方向，適合作為課程架構參考；報告網頁公開後將更新摘要。</p>
             <div class="tags"><span class="tag warn">連結暫時無法開啟</span><span class="tag">課程計畫</span></div>
+            <div class="cta-row"><a class="cta muted" href="https://sherry115-arch.github.io/2026EARTH_SCI_REPORT/#" target="_blank" rel="noopener">報告網頁（目前 404）</a><a class="cta alt" href="https://github.com/sherry115-arch/2026_summer_earthscience" target="_blank" rel="noopener">GitHub 課程計畫</a></div>
           </li>
 
           <li class="card">
@@ -405,6 +483,7 @@
             <h4>網頁特點</h4>
             <p>以真實野外數據為核心，關鍵數字統計卡、可展開的週次時間軸與分頁式現場紀錄，版面俐落。</p>
             <div class="tags"><span class="tag">野外實測</span><span class="tag">數據卡</span><span class="tag">時間軸</span></div>
+            <div class="cta-row"><a class="cta" href="https://susensu0405.github.io/20260821/#reflection" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -417,6 +496,7 @@
             <h4>網頁特點</h4>
             <p>「地震波頻率與建築共振體驗」按鈕模擬低頻／高頻震波對高、中、低樓層的動態影響，支援深色模式，並連結個人 GitHub 網站。</p>
             <div class="tags"><span class="tag">共振體驗</span><span class="tag">深色模式</span><span class="tag">個人網站</span></div>
+            <div class="cta-row"><a class="cta" href="https://jasmine615.github.io/finalexam/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -429,6 +509,7 @@
             <h4>網頁特點</h4>
             <p>「啟動地震觀測站」開場動畫與任務完成計數；互動走時圖滑桿、「敲鐵鎚猜哪種波先到」遊戲、AI 判讀任務與共振頻率挑戰，手帳風格排版。</p>
             <div class="tags"><span class="tag">任務地圖</span><span class="tag">走時圖互動</span><span class="tag">照片相簿</span></div>
+            <div class="cta-row"><a class="cta" href="https://mengching1213.github.io/20260821FINAL/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -441,6 +522,7 @@
             <h4>網頁特點</h4>
             <p>章節式探索筆記，可展開的觀察與反思；點選震源／Geophone／DAS-1／地層元件後播放震波傳播動畫，並可切換震動頻率觀察樓高反應。</p>
             <div class="tags"><span class="tag">章節筆記</span><span class="tag">元件動畫</span><span class="tag">實習報告</span></div>
+            <div class="cta-row"><a class="cta" href="https://f72400991-gif.github.io/2026_08_21_final/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -453,6 +535,7 @@
             <h4>網頁特點</h4>
             <p>互動走時曲線：點選任一地震儀即顯示直達波／折射波到時與領先訊號（v₁≈500、v₂≈2500 m/s，交會距離約 36.7 m），可「重播震測」看兩波賽跑；中英雙語標題。</p>
             <div class="tags"><span class="tag">互動走時曲線</span><span class="tag">雙語</span><span class="tag">Field Journal</span></div>
+            <div class="cta-row"><a class="cta" href="https://kuio0518.github.io/2026_0821earth/#refs" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -465,6 +548,7 @@
             <h4>網頁特點</h4>
             <p>精簡單頁，集中連結竹北國小官網、Gemini、GitHub、IRIS 地震教學與期末資料上傳，方便師生快速取用。</p>
             <div class="tags"><span class="tag">資源入口</span><span class="tag">課程行事曆</span></div>
+            <div class="cta-row"><a class="cta" href="https://hs4581.github.io/20260821_earthscience_final/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -477,6 +561,7 @@
             <h4>網頁特點</h4>
             <p>結構清楚的研習成果報告型網頁，資訊科技、地球物理、雙語教案三軌並列，適合作為課程重點總整理。</p>
             <div class="tags"><span class="tag">重點總整理</span><span class="tag">CLIL 四模組</span></div>
+            <div class="cta-row"><a class="cta" href="https://kin11507.github.io/2026-kin/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -489,6 +574,7 @@
             <h4>網頁特點</h4>
             <p>地震波模擬器可調振幅與頻率並「敲一下」產生瞬間震動；附選擇題小挑戰、中／EN 切換、日夜模式與可放大照片。</p>
             <div class="tags"><span class="tag">震波模擬器</span><span class="tag">中英切換</span><span class="tag">日夜模式</span></div>
+            <div class="cta-row"><a class="cta" href="https://chinwen2004-rgb.github.io/2026_earthscience_final/#experiment" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
 
           <li class="card">
@@ -502,6 +588,7 @@
             <h4>網頁特點</h4>
             <p>RPG 遊戲化：技能樹解鎖、XP 累積、副本戰報與寶箱收藏室；付費版加上音效與進度條，兩版並列可比較不同 AI 工具的產出差異。</p>
             <div class="tags"><span class="tag">RPG 遊戲化</span><span class="tag">技能樹</span><span class="tag">雙版本比較</span></div>
+            <div class="cta-row"><a class="cta" href="https://ziseven.github.io/final/" target="_blank" rel="noopener">開啟免費版報告</a><a class="cta alt" href="https://ziseven.github.io/finall/#page-title" target="_blank" rel="noopener">開啟付費版報告</a></div>
           </li>
 
           <li class="card">
@@ -514,6 +601,7 @@
             <h4>網頁特點</h4>
             <p>內建「報告模式」，各段落附口頭發表提示（建議講法與時間），實驗內容以分頁呈現，為現場 5–7 分鐘發表而設計。</p>
             <div class="tags"><span class="tag">報告模式</span><span class="tag">作品歷程</span><span class="tag">分頁實驗</span></div>
+            <div class="cta-row"><a class="cta" href="https://poking-tofu.github.io/2026_earth_end/" target="_blank" rel="noopener">開啟報告網頁</a></div>
           </li>
         </ul>
       </div>
