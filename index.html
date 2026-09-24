@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="北市大 2026 暑假地球科學課程——學習成果報告：期末報告連結。" />
-  <title>學習成果報告｜北市大暑假地球科學課程 2026</title>
+  <meta name="description" content="北市大 2026 暑假地球科學課程——地震學、地球物理與 AI／Agent 輔助教學實作。課程內容簡介與每位老師的學習成果報告摘要。" />
+  <title>北市大暑假地球科學課程 2026｜課程簡介與學習成果報告</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
@@ -21,16 +21,17 @@
       --magma: #e07a3d;
       --gold: #d4a04a;
       --line: rgba(15, 42, 46, 0.12);
-      --max: 760px;
+      --max: 1040px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "Noto Sans TC", sans-serif;
       color: var(--ink);
       background: var(--paper);
-      line-height: 1.7;
+      line-height: 1.75;
     }
     a { color: var(--teal); text-underline-offset: 0.18em; }
     a:hover { color: var(--magma); }
@@ -40,13 +41,14 @@
       margin-inline: auto;
     }
 
+    /* Header */
     header {
-      background: var(--teal-deep);
+      background: linear-gradient(160deg, #061c20, var(--teal-deep) 60%, #0d4a50);
       color: var(--mist);
-      padding: 2.75rem 0 2.25rem;
+      padding: 3.25rem 0 2.75rem;
     }
     .eyebrow {
-      margin: 0 0 0.45rem;
+      margin: 0 0 0.5rem;
       font-family: "Bricolage Grotesque", sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
@@ -57,53 +59,210 @@
     h1 {
       margin: 0;
       font-family: "Noto Serif TC", serif;
-      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.25;
     }
     .lead {
-      margin: 0.7rem 0 0;
+      margin: 0.9rem 0 0;
+      max-width: 44em;
       color: rgba(238, 245, 243, 0.88);
+      font-size: 1.05rem;
+    }
+    .meta-line {
+      margin: 1.1rem 0 0;
+      font-size: 0.92rem;
+      color: var(--foam);
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.6rem;
+    }
+    .nav a {
+      color: var(--mist);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.45rem 0.95rem;
+      border: 1px solid rgba(184, 224, 216, 0.45);
+      border-radius: 999px;
+    }
+    .nav a:hover { background: rgba(184, 224, 216, 0.15); color: #fff; }
+
+    /* Sections */
+    section { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    section + section { border-top: 1px solid var(--line); }
+    .kicker {
+      margin: 0 0 0.35rem;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+    }
+    h2 {
+      margin: 0 0 0.6rem;
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(1.5rem, 3.4vw, 2.05rem);
+      line-height: 1.3;
+    }
+    .intro { margin: 0; max-width: 62ch; color: var(--ink-soft); }
+
+    .about { background: var(--mist); }
+    .facts {
+      display: grid;
+      gap: 0.9rem;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      list-style: none;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .facts li {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.95rem 1.1rem;
+    }
+    .facts strong {
+      display: block;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.2rem;
     }
 
-    main { padding: 2.25rem 0 3.5rem; }
-
-    .report-list {
+    .weeks {
       list-style: none;
-      margin: 0;
+      margin: 1.75rem 0 0;
       padding: 0;
       border-top: 1px solid var(--line);
     }
-    .report-list li {
+    .weeks li {
       display: grid;
-      gap: 0.15rem 1rem;
-      align-items: baseline;
+      gap: 0.2rem 1.25rem;
       padding: 0.95rem 0;
       border-bottom: 1px solid var(--line);
+      grid-template-columns: 4.2rem 1fr;
+      align-items: baseline;
     }
-    .report-list li.has-time {
-      grid-template-columns: auto 1fr;
+    @media (min-width: 720px) {
+      .weeks li { grid-template-columns: 4.2rem 5rem 1.1fr 1fr; }
     }
+    .wk {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--teal);
+    }
+    .wd { color: var(--ink-soft); font-size: 0.92rem; }
+    .wt { margin: 0; font-weight: 700; grid-column: 2 / -1; }
+    .wa { margin: 0; color: var(--ink-soft); font-size: 0.95rem; grid-column: 2 / -1; }
+    @media (min-width: 720px) {
+      .wt, .wa { grid-column: auto; }
+    }
+    .weeks li.final { background: rgba(224, 122, 61, 0.08); padding-inline: 0.5rem; }
+    .weeks li.final .wk { color: var(--magma); }
+
+    .pillars {
+      display: grid;
+      gap: 1rem;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      list-style: none;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+    .pillars li {
+      border-left: 3px solid var(--teal-bright);
+      padding: 0.2rem 0 0.2rem 1rem;
+    }
+    .pillars strong { display: block; font-family: "Noto Serif TC", serif; font-size: 1.05rem; }
+    .pillars span { color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* Reports */
+    .report-note {
+      margin: 1rem 0 0;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+    .cards {
+      display: grid;
+      gap: 1.1rem;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.2rem 1.3rem 1.25rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(10, 61, 66, 0.12);
+    }
+    .card-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.75rem;
+    }
+    .name {
+      margin: 0;
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+    .name a { text-decoration: none; }
+    .name a:hover { text-decoration: underline; }
     .slot {
       font-family: "Bricolage Grotesque", sans-serif;
       font-weight: 700;
+      font-size: 0.85rem;
       color: var(--teal-bright);
       white-space: nowrap;
     }
-    .names {
+    .site {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .site a { word-break: break-all; }
+    .card h4 {
+      margin: 0.35rem 0 0;
+      font-size: 0.8rem;
+      font-family: "Bricolage Grotesque", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .card p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem 1.1rem;
-      font-size: 1.08rem;
+      gap: 0.35rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
     }
-    .names a {
+    .tag {
+      font-size: 0.75rem;
       font-weight: 700;
-      text-decoration: none;
+      color: var(--teal-deep);
+      background: rgba(46, 168, 164, 0.12);
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
     }
-    .names a:hover { text-decoration: underline; }
-    .pair {
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
+    .tag.warn { color: #8a3d12; background: rgba(224, 122, 61, 0.15); }
+    .versions { display: inline-flex; gap: 0.4rem; font-size: 0.9rem; }
 
     footer {
       padding: 2rem 0 2.5rem;
@@ -119,67 +278,251 @@
   <header>
     <div class="wrap">
       <p class="eyebrow">UTaipei · Summer 2026</p>
-      <h1>學習成果報告</h1>
-      <p class="lead">期末報告的連結</p>
+      <h1>北市大暑假地球科學課程</h1>
+      <p class="lead">地震學、地球物理與 AI／Agent 輔助教學實作。為中小學現職教師設計的六週課程：從校園折射震測、AI 代理工具，到 CLIL 雙語防災教案與成果網頁發表。</p>
+      <p class="meta-line">2026／7／17 起 · 每週四上午 · 共 6 週 · 每次 4 小時 · 對象：中小學現職教師</p>
+      <nav class="nav">
+        <a href="#about">課程簡介</a>
+        <a href="#weeks">六週內容</a>
+        <a href="#reports">學習成果報告</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <div class="wrap">
-      <ol class="report-list">
-        <li class="has-time">
-          <span class="slot">11:15 - 11:18</span>
-          <span class="names">
-            <a href="https://knowledge6211-hub.github.io/2026_earthscience/#simulators" target="_blank" rel="noopener">王芝琦</a>
-            <a href="https://eric1987eric-hash.github.io/1150821final-/" target="_blank" rel="noopener">張競育</a>
-          </span>
-        </li>
-        <li>
-          <span class="names"><a href="https://genebaby0627-create.github.io/Chun115_earthscience_final/#resources" target="_blank" rel="noopener">賴宜君</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://yao2895-moonwolf.github.io/earth-science-2026-finalreport2/#resources" target="_blank" rel="noopener">陳重佑</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://sherry115-arch.github.io/2026EARTH_SCI_REPORT/#" target="_blank" rel="noopener">張雅菁</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://susensu0405.github.io/20260821/#reflection" target="_blank" rel="noopener">蘇新雅</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://jasmine615.github.io/finalexam/" target="_blank" rel="noopener">王永蘭</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://mengching1213.github.io/20260821FINAL/" target="_blank" rel="noopener">楊孟晴</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://f72400991-gif.github.io/2026_08_21_final/" target="_blank" rel="noopener">李俊鴻</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://kuio0518.github.io/2026_0821earth/#refs" target="_blank" rel="noopener">鄭莉蓁</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://hs4581.github.io/20260821_earthscience_final/" target="_blank" rel="noopener">陳慧容</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://kin11507.github.io/2026-kin/" target="_blank" rel="noopener">王金生</a></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://chinwen2004-rgb.github.io/2026_earthscience_final/#experiment" target="_blank" rel="noopener">余晋旼</a></span>
-        </li>
-        <li>
-          <span class="names">詹喬雅 <span class="pair">(<a href="https://ziseven.github.io/final/" target="_blank" rel="noopener">免費版</a> / <a href="https://ziseven.github.io/finall/#page-title" target="_blank" rel="noopener">付費版</a>)</span></span>
-        </li>
-        <li>
-          <span class="names"><a href="https://poking-tofu.github.io/2026_earth_end/" target="_blank" rel="noopener">游博鈞</a></span>
-        </li>
-      </ol>
-    </div>
+    <section class="about" id="about">
+      <div class="wrap">
+        <p class="kicker">Course</p>
+        <h2>這門課在做什麼</h2>
+        <p class="intro">課程以地震學與地球物理為主軸，帶領教師在學習領域知識的同時，培養 AI 與雲端平台的資訊素養，並透過 CLIL（內容與語言整合學習）練習用英文描述現象、提問與回應。最後每位老師把五週所學整合成一個可公開瀏覽的互動網頁，在第六週進行 5–7 分鐘的口頭發表。</p>
+        <ul class="facts">
+          <li><strong>課程精神</strong>教學相長、動手做，學有用的技能帶回教室</li>
+          <li><strong>核心知識</strong>P 波／S 波／表面波、折射震測與走時曲線、建築共振與地盤效應</li>
+          <li><strong>數位工具</strong>GitHub Pages、Google GWS／Apps Script、Antigravity IDE、Gemini</li>
+          <li><strong>教學法</strong>CLIL 雙語、TPR、Think-Pair-Share、IRIS 開源教材</li>
+        </ul>
+        <ul class="pillars">
+          <li><strong>折射震測實作</strong><span>在校園以鐵鎚敲擊鐵板製造人工震源，佈設 24 支地震儀，從直達波與折射波的到時推算地下構造。</span></li>
+          <li><strong>AI 代理與自動化</strong><span>用 Antigravity IDE 讓 AI 直接操作檔案產出教案與網頁；用 GAS 串接表單、試算表與自動寄信。</span></li>
+          <li><strong>CLIL 防災教案</strong><span>結合 IRIS 資源與提示詞工程，設計適合國小高年級的雙語地震防災教案。</span></li>
+          <li><strong>成果網頁發表</strong><span>把學習歷程整理成互動網頁，透過 GitHub Pages 發布，讓教案與作品走出教室。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="weeks">
+      <div class="wrap">
+        <p class="kicker">Six Thursdays</p>
+        <h2>六週上課內容</h2>
+        <p class="intro">每週四小時：地震案例導入 → 核心概念講解 → 資料工具與教案實作 → 作業說明與小組分享。</p>
+        <ol class="weeks">
+          <li><span class="wk">W01</span><span class="wd">7／17</span><p class="wt">課程緣起、環境建置、工具介紹</p><p class="wa">GitHub、GitHub Pages、Google GWS／GAS；作業：個人地震學課程工具包</p></li>
+          <li><span class="wk">W02</span><span class="wd">7／24</span><p class="wt">折射震測原理：探測校園底下的構造</p><p class="wa">校園野外震測、走時曲線、Google Sheets 圖表；作業：簡易震測實作</p></li>
+          <li><span class="wk">W03</span><span class="wd">7／31</span><p class="wt">AI 工具使用：Antigravity IDE</p><p class="wa">AI Agent 操作檔案、GAS 表單與自動寄信；作業：震源定位教案簡報</p></li>
+          <li><span class="wk">W04</span><span class="wd">8／7</span><p class="wt">折射震測 CLIL 教學・Antigravity 報告與網頁・報告練習</p><p class="wa">雙語教案設計、報告網頁製作；作業：Antigravity 報告網頁</p></li>
+          <li><span class="wk">W05</span><span class="wd">8／14</span><p class="wt">CLIL 防災探究：地震波頻率與地層——建築共振</p><p class="wa">黏土竹籤建築共振實驗、地盤效應、IRIS 教材；作業：地震探測分析報告</p></li>
+          <li class="final"><span class="wk">W06</span><span class="wd">8／21</span><p class="wt">學習成果報告</p><p class="wa">期末教案作品與互動網頁 · 5–7 分鐘口頭發表</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="about" id="reports">
+      <div class="wrap">
+        <p class="kicker">Final Reports</p>
+        <h2>學習成果報告：每位老師的成果與網頁特點</h2>
+        <p class="intro">以下依報告順序整理每位老師的期末網頁。點名字可開啟原始報告。</p>
+
+        <ul class="cards">
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://knowledge6211-hub.github.io/2026_earthscience/#simulators" target="_blank" rel="noopener">王芝琦</a></h3>
+              <span class="slot">11:15 - 11:18</span>
+            </div>
+            <p class="site">地球物理與 CLIL 防災探究——互動探索成果網頁</p>
+            <h4>成果摘要</h4>
+            <p>整理五週課程進度與四大核心技術：網頁建置與 GitHub Pages 部署、Antigravity 與 GAS 自動化、折射震測原理、CLIL 教案與提示詞工程，並附參考資源清單。</p>
+            <h4>網頁特點</h4>
+            <p>「趣味互動實驗室」：一鍵觸發人工震源，動畫比較直達波與折射波抵達時差；建築共振測試可切換高／低頻震波，觀察低樓層與高樓層的搖晃差異。</p>
+            <div class="tags"><span class="tag">震波動畫</span><span class="tag">共振模擬</span><span class="tag">CLIL</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://eric1987eric-hash.github.io/1150821final-/" target="_blank" rel="noopener">張競育</a></h3>
+              <span class="slot">11:15 - 11:18</span>
+            </div>
+            <p class="site">Earthquake Quest｜地震探險隊</p>
+            <h4>成果摘要</h4>
+            <p>以「從『我是不是不行』到『好像可以試試看』」為主軸的五週學習航線與長篇心得，並將所學轉成國小五～六年級可用的 Mini CLIL Lesson（Warm-up → Video → Vocabulary → Challenge → Reflection）。</p>
+            <h4>網頁特點</h4>
+            <p>探險隊闖關式敘事、雙語單字翻牌卡、句型跟讀、「Earthquake Detective」互動挑戰與今日口訣，適合直接帶進課堂。</p>
+            <div class="tags"><span class="tag">闖關敘事</span><span class="tag">翻牌單字卡</span><span class="tag">Mini CLIL</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://genebaby0627-create.github.io/Chun115_earthscience_final/#resources" target="_blank" rel="noopener">賴宜君</a></h3>
+            </div>
+            <p class="site">EarthSci Portfolio｜學習心得與成果紀錄</p>
+            <h4>成果摘要</h4>
+            <p>以折射震測實作心得為核心，介紹 Geophone（地震檢波器）原理與直達波／折射波先後的疑問，整理建築共振實驗、CLIL 教案設計、課堂工具箱與五週摘要。</p>
+            <h4>網頁特點</h4>
+            <p>心得敘事搭配知識小方塊與探究式提問，附「發射模擬地震波」互動按鈕，表情符號導覽親切易讀。</p>
+            <div class="tags"><span class="tag">Geophone 解說</span><span class="tag">探究提問</span><span class="tag">工具箱</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://yao2895-moonwolf.github.io/earth-science-2026-finalreport2/#resources" target="_blank" rel="noopener">陳重佑</a></h3>
+            </div>
+            <p class="site">淺層地震波折射探勘與地球物理應用學習報告</p>
+            <h4>成果摘要</h4>
+            <p>Executive Summary 歸納三大能力（地球物理探勘、CLIL 教案、AI Agent 與自動化），並提出三點反思：簡單物理模型的力量、由表面波與共振重構地震災害認知、AI 從問答機器人到 Agent 操控的典範轉移。</p>
+            <h4>網頁特點</h4>
+            <p>「Building Resonance Laboratory」：滑桿調整樓層高度與震波頻率，即時算出建築固有頻率（f₀ ≈ 10/N）、共振匹配度與頂樓位移，並有典型情境預設。</p>
+            <div class="tags"><span class="tag">共振實驗室</span><span class="tag">參數滑桿</span><span class="tag">作品庫</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://sherry115-arch.github.io/2026EARTH_SCI_REPORT/#" target="_blank" rel="noopener">張雅菁</a></h3>
+            </div>
+            <p class="site">2026 EARTH SCI REPORT</p>
+            <h4>成果摘要</h4>
+            <p>期末報告連結目前顯示 GitHub Pages 尚未公開。其 GitHub 另整理了課程計畫網頁：六週總表與可檢核作業、每週四小時流程、與大學部「地球物理學」的銜接對照與評量方式，並附「臺灣地震預警系統的演進與發展」災防宣導資料。</p>
+            <h4>網頁特點</h4>
+            <p>以課程計畫文件化為方向，適合作為課程架構參考；報告網頁公開後將更新摘要。</p>
+            <div class="tags"><span class="tag warn">連結暫時無法開啟</span><span class="tag">課程計畫</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://susensu0405.github.io/20260821/#reflection" target="_blank" rel="noopener">蘇新雅</a></h3>
+            </div>
+            <p class="site">地球物理 × AI × CLIL｜學習成果</p>
+            <h4>成果摘要</h4>
+            <p>從「會操作」走向「會應用」：五週學習地圖、四個關鍵能力，以及 7/24 圖書館後方野外震測的完整紀錄——DAS-1 24 頻道、1 m 測站間距、0.125 ms 取樣、五個震源位置；反思「安靜其實很重要」，體會背景噪訊控制。</p>
+            <h4>網頁特點</h4>
+            <p>以真實野外數據為核心，關鍵數字統計卡、可展開的週次時間軸與分頁式現場紀錄，版面俐落。</p>
+            <div class="tags"><span class="tag">野外實測</span><span class="tag">數據卡</span><span class="tag">時間軸</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://jasmine615.github.io/finalexam/" target="_blank" rel="noopener">王永蘭</a></h3>
+            </div>
+            <p class="site">地球科學五週學習心得與成果展</p>
+            <h4>成果摘要</h4>
+            <p>三大收穫：用 GitHub Pages 自主建站與整理課程檔案、親身體驗震源佈置與折射震測、驗證高樓易受低頻／矮樓易受高頻震波影響的共振效應；並整理五週摘要與四大技術模組。</p>
+            <h4>網頁特點</h4>
+            <p>「地震波頻率與建築共振體驗」按鈕模擬低頻／高頻震波對高、中、低樓層的動態影響，支援深色模式，並連結個人 GitHub 網站。</p>
+            <div class="tags"><span class="tag">共振體驗</span><span class="tag">深色模式</span><span class="tag">個人網站</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://mengching1213.github.io/20260821FINAL/" target="_blank" rel="noopener">楊孟晴</a></h3>
+            </div>
+            <p class="site">地球物理課程學習報告｜Earth Science Mission</p>
+            <h4>成果摘要</h4>
+            <p>五週任務地圖串起工具建置、折射震測、野外紀錄、AI 任務與共振探究；實測 23 m 測線、24 支檢波器，擬合第一層 300–480 m/s、第二層 600–1700 m/s，推估界面深度 2.5–4.5 m；附實作照片相簿與 CLIL 句型。</p>
+            <h4>網頁特點</h4>
+            <p>「啟動地震觀測站」開場動畫與任務完成計數；互動走時圖滑桿、「敲鐵鎚猜哪種波先到」遊戲、AI 判讀任務與共振頻率挑戰，手帳風格排版。</p>
+            <div class="tags"><span class="tag">任務地圖</span><span class="tag">走時圖互動</span><span class="tag">照片相簿</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://f72400991-gif.github.io/2026_08_21_final/" target="_blank" rel="noopener">李俊鴻</a></h3>
+            </div>
+            <p class="site">我的地球物理探索之旅｜五週學習報告</p>
+            <h4>成果摘要</h4>
+            <p>以「六條交會的學習線索」組織五週歷程，收錄《折射震測實習心得報告》（Wiggle Plot、First Arrival、測線參數）與「原本以為／實際動手之後」的認知轉變，並梳理 Gemini → Antigravity → GitHub → GAS 的工具流程。</p>
+            <h4>網頁特點</h4>
+            <p>章節式探索筆記，可展開的觀察與反思；點選震源／Geophone／DAS-1／地層元件後播放震波傳播動畫，並可切換震動頻率觀察樓高反應。</p>
+            <div class="tags"><span class="tag">章節筆記</span><span class="tag">元件動畫</span><span class="tag">實習報告</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://kuio0518.github.io/2026_0821earth/#refs" target="_blank" rel="noopener">鄭莉蓁</a></h3>
+            </div>
+            <p class="site">折射震測課程紀錄｜Refraction Seismics Field Journal</p>
+            <h4>成果摘要</h4>
+            <p>「把走時曲線從課本敲到螢幕上」：清楚說明直達波、折射波、臨界角與交會距離，記錄佈設 24 支地震儀、揮鐵鎚敲擊後看到訊號疊加、交會點浮現的「公式活過來」瞬間，並整理五週進度與 GitHub 作品。</p>
+            <h4>網頁特點</h4>
+            <p>互動走時曲線：點選任一地震儀即顯示直達波／折射波到時與領先訊號（v₁≈500、v₂≈2500 m/s，交會距離約 36.7 m），可「重播震測」看兩波賽跑；中英雙語標題。</p>
+            <div class="tags"><span class="tag">互動走時曲線</span><span class="tag">雙語</span><span class="tag">Field Journal</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://hs4581.github.io/20260821_earthscience_final/" target="_blank" rel="noopener">陳慧容</a></h3>
+            </div>
+            <p class="site">地球科學探究與實作教室</p>
+            <h4>成果摘要</h4>
+            <p>以校內教學入口為定位：五週課程行事曆、地震波測量進度整理（工具包建置、校園折射震測、Antigravity IDE、雙語報告與網站、地層探測分析），以及學習資源連結。</p>
+            <h4>網頁特點</h4>
+            <p>精簡單頁，集中連結竹北國小官網、Gemini、GitHub、IRIS 地震教學與期末資料上傳，方便師生快速取用。</p>
+            <div class="tags"><span class="tag">資源入口</span><span class="tag">課程行事曆</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://kin11507.github.io/2026-kin/" target="_blank" rel="noopener">王金生</a></h3>
+            </div>
+            <p class="site">地球物理探勘技術與 CLIL 雙語教學實務</p>
+            <h4>成果摘要</h4>
+            <p>系統整理課程概述、五週進度與四大核心技術，並拆解 CLIL 教案四模組：引起動機（Warm-up）、震央與震源影音解析、雙語能量站、互動挑戰與反思；附完整參考資源。</p>
+            <h4>網頁特點</h4>
+            <p>結構清楚的研習成果報告型網頁，資訊科技、地球物理、雙語教案三軌並列，適合作為課程重點總整理。</p>
+            <div class="tags"><span class="tag">重點總整理</span><span class="tag">CLIL 四模組</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://chinwen2004-rgb.github.io/2026_earthscience_final/#experiment" target="_blank" rel="noopener">余晋旼</a></h3>
+            </div>
+            <p class="site">我的地震學學習旅程｜Seismic Learning Journey</p>
+            <h4>成果摘要</h4>
+            <p>「從敲一下開始，看見地震波」：五週學習串成「實驗 → 資料 → AI → 教學」路徑，收錄人工震源實驗與波形紀錄照片，並以中英雙語撰寫課程心得，反思「從學會到做出來」。</p>
+            <h4>網頁特點</h4>
+            <p>地震波模擬器可調振幅與頻率並「敲一下」產生瞬間震動；附選擇題小挑戰、中／EN 切換、日夜模式與可放大照片。</p>
+            <div class="tags"><span class="tag">震波模擬器</span><span class="tag">中英切換</span><span class="tag">日夜模式</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name">詹喬雅</h3>
+              <span class="versions">(<a href="https://ziseven.github.io/final/" target="_blank" rel="noopener">免費版</a> / <a href="https://ziseven.github.io/finall/#page-title" target="_blank" rel="noopener">付費版</a>)</span>
+            </div>
+            <p class="site">地球物理大冒險｜兩種 AI 工具版本的同一份報告</p>
+            <h4>成果摘要</h4>
+            <p>從花蓮米崙斷層帶的成長經驗出發，重新解鎖 Snell's Law 與臨界折射波；記錄 48 m 測線實測（表層 300–500、下層 600–1000 m/s，約 3 m 深界面）、訊號疊加抑噪、GAS「零人工」報告收件後台與 CLIL 教案，另附自製「楓之谷地震學」小遊戲。</p>
+            <h4>網頁特點</h4>
+            <p>RPG 遊戲化：技能樹解鎖、XP 累積、副本戰報與寶箱收藏室；付費版加上音效與進度條，兩版並列可比較不同 AI 工具的產出差異。</p>
+            <div class="tags"><span class="tag">RPG 遊戲化</span><span class="tag">技能樹</span><span class="tag">雙版本比較</span></div>
+          </li>
+
+          <li class="card">
+            <div class="card-head">
+              <h3 class="name"><a href="https://poking-tofu.github.io/2026_earth_end/" target="_blank" rel="noopener">游博鈞</a></h3>
+            </div>
+            <p class="site">從第一個網頁到地球物理探究｜五週學習歷程</p>
+            <h4>成果摘要</h4>
+            <p>以「工具建立 → 科學實作 → AI 整合 → 教學轉化」四步驟串起五週，保留兩個代表作品：第一個 GitHub Pages 網頁與折射震測實驗報告（DAS-1 24 通道、核心原理、野外操作、波形觀察、探勘結果與反思）。</p>
+            <h4>網頁特點</h4>
+            <p>內建「報告模式」，各段落附口頭發表提示（建議講法與時間），實驗內容以分頁呈現，為現場 5–7 分鐘發表而設計。</p>
+            <div class="tags"><span class="tag">報告模式</span><span class="tag">作品歷程</span><span class="tag">分頁實驗</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>北市大暑假地球科學課程 · 2026</p>
+      <p>北市大暑假地球科學課程 · 2026 · <a href="https://github.com/oceanicdayi/Utaipei_2026_summer">GitHub Repo</a></p>
     </div>
   </footer>
 </body>
